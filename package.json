@@ -1,0 +1,34 @@
+{
+	"name": "blennder-blocks",
+	"version": "0.1.0",
+	"description": "Registers blocks to be used in the Blennder theme.",
+	"author": "Blennd Ninjas",
+	"license": "GPL-2.0-or-later",
+	"main": "build/index.js",
+	"scripts": {
+		"build": "wp-scripts build",
+		"format": "wp-scripts format",
+		"lint:css": "wp-scripts lint-style",
+		"lint:js": "wp-scripts lint-js",
+		"start": "wp-scripts start",
+		"packages-update": "wp-scripts packages-update",
+		"start:accordion": "wp-scripts start blocks/accordion/src/index.js --output-path=blocks/accordion/build/",
+		"build:accordion": "wp-scripts build blocks/accordion/src/index.js --output-path=blocks/accordion/build/",
+		"start:hero": "wp-scripts start blocks/hero/src/index.js --output-path=blocks/hero/build/",
+		"build:hero": "wp-scripts build blocks/hero/src/index.js --output-path=blocks/hero/build/",
+		"start:section": "wp-scripts start blocks/section/src/index.js --output-path=blocks/section/build/",
+		"build:section": "wp-scripts build blocks/section/src/index.js --output-path=blocks/section/build/",
+		"start:swiper": "wp-scripts start blocks/swiper/src/index.js --output-path=blocks/swiper/build/",
+		"build:swiper": "wp-scripts build blocks/swiper/src/index.js --output-path=blocks/swiper/build/"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^9.0.0",
+		"@wordpress/blocks": "^11.7.0",
+		"@wordpress/i18n": "^4.8.0",
+		"swiper": "^8.1.4",
+		"typescript": "^4.6.4"
+	},
+	"devDependencies": {
+		"@wordpress/scripts": "^23.0.0"
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "blennder-blocks/accordion",
+	"version": "0.1.0",
+	"title": "Accordion",
+	"category": "components",
+	"description": "accordion component",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "blennder-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

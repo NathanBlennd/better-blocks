@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"moduleResolution": "node",
+		"noImplicitAny": false,
+		"noEmitOnError": true,
+		"removeComments": false,
+		"sourceMap": true,
+		"module": "es6",
+		"target": "es5",
+		"outDir": "dist",
+		"types": ["node"]
+	},
+	"include": [
+		"blocks/*/ts/*"
+	]
+}

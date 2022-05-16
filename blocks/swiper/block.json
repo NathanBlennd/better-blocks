@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "blennder-blocks/swiper",
+	"version": "0.1.0",
+	"title": "Swiper",
+	"category": "components",
+	"description": "swiper component",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "blennder-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
