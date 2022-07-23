@@ -11,9 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { InnerBlocks, InspectorControls, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, PanelRow, TextControl } from '@wordpress/components';
-
+import { RichText, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,29 +29,26 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit( { attributes, setAttributes, context } ) {
 
-	const ALLOWED_BLOCKS = [ 'blennder-blocks/accordion-item' ];
-
-	const { accordionId } = attributes;
+	setAttributes( { parentId: context[ 'blennder-blocks/accordionId' ] } );
 
 	return (
 		<div { ...useBlockProps() }>
-			<InspectorControls>
-				<PanelBody
-					title="Settings"
-					initialOpen={true}
-				>
-					<PanelRow>
-						<TextControl
-							label="Accordion ID"
-							value={ accordionId }
-							onChange={ ( value ) => setAttributes( { accordionId: value } ) }
-						/>
-					</PanelRow>
-				</PanelBody>
-			</InspectorControls>
-			<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
+			<RichText
+				tagName="h2"
+				value={ attributes.heading }
+				allowedFormats={ [] }
+				onChange={ ( heading ) => setAttributes( { heading } ) }
+				placeholder={ __( 'Heading...' ) }
+			/>
+			<RichText
+				tagName="p"
+				value={ attributes.content }
+				allowedFormats={ [] }
+				onChange={ ( content ) => setAttributes( { content } ) }
+				placeholder={ __( 'Content...' ) }
+			/>
 		</div>
 	);
 }

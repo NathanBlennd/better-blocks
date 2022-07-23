@@ -5,8 +5,17 @@
 	"title": "Accordion",
 	"category": "components",
 	"description": "accordion component",
+	"attributes": {
+		"accordionId": {
+			"type": "string",
+			"default": ""
+		}
+	},
 	"supports": {
 		"html": false
+	},
+	"providesContext": {
+		"blennder-blocks/accordionId": "accordionId"
 	},
 	"textdomain": "blennder-blocks",
 	"editorScript": "file:./build/index.js",

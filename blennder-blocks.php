@@ -13,6 +13,8 @@
  * @package           blennder-blocks
  */
 
+defined( 'ABSPATH' ) || die;
+
 define( 'BLENNDER_BLOCKS', plugin_dir_path( __FILE__ ) );
 
 
@@ -42,6 +44,7 @@ add_filter( 'block_categories_all', 'blennder_blocks_block_categories_all', 10, 
  * through the block editor in the corresponding context.
  */
 function blennder_blocks_init() {
+	register_block_type( BLENNDER_BLOCKS . 'blocks/accordion-item/' );
 	register_block_type( BLENNDER_BLOCKS . 'blocks/accordion/' );
 	register_block_type( BLENNDER_BLOCKS . 'blocks/hero/' );
 	register_block_type( BLENNDER_BLOCKS . 'blocks/section/' );
@@ -68,3 +71,27 @@ function add_type_attribute($tag, $handle, $src) {
 	return $tag;
 }
 add_filter( 'script_loader_tag', 'add_type_attribute' , 10, 3 );
+
+
+function load_bootsrap_from_cdn() {
+	wp_enqueue_style(
+		'bootstrap',
+		'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
+		[],
+		'5.2.0'
+	);
+	wp_enqueue_script(
+		'bootstrap',
+		'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js',
+		[ 'jquery' ],
+		'5.2.0',
+		true
+	);
+	wp_enqueue_script(
+		'blennder/accordion',
+		plugins_url( 'dist/accordion/ts/accordion.js', __FILE__ ),
+		[ 'jquery', 'bootstrap' ],
+		'0.1.0'
+	);
+}
+add_action( 'wp_enqueue_scripts', 'load_bootsrap_from_cdn' );

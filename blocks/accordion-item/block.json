@@ -1,0 +1,33 @@
+{
+	"apiVersion": 2,
+	"name": "blennder-blocks/accordion-item",
+	"version": "0.1.0",
+	"title": "Accordion Item",
+	"category": "components",
+	"description": "An accordion item contains a header and content.",
+	"attributes": {
+		"heading": {
+			"type": "string",
+			"source": "html",
+			"selector": ".heading"
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".accordion-body"
+		},
+		"parentId": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"parent": [ "blennder-blocks/accordion" ],
+	"usesContext": [ "blennder-blocks/accordionId" ],
+	"supports": {
+		"html": false
+	},
+	"textdomain": "blennder-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
