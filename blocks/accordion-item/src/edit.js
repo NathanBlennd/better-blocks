@@ -13,6 +13,8 @@ import { __ } from '@wordpress/i18n';
  */
 import { RichText, useBlockProps } from '@wordpress/block-editor';
 
+import { cleanForSlug } from '@wordpress/url';
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -33,22 +35,40 @@ export default function Edit( { attributes, setAttributes, context } ) {
 
 	setAttributes( { parentId: context[ 'blennder-blocks/accordionId' ] } );
 
+	const md5 = require( 'md5' );
+
+	const blockProps = useBlockProps.save();
+	const cleanHeading = cleanForSlug( attributes.heading );
+	const contentID = 'id-' + md5( attributes.content );
+	const contentTarget = '#' + contentID;
+
+	const { parentId } = attributes;
+	const id = '#' + cleanForSlug( parentId );
+
 	return (
 		<div { ...useBlockProps() }>
-			<RichText
-				tagName="h2"
-				value={ attributes.heading }
-				allowedFormats={ [] }
-				onChange={ ( heading ) => setAttributes( { heading } ) }
-				placeholder={ __( 'Heading...' ) }
-			/>
-			<RichText
-				tagName="p"
-				value={ attributes.content }
-				allowedFormats={ [] }
-				onChange={ ( content ) => setAttributes( { content } ) }
-				placeholder={ __( 'Content...' ) }
-			/>
+			<div class="accordion-item">
+				<h2 class="accordion-header" id={ cleanHeading }>
+					<button class="components-button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={ contentTarget } aria-expanded="false" aria-controls={ cleanHeading }>
+					<RichText
+						tagName="h2"
+						value={ attributes.heading }
+						allowedFormats={ [] }
+						onChange={ ( heading ) => setAttributes( { heading } ) }
+						placeholder={ __( 'Heading...' ) }
+					/>
+					</button>
+				</h2>
+				<div id={ contentID } class="accordion-collapse collapse" aria-labelledby={ cleanHeading } data-bs-parent={ id }>
+				<RichText
+					tagName="p"
+					value={ attributes.content }
+					allowedFormats={ [] }
+					onChange={ ( content ) => setAttributes( { content } ) }
+					placeholder={ __( 'Content...' ) }
+				/>
+				</div>
+			</div>
 		</div>
 	);
 }

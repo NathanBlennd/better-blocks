@@ -94,4 +94,5 @@ function load_bootsrap_from_cdn() {
 		'0.1.0'
 	);
 }
+add_action( 'admin_enqueue_scripts', 'load_bootsrap_from_cdn' );
 add_action( 'wp_enqueue_scripts', 'load_bootsrap_from_cdn' );

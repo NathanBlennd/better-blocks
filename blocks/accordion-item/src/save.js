@@ -39,7 +39,7 @@ export default function save( { attributes } ) {
 		<div { ...blockProps }>
 			<div class="accordion-item">
 				<h2 class="accordion-header" id={ cleanHeading }>
-					<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={ contentTarget } aria-expanded="false" aria-controls={ cleanHeading }>
+					<button class="components-button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={ contentTarget } aria-expanded="false" aria-controls={ cleanHeading }>
 						<RichText.Content className="heading" tagName="h2" value={ attributes.heading } />
 					</button>
 				</h2>
