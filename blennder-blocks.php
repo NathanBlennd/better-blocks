@@ -13,6 +13,9 @@
  * @package           blennder-blocks
  */
 
+declare( strict_types = 1 );
+namespace blenndiris\blennder_blocks;
+
 defined( 'ABSPATH' ) || die;
 
 define( 'BLENNDER_BLOCKS', plugin_dir_path( __FILE__ ) );
@@ -35,7 +38,7 @@ function blennder_blocks_block_categories_all( $block_categories, $editor_contex
 	}
 	return $block_categories;
 }
-add_filter( 'block_categories_all', 'blennder_blocks_block_categories_all', 10, 2 );
+add_filter( 'block_categories_all', __NAMESPACE__ . '\blennder_blocks_block_categories_all', 10, 2 );
 
 
 /**
@@ -46,53 +49,20 @@ add_filter( 'block_categories_all', 'blennder_blocks_block_categories_all', 10, 
 function blennder_blocks_init() {
 	register_block_type( BLENNDER_BLOCKS . 'blocks/accordion-item/' );
 	register_block_type( BLENNDER_BLOCKS . 'blocks/accordion/' );
-	register_block_type( BLENNDER_BLOCKS . 'blocks/hero/' );
-	register_block_type( BLENNDER_BLOCKS . 'blocks/section/' );
-	register_block_type( BLENNDER_BLOCKS . 'blocks/swiper/' );
+	// register_block_type( BLENNDER_BLOCKS . 'blocks/carousel/' );
+	// register_block_type( BLENNDER_BLOCKS . 'blocks/hero/' );
+	// register_block_type( BLENNDER_BLOCKS . 'blocks/section/' );
 }
-add_action( 'init', 'blennder_blocks_init' );
+add_action( 'init', __NAMESPACE__ . '\blennder_blocks_init' );
 
-
-/**
- * Enqueues the frontend scripts.
- */
-function blennder_blocks_enqueue_scripts() {
-	wp_enqueue_script( 'blennder-blocks-swiper', plugins_url( '/dist/swiper.js' , __FILE__ ), null, false, true );
-}
-add_action( 'wp_enqueue_scripts', 'blennder_blocks_enqueue_scripts' );
-
-function add_type_attribute($tag, $handle, $src) {
-	// if not your script, do nothing and return original $tag
-	if ( 'blennder-blocks-swiper' !== $handle ) {
-			return $tag;
-	}
-	// change the script tag by adding type="module" and return it.
-	$tag = '<script type="module" src="' . esc_url( $src ) . '"></script>';
-	return $tag;
-}
-add_filter( 'script_loader_tag', 'add_type_attribute' , 10, 3 );
-
-
-function load_bootsrap_from_cdn() {
-	wp_enqueue_style(
-		'bootstrap',
-		'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css',
-		[],
-		'5.2.0'
-	);
-	wp_enqueue_script(
-		'bootstrap',
-		'https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js',
-		[ 'jquery' ],
-		'5.2.0',
-		true
-	);
+function register_script() {
 	wp_enqueue_script(
 		'blennder/accordion',
-		plugins_url( 'dist/accordion/ts/accordion.js', __FILE__ ),
-		[ 'jquery', 'bootstrap' ],
-		'0.1.0'
+		plugins_url( 'dist/accordion.js', __FILE__ ),
+		[],
+		'0.1.0',
+		true
 	);
 }
-add_action( 'admin_enqueue_scripts', 'load_bootsrap_from_cdn' );
-add_action( 'wp_enqueue_scripts', 'load_bootsrap_from_cdn' );
+add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\register_script' );
+add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_script' );

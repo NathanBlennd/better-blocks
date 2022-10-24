@@ -13,8 +13,6 @@ import { __ } from '@wordpress/i18n';
  */
 import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
-import { cleanForSlug } from '@wordpress/url';
-
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -27,14 +25,9 @@ import { cleanForSlug } from '@wordpress/url';
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
-	const { accordionId } = attributes;
-	const id = cleanForSlug( accordionId );
-
 	return (
 		<div { ...blockProps }>
-			<div id={ id } class="accordion">
-				<InnerBlocks.Content />
-			</div>
+			<InnerBlocks.Content />
 		</div>
 	);
 }

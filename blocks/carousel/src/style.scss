@@ -5,9 +5,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-blennder-blocks-swiper {
-	.swiper {
-		width: 600px;
-		height: 300px;
+.wp-block-blennder-blocks-carousel {
+	.carousel-item {
+		min-height: 100px;
+		text-align: center;
 	}
 }

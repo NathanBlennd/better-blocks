@@ -4,18 +4,11 @@
 	"version": "0.1.0",
 	"title": "Accordion",
 	"category": "components",
-	"description": "accordion component",
+	"description": "accordion",
 	"attributes": {
-		"accordionId": {
-			"type": "string",
-			"default": ""
-		}
 	},
 	"supports": {
 		"html": false
-	},
-	"providesContext": {
-		"blennder-blocks/accordionId": "accordionId"
 	},
 	"textdomain": "blennder-blocks",
 	"editorScript": "file:./build/index.js",

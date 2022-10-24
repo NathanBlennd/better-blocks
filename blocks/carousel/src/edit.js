@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -30,12 +30,12 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit() {
+
+	const ALLOWED_BLOCKS = [ 'core/cover' ];
+
 	return (
-		<p { ...useBlockProps() }>
-			{ __(
-				'Multiple Blocks Plugin – hello from the editor!',
-				'blennder-blocks'
-			) }
-		</p>
+		<div { ...useBlockProps() }>
+			<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
+		</div>
 	);
 }

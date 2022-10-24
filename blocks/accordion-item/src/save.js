@@ -25,25 +25,19 @@ import { cleanForSlug } from '@wordpress/url';
  * @return {WPElement} Element to render.
  */
 export default function save( { attributes } ) {
-	const md5 = require( 'md5' );
-
 	const blockProps = useBlockProps.save();
-	const cleanHeading = cleanForSlug( attributes.heading );
-	const contentID = 'id-' + md5( attributes.content );
-	const contentTarget = '#' + contentID;
-
-	const { parentId } = attributes;
-	const id = '#' + cleanForSlug( parentId );
+	const cleanHeading = cleanForSlug( attributes.heading ?? '' );
+	const cleanContent = cleanForSlug( attributes.content ?? '' );
 
 	return (
 		<div { ...blockProps }>
 			<div class="accordion-item">
 				<h2 class="accordion-header" id={ cleanHeading }>
-					<button class="components-button accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target={ contentTarget } aria-expanded="false" aria-controls={ cleanHeading }>
+					<button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls={ cleanContent }>
 						<RichText.Content className="heading" tagName="h2" value={ attributes.heading } />
 					</button>
 				</h2>
-				<div id={ contentID } class="accordion-collapse collapse" aria-labelledby={ cleanHeading } data-bs-parent={ id }>
+				<div id={ cleanContent} class="accordion-collapse collapse" aria-labelledby={ cleanHeading }>
 					<RichText.Content className="accordion-body" tagName="div" value={ attributes.content } />
 				</div>
 			</div>

@@ -15,14 +15,9 @@
 			"type": "string",
 			"source": "html",
 			"selector": ".accordion-body"
-		},
-		"parentId": {
-			"type": "string",
-			"default": ""
 		}
 	},
 	"parent": [ "blennder-blocks/accordion" ],
-	"usesContext": [ "blennder-blocks/accordionId" ],
 	"supports": {
 		"html": false
 	},

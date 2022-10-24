@@ -1,10 +1,10 @@
 {
 	"apiVersion": 2,
-	"name": "blennder-blocks/swiper",
+	"name": "blennder-blocks/carousel",
 	"version": "0.1.0",
-	"title": "Swiper",
+	"title": "Carousel",
 	"category": "components",
-	"description": "swiper component",
+	"description": "carousel component",
 	"supports": {
 		"html": false
 	},

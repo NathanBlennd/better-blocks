@@ -16,12 +16,12 @@
 		"build:accordion": "wp-scripts build blocks/accordion/src/index.js --output-path=blocks/accordion/build/",
 		"start:accordion-item": "wp-scripts start blocks/accordion-item/src/index.js --output-path=blocks/accordion-item/build/",
 		"build:accordion-item": "wp-scripts build blocks/accordion-item/src/index.js --output-path=blocks/accordion-item/build/",
+		"start:carousel": "wp-scripts start blocks/carousel/src/index.js --output-path=blocks/carousel/build/",
+		"build:carousel": "wp-scripts build blocks/carousel/src/index.js --output-path=blocks/carousel/build/",
 		"start:hero": "wp-scripts start blocks/hero/src/index.js --output-path=blocks/hero/build/",
 		"build:hero": "wp-scripts build blocks/hero/src/index.js --output-path=blocks/hero/build/",
 		"start:section": "wp-scripts start blocks/section/src/index.js --output-path=blocks/section/build/",
-		"build:section": "wp-scripts build blocks/section/src/index.js --output-path=blocks/section/build/",
-		"start:swiper": "wp-scripts start blocks/swiper/src/index.js --output-path=blocks/swiper/build/",
-		"build:swiper": "wp-scripts build blocks/swiper/src/index.js --output-path=blocks/swiper/build/"
+		"build:section": "wp-scripts build blocks/section/src/index.js --output-path=blocks/section/build/"
 	},
 	"dependencies": {
 		"@wordpress/block-editor": "^9.5.0",
@@ -29,7 +29,6 @@
 		"@wordpress/i18n": "^4.13.0",
 		"@wordpress/url": "^3.14.0",
 		"md5": "^2.3.0",
-		"swiper": "^8.1.4",
 		"typescript": "^4.6.4"
 	},
 	"devDependencies": {
