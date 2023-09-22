@@ -16,12 +16,10 @@
 		"build:accordion": "wp-scripts build blocks/accordion/src/index.js --output-path=blocks/accordion/build/",
 		"start:accordion-item": "wp-scripts start blocks/accordion-item/src/index.js --output-path=blocks/accordion-item/build/",
 		"build:accordion-item": "wp-scripts build blocks/accordion-item/src/index.js --output-path=blocks/accordion-item/build/",
-		"start:carousel": "wp-scripts start blocks/carousel/src/index.js --output-path=blocks/carousel/build/",
-		"build:carousel": "wp-scripts build blocks/carousel/src/index.js --output-path=blocks/carousel/build/",
-		"start:hero": "wp-scripts start blocks/hero/src/index.js --output-path=blocks/hero/build/",
-		"build:hero": "wp-scripts build blocks/hero/src/index.js --output-path=blocks/hero/build/",
-		"start:section": "wp-scripts start blocks/section/src/index.js --output-path=blocks/section/build/",
-		"build:section": "wp-scripts build blocks/section/src/index.js --output-path=blocks/section/build/"
+		"start:card": "wp-scripts start blocks/card/src/index.js --output-path=blocks/card/build/",
+		"build:card": "wp-scripts build blocks/card/src/index.js --output-path=blocks/card/build/",
+		"start:cards": "wp-scripts start blocks/cards/src/index.js --output-path=blocks/cards/build/",
+		"build:cards": "wp-scripts build blocks/cards/src/index.js --output-path=blocks/cards/build/"
 	},
 	"dependencies": {
 		"@wordpress/block-editor": "^9.5.0",

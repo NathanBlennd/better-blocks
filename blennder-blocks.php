@@ -49,7 +49,8 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\blennder_blocks_block_cate
 function blennder_blocks_init() {
 	register_block_type( BLENNDER_BLOCKS . 'blocks/accordion-item/' );
 	register_block_type( BLENNDER_BLOCKS . 'blocks/accordion/' );
-	// register_block_type( BLENNDER_BLOCKS . 'blocks/carousel/' );
+	register_block_type( BLENNDER_BLOCKS . 'blocks/card/' );
+	register_block_type( BLENNDER_BLOCKS . 'blocks/cards/' );
 	// register_block_type( BLENNDER_BLOCKS . 'blocks/hero/' );
 	// register_block_type( BLENNDER_BLOCKS . 'blocks/section/' );
 }

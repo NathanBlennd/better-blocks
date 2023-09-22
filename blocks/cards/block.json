@@ -1,0 +1,28 @@
+{
+	"apiVersion": 3,
+	"name": "blennder-blocks/cards",
+	"version": "0.1.0",
+	"title": "Cards",
+	"category": "components",
+	"description": "Cards component",
+	"attributes": {
+		"size": {
+			"enum": [ "1", "2", "3", "4" ]
+		},
+		"tagName": {
+			"type": "string",
+			"default": "div"
+		},
+		"bg_color": {
+			"type": "string",
+			"default": "#000000"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "blennder-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
