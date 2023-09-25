@@ -4,6 +4,12 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-blennder-blocks-hero {
+.wp-block-blennder-blocks-cards {
+	.card-deck {
+		display: block;
 
+		.block-editor-block-list__layout {
+			display: flex;
+		}
+	}
 }

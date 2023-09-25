@@ -15,21 +15,21 @@
   flex-wrap: wrap;
   gap: 16px;
 }
-.wp-block-blennder-blocks-cards .card-deck > * {
+.wp-block-blennder-blocks-cards .card-deck > .card {
   flex-basis: 100%;
 }
 @media (min-width: 968px) {
-  .wp-block-blennder-blocks-cards .card-deck-2 > * {
+  .wp-block-blennder-blocks-cards .card-deck-2 > .card {
     flex-basis: calc(50% - 8px);
   }
 }
 @media (min-width: 968px) {
-  .wp-block-blennder-blocks-cards .card-deck-3 > * {
+  .wp-block-blennder-blocks-cards .card-deck-3 > .card {
     flex-basis: calc(33% - 9px);
   }
 }
 @media (min-width: 968px) {
-  .wp-block-blennder-blocks-cards .card-deck-4 > * {
+  .wp-block-blennder-blocks-cards .card-deck-4 > .card {
     flex-basis: calc(25% - 12px);
   }
 }

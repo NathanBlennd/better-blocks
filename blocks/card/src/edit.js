@@ -11,9 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { RichText, useBlockProps } from '@wordpress/block-editor';
-
-import { cleanForSlug } from '@wordpress/url';
+import { MediaPlaceholder, RichText, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -32,26 +30,44 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 export default function Edit( { attributes, setAttributes, context } ) {
+	const mediaPreview = !! attributes.imageUrl && (
+		<img src={ attributes.imageUrl } />
+	);
 
 	return (
 		<div { ...useBlockProps() }>
-			<h2 class="card-header">
-				<RichText
-					tagName="h2"
-					value={ attributes.heading }
-					allowedFormats={ [] }
-					onChange={ ( heading ) => setAttributes( { heading } ) }
-					placeholder={ __( 'Heading...' ) }
+			<div class="card-image">
+				<MediaPlaceholder
+					onSelect = {
+						( el ) => {
+							setAttributes( { imageUrl: el.url } );
+						}
+					}
+					allowedTypes = { [ 'image' ] }
+					multiple = { false }
+					labels = { { title: 'The Image' } }
+					mediaPreview={ mediaPreview }
 				/>
-			</h2>
-			<div class="card-body">
-				<RichText
-					tagName="p"
-					value={ attributes.content }
-					allowedFormats={ [] }
-					onChange={ ( content ) => setAttributes( { content } ) }
-					placeholder={ __( 'Content...' ) }
-				/>
+			</div>
+			<div className="card-body">
+				<h2 class="card-header">
+					<RichText
+						tagName="h2"
+						value={ attributes.heading }
+						allowedFormats={ [] }
+						onChange={ ( heading ) => setAttributes( { heading } ) }
+						placeholder={ __( 'Heading...' ) }
+					/>
+				</h2>
+				<div class="card-body">
+					<RichText
+						tagName="p"
+						value={ attributes.content }
+						allowedFormats={ [] }
+						onChange={ ( content ) => setAttributes( { content } ) }
+						placeholder={ __( 'Content...' ) }
+					/>
+				</div>
 			</div>
 		</div>
 	);

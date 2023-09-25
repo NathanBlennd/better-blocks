@@ -1,3 +1,5 @@
+// @see https://github.com/WordPress/gutenberg/tree/trunk/packages/block-library/src/image
+
 /**
  * Retrieves the translation of text.
  *
@@ -11,9 +13,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { ColorPalette, InspectorControls, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
+import { InspectorControls, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import { useState } from '@wordpress/element';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.

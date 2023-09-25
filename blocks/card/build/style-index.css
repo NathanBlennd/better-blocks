@@ -7,13 +7,19 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-blennder-blocks-card {
+.card {
   border: 1px solid #eee;
   box-sizing: border-box;
+}
+.card-body {
   padding: 1rem;
 }
-.wp-block-blennder-blocks-card .card-heading {
+.card-heading {
   margin-top: 0;
+}
+.card-image {
+  height: auto;
+  max-width: 100%;
 }
 
 /*# sourceMappingURL=style-index.css.map*/

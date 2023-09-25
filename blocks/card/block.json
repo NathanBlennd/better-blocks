@@ -14,8 +14,11 @@
 		"content": {
 			"type": "string",
 			"source": "html",
-			"selector": ".card-body"
-		}
+			"selector": ".card-content"
+		},
+		"imageUrl": {
+            "type": "string"
+        }
 	},
 	"parent": [ "blennder-blocks/cards" ],
 	"supports": {

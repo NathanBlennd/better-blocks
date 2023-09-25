@@ -56,14 +56,15 @@ function blennder_blocks_init() {
 }
 add_action( 'init', __NAMESPACE__ . '\blennder_blocks_init' );
 
-function register_script() {
-	wp_enqueue_script(
-		'blennder/accordion',
-		plugins_url( 'dist/accordion.js', __FILE__ ),
-		[],
-		'0.1.0',
-		true
-	);
+function blennder_blocks_enqueue_block_assets(){
+    if ( has_block( 'blennder-blocks/accordion' ) ) {
+		wp_enqueue_script(
+			'blennder/accordion',
+			plugins_url( 'dist/accordion.js', __FILE__ ),
+			[],
+			'0.1.0',
+			true
+		);
+    }
 }
-add_action( 'admin_enqueue_scripts', __NAMESPACE__ . '\register_script' );
-add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\register_script' );
+add_action( 'enqueue_block_assets', __NAMESPACE__ . '\blennder_blocks_enqueue_block_assets' );

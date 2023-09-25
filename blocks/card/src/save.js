@@ -25,16 +25,12 @@ import { cleanForSlug } from '@wordpress/url';
  * @return {WPElement} Element to render.
  */
 export default function save( { attributes } ) {
-	const blockProps = useBlockProps.save();
-
 	return (
-		<div { ...blockProps }>
-			<div className="card-image">
-
-			</div>
-			<RichText.Content className="card-heading" tagName="h2" value={ attributes.heading } />
-			<div class="card-content">
-				<RichText.Content className="card-body" tagName="div" value={ attributes.content } />
+		<div className="card">
+			<img className="card-image" src={ attributes.imageUrl }/>
+			<div className="card-body">
+				<RichText.Content className="card-heading" tagName="h2" value={ attributes.heading } />
+				<RichText.Content className="card-content" tagName="div" value={ attributes.content } />
 			</div>
 		</div>
 	);

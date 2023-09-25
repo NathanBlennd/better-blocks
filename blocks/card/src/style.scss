@@ -5,12 +5,20 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-blennder-blocks-card {
+.card {
 	border: 1px solid #eee;
 	box-sizing: border-box;
-	padding: 1rem;
 
-	.card-heading {
+	&-body {
+		padding: 1rem;
+	}
+
+	&-heading {
 		margin-top: 0;
+	}
+
+	&-image {
+		height: auto;
+		max-width: 100%;
 	}
 }
