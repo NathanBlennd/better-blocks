@@ -18,7 +18,7 @@ namespace blenndiris\better_blocks;
 
 defined( 'ABSPATH' ) || die;
 
-define( 'BETTER_BLOCKS', plugin_dir_path( __FILE__ ) );
+define( 'BETTER_BLOCKS', __DIR__ );
 
 
 /**
@@ -47,10 +47,10 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\better_blocks_block_catego
  * through the block editor in the corresponding context.
  */
 function better_blocks_init() {
-	register_block_type( BETTER_BLOCKS . 'blocks/accordion-item/' );
-	register_block_type( BETTER_BLOCKS . 'blocks/accordion/' );
-	register_block_type( BETTER_BLOCKS . 'blocks/card/' );
-	register_block_type( BETTER_BLOCKS . 'blocks/cards/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/accordion-item/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/accordion/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
 	// register_block_type( BETTER_BLOCKS . 'blocks/hero/' );
 	// register_block_type( BETTER_BLOCKS . 'blocks/section/' );
 }

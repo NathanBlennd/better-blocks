@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { MediaPlaceholder, RichText, useBlockProps } from '@wordpress/block-editor';
+import { InnerBlocks, MediaPlaceholder, RichText, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -34,6 +34,8 @@ export default function Edit( { attributes, setAttributes, context } ) {
 		<img src={ attributes.imageUrl } />
 	);
 
+	const ALLOWED_BLOCKS = [ 'heading', 'paragraph' ];
+
 	return (
 		<div { ...useBlockProps() }>
 			<div class="card-image">
@@ -50,24 +52,7 @@ export default function Edit( { attributes, setAttributes, context } ) {
 				/>
 			</div>
 			<div className="card-body">
-				<h2 class="card-header">
-					<RichText
-						tagName="h2"
-						value={ attributes.heading }
-						allowedFormats={ [] }
-						onChange={ ( heading ) => setAttributes( { heading } ) }
-						placeholder={ __( 'Heading...' ) }
-					/>
-				</h2>
-				<div class="card-body">
-					<RichText
-						tagName="p"
-						value={ attributes.content }
-						allowedFormats={ [] }
-						onChange={ ( content ) => setAttributes( { content } ) }
-						placeholder={ __( 'Content...' ) }
-					/>
-				</div>
+					<InnerBlocks />
 			</div>
 		</div>
 	);

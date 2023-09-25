@@ -11,9 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { RichText, useBlockProps } from '@wordpress/block-editor';
-
-import { cleanForSlug } from '@wordpress/url';
+import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -25,12 +23,12 @@ import { cleanForSlug } from '@wordpress/url';
  * @return {WPElement} Element to render.
  */
 export default function save( { attributes } ) {
+	const blockProps = useBlockProps.save();
 	return (
-		<div className="card">
+		<div { ...blockProps }>
 			<img className="card-image" src={ attributes.imageUrl }/>
-			<div className="card-body">
-				<RichText.Content className="card-heading" tagName="h2" value={ attributes.heading } />
-				<RichText.Content className="card-content" tagName="div" value={ attributes.content } />
+			<div class="card-body">
+				<InnerBlocks.Content />
 			</div>
 		</div>
 	);

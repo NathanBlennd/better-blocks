@@ -1,1 +1,37 @@
-.wp-block-better-blocks-cards{box-sizing:border-box}.wp-block-better-blocks-cards .card-deck{display:flex;flex-wrap:wrap;gap:16px}.wp-block-better-blocks-cards .card-deck>.card{flex-basis:100%}@media(min-width:968px){.wp-block-better-blocks-cards .card-deck-2>.card{flex-basis:calc(50% - 8px)}.wp-block-better-blocks-cards .card-deck-3>.card{flex-basis:calc(33% - 9px)}.wp-block-better-blocks-cards .card-deck-4>.card{flex-basis:calc(25% - 12px)}}
+/*!****************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[3].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[3].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[3].use[3]!./blocks/cards/src/style.scss ***!
+  \****************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-better-blocks-cards {
+  box-sizing: border-box;
+}
+.wp-block-better-blocks-cards .card-deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.wp-block-better-blocks-cards .card-deck > .wp-block-better-blocks-card {
+  flex-basis: 100%;
+}
+@media (min-width: 968px) {
+  .wp-block-better-blocks-cards .card-deck-2 > .wp-block-better-blocks-card {
+    flex-basis: calc(50% - 8px);
+  }
+}
+@media (min-width: 968px) {
+  .wp-block-better-blocks-cards .card-deck-3 > .wp-block-better-blocks-card {
+    flex-basis: calc(33% - 9px);
+  }
+}
+@media (min-width: 968px) {
+  .wp-block-better-blocks-cards .card-deck-4 > .wp-block-better-blocks-card {
+    flex-basis: calc(25% - 12px);
+  }
+}
+
+/*# sourceMappingURL=style-index.css.map*/

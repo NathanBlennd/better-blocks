@@ -13,23 +13,23 @@
 		flex-wrap: wrap;
 		gap: 16px;
 
-		> .card {
+		> .wp-block-better-blocks-card {
 			flex-basis: 100%;
 		}
 
-		&-2 > .card {
+		&-2 > .wp-block-better-blocks-card {
 			@media (min-width: 968px) {
 				flex-basis: calc( 50% - 8px );
 			}
 		}
 
-		&-3 > .card {
+		&-3 > .wp-block-better-blocks-card {
 			@media (min-width: 968px) {
 				flex-basis: calc( 33% - 9px );
 			}
 		}
 
-		&-4 > .card {
+		&-4 > .wp-block-better-blocks-card {
 			@media (min-width: 968px) {
 				flex-basis: calc( 25% - 12px );
 			}

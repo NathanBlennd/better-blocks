@@ -5,19 +5,19 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.card {
+ .wp-block-better-blocks-card {
 	border: 1px solid #eee;
 	box-sizing: border-box;
 
-	&-body {
+	.card-body {
 		padding: 1rem;
 	}
 
-	&-heading {
+	.card-heading {
 		margin-top: 0;
 	}
 
-	&-image {
+	.card-image {
 		height: auto;
 		max-width: 100%;
 	}
