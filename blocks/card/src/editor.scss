@@ -4,6 +4,11 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-better-blocks-accordion {
+.wp-block-better-blocks-card {
+	.block-editor-block-list__layout {
 
+		.wp-block-better-blocks-cards .card-deck & {
+			display: block;
+		}
+	}
 }

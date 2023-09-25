@@ -29,30 +29,35 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, setAttributes, context } ) {
+export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const mediaPreview = !! attributes.imageUrl && (
 		<img src={ attributes.imageUrl } />
 	);
 
-	const ALLOWED_BLOCKS = [ 'heading', 'paragraph' ];
+	const ALLOWED_BLOCKS = [ 'core/heading', 'core/paragraph', 'core/buttons' ];
 
 	return (
 		<div { ...useBlockProps() }>
 			<div class="card-image">
-				<MediaPlaceholder
-					onSelect = {
-						( el ) => {
-							setAttributes( { imageUrl: el.url } );
+				{ ( ! mediaPreview || isSelected ) &&
+					<MediaPlaceholder
+						onSelect = {
+							( el ) => {
+								setAttributes( { imageUrl: el.url } );
+							}
 						}
-					}
-					allowedTypes = { [ 'image' ] }
-					multiple = { false }
-					labels = { { title: 'The Image' } }
-					mediaPreview={ mediaPreview }
-				/>
+						allowedTypes = { [ 'image' ] }
+						multiple = { false }
+						labels = { { title: 'The Image' } }
+						mediaPreview={ mediaPreview }
+					/>
+				}
+				{ ( mediaPreview && ! isSelected ) &&
+					<img className="card-image" src={ attributes.imageUrl }/>
+				}
 			</div>
 			<div className="card-body">
-					<InnerBlocks />
+				<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />
 			</div>
 		</div>
 	);

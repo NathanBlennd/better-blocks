@@ -10,6 +10,34 @@
 
 		.block-editor-block-list__layout {
 			display: flex;
+
+			.wp-block-better-blocks-card {
+				flex-basis: 100%;
+			}
+		}
+
+		&-2 {
+			.block-editor-block-list__layout .wp-block-better-blocks-card {
+				@media (min-width: 968px) {
+					flex-basis: calc( 50% - 8px );
+				}
+			}
+		}
+
+		&-3 {
+			.block-editor-block-list__layout .wp-block-better-blocks-card {
+				@media (min-width: 968px) {
+					flex-basis: calc( 33% - 9px );
+				}
+			}
+		}
+
+		&-4 {
+			.block-editor-block-list__layout .wp-block-better-blocks-card {
+				@media (min-width: 968px) {
+					flex-basis: calc( 25% - 12px );
+				}
+			}
 		}
 	}
 }
