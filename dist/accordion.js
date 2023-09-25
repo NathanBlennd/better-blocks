@@ -1,6 +1,6 @@
 var ACCORDION_TIMEOUT = 300;
 var ACCORDION_ARIA_EXPANDED = 'aria-expanded';
-var ACCORDION_CLASS = 'wp-block-blennder-blocks-accordion';
+var ACCORDION_CLASS = 'wp-block-better-blocks-accordion';
 var ACCORDION_ITEM_CLASS = 'accordion-item';
 var ACCORDION_BODY_CLASS = 'accordion-body';
 var ACCORDION_BUTTON_CLASS = 'accordion-button';

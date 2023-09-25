@@ -34,7 +34,7 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } ) {
 
-	const ALLOWED_BLOCKS = [ 'blennder-blocks/card' ];
+	const ALLOWED_BLOCKS = [ 'better-blocks/card' ];
 
 	const { size } = attributes;
 

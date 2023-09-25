@@ -1,4 +1,4 @@
-=== Blennder Blocks ===
+=== Better Blocks ===
 Contributors:      Blennd Ninjas
 Tags:              block
 Tested up to:      5.8.0
@@ -10,7 +10,7 @@ Example block written with ESNext standard and JSX support – build step requir
 
 == Description ==
 
-Registers blocks to be used in the Blennder theme.
+Registers custom blocks.
 
 == Installation ==
 

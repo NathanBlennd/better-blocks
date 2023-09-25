@@ -34,7 +34,7 @@ export default function Edit() {
 		<p { ...useBlockProps() }>
 			{ __(
 				'Multiple Blocks Plugin – hello from the editor!',
-				'blennder-blocks'
+				'better-blocks'
 			) }
 		</p>
 	);

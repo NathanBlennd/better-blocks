@@ -25,7 +25,7 @@ import save from './save';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( 'blennder-blocks/card', {
+registerBlockType( 'better-blocks/card', {
 
 	/**
 	 * @see ./edit.js

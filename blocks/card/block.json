@@ -1,6 +1,6 @@
 {
 	"apiVersion": 2,
-	"name": "blennder-blocks/card",
+	"name": "better-blocks/card",
 	"version": "0.1.0",
 	"title": "Card",
 	"category": "components",
@@ -20,11 +20,11 @@
             "type": "string"
         }
 	},
-	"parent": [ "blennder-blocks/cards" ],
+	"parent": [ "better-blocks/cards" ],
 	"supports": {
 		"html": false
 	},
-	"textdomain": "blennder-blocks",
+	"textdomain": "better-blocks",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"

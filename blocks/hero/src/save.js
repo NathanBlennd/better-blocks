@@ -27,7 +27,7 @@ export default function save() {
 		<section { ...useBlockProps.save() }>
 			{ __(
 				'Multiple Blocks Plugin – hello from the saved content!',
-				'blennder-blocks'
+				'better-blocks'
 			) }
 		</section>
 	);

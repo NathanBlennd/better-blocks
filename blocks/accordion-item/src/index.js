@@ -25,7 +25,7 @@ import save from './save';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-registerBlockType( 'blennder-blocks/accordion-item', {
+registerBlockType( 'better-blocks/accordion-item', {
 
 	/**
 	 * @see ./edit.js

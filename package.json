@@ -1,7 +1,7 @@
 {
-	"name": "blennder-blocks",
+	"name": "better-blocks",
 	"version": "0.1.0",
-	"description": "Registers blocks to be used in the Blennder theme.",
+	"description": "Registers custom blocks.",
 	"author": "Blennd Ninjas",
 	"license": "GPL-2.0-or-later",
 	"main": "build/index.js",

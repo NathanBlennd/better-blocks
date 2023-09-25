@@ -1,6 +1,6 @@
-# Blennder Blocks
+# Better Blocks
 
-Registers blocks to be used in the Blennder theme.
+Registers custom blocks.
 
 ## Installation
 

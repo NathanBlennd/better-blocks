@@ -1,6 +1,6 @@
 {
 	"apiVersion": 2,
-	"name": "blennder-blocks/accordion-item",
+	"name": "better-blocks/accordion-item",
 	"version": "0.1.0",
 	"title": "Accordion Item",
 	"category": "components",
@@ -17,11 +17,11 @@
 			"selector": ".accordion-body"
 		}
 	},
-	"parent": [ "blennder-blocks/accordion" ],
+	"parent": [ "better-blocks/accordion" ],
 	"supports": {
 		"html": false
 	},
-	"textdomain": "blennder-blocks",
+	"textdomain": "better-blocks",
 	"editorScript": "file:./build/index.js",
 	"editorStyle": "file:./build/index.css",
 	"style": "file:./build/style-index.css"

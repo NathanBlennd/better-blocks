@@ -31,7 +31,7 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } ) {
 
-	const ALLOWED_BLOCKS = [ 'blennder-blocks/accordion-item' ];
+	const ALLOWED_BLOCKS = [ 'better-blocks/accordion-item' ];
 
 	return (
 		<div { ...useBlockProps() }>
