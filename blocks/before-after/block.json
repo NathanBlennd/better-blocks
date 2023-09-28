@@ -1,0 +1,23 @@
+{
+	"apiVersion": 2,
+	"name": "better-blocks/before-after",
+	"version": "0.1.0",
+	"title": "Before/After",
+	"category": "components",
+	"description": "before after",
+	"attributes": {
+		"image1Url": {
+            "type": "string"
+        },
+		"image2Url": {
+            "type": "string"
+        }
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

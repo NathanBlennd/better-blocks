@@ -52,6 +52,7 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\better_blocks_block_catego
 function better_blocks_init() {
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion-item/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/before-after/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
 	// register_block_type( BETTER_BLOCKS . 'blocks/hero/' );
@@ -63,7 +64,16 @@ function better_blocks_enqueue_block_assets(){
     if ( has_block( 'better-blocks/accordion' ) ) {
 		wp_enqueue_script(
 			'better/accordion',
-			plugins_url( 'dist/accordion.js', __FILE__ ),
+			plugins_url( 'dist/accordion/ts/accordion.js', __FILE__ ),
+			[],
+			'0.1.0',
+			true
+		);
+    }
+	if ( has_block( 'better-blocks/before-after' ) ) {
+		wp_enqueue_script(
+			'better/before-after',
+			plugins_url( 'dist/before-after/ts/before-after.js', __FILE__ ),
 			[],
 			'0.1.0',
 			true
