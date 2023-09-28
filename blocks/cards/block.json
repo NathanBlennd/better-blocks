@@ -9,13 +9,8 @@
 		"size": {
 			"enum": [ "1", "2", "3", "4" ]
 		},
-		"tagName": {
-			"type": "string",
-			"default": "div"
-		},
-		"bg_color": {
-			"type": "string",
-			"default": "#000000"
+		"type": {
+			"type": "string"
 		}
 	},
 	"supports": {

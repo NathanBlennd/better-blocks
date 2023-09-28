@@ -20,12 +20,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./blocks/accordion/src/editor.scss");
 
-
 /**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -51,14 +51,14 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
-
-function Edit(_ref) {
-  let {
-    attributes,
-    setAttributes
-  } = _ref;
+function Edit({
+  attributes,
+  setAttributes
+}) {
   const ALLOWED_BLOCKS = ['better-blocks/accordion-item'];
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks, {
     allowedBlocks: ALLOWED_BLOCKS
   }));
 }
@@ -83,6 +83,7 @@ __webpack_require__.r(__webpack_exports__);
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * All files containing `style` keyword are bundled together. The code used
@@ -103,13 +104,11 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('better-blocks/accordion', {
   /**
    * @see ./edit.js
    */
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-
   /**
    * @see ./save.js
    */
@@ -135,12 +134,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 
-
 /**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -159,13 +158,13 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
-
-function save(_ref) {
-  let {
-    attributes
-  } = _ref;
+function save({
+  attributes
+}) {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InnerBlocks.Content, null));
 }
 
 /***/ }),

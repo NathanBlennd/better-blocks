@@ -22,12 +22,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./blocks/accordion-item/src/editor.scss");
 
-
 /**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -54,19 +54,18 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
-
-function Edit(_ref) {
+function Edit({
+  attributes,
+  setAttributes,
+  context
+}) {
   var _attributes$heading, _attributes$content;
-
-  let {
-    attributes,
-    setAttributes,
-    context
-  } = _ref;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   const cleanHeading = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$heading = attributes.heading) !== null && _attributes$heading !== void 0 ? _attributes$heading : '');
   const cleanContent = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$content = attributes.content) !== null && _attributes$content !== void 0 ? _attributes$content : '');
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)(), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "accordion-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     class: "accordion-header",
@@ -121,6 +120,7 @@ __webpack_require__.r(__webpack_exports__);
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
 
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * All files containing `style` keyword are bundled together. The code used
@@ -141,13 +141,11 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
  */
-
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)('better-blocks/accordion-item', {
   /**
    * @see ./edit.js
    */
   edit: _edit__WEBPACK_IMPORTED_MODULE_2__["default"],
-
   /**
    * @see ./save.js
    */
@@ -175,12 +173,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/url */ "@wordpress/url");
 /* harmony import */ var _wordpress_url__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_url__WEBPACK_IMPORTED_MODULE_3__);
 
-
 /**
  * Retrieves the translation of text.
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-i18n/
  */
+
 
 /**
  * React hook that is used to mark the block wrapper element.
@@ -200,17 +198,16 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @return {WPElement} Element to render.
  */
-
-function save(_ref) {
+function save({
+  attributes
+}) {
   var _attributes$heading, _attributes$content;
-
-  let {
-    attributes
-  } = _ref;
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   const cleanHeading = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$heading = attributes.heading) !== null && _attributes$heading !== void 0 ? _attributes$heading : '');
   const cleanContent = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$content = attributes.content) !== null && _attributes$content !== void 0 ? _attributes$content : '');
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", blockProps, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+    ...blockProps
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "accordion-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     class: "accordion-header",

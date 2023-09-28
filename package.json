@@ -3,7 +3,7 @@
 	"version": "0.1.0",
 	"description": "Registers custom blocks.",
 	"author": "Blennd Ninjas",
-	"license": "GPL-2.0-or-later",
+	"license": "GPL-3.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
 		"build": "wp-scripts build",
@@ -21,15 +21,15 @@
 		"start:cards": "wp-scripts start blocks/cards/src/index.js --output-path=blocks/cards/build/",
 		"build:cards": "wp-scripts build blocks/cards/src/index.js --output-path=blocks/cards/build/"
 	},
-	"dependencies": {
-		"@wordpress/block-editor": "^9.5.0",
-		"@wordpress/blocks": "^11.12.0",
-		"@wordpress/i18n": "^4.13.0",
-		"@wordpress/url": "^3.14.0",
-		"md5": "^2.3.0",
-		"typescript": "^4.6.4"
-	},
 	"devDependencies": {
-		"@wordpress/scripts": "^23.5.0"
+		"@wordpress/scripts": "^26.13.0"
+	},
+	"dependencies": {
+		"@wordpress/block-editor": "^12.10.0",
+		"@wordpress/blocks": "^12.19.0",
+		"@wordpress/i18n": "^4.42.0",
+		"@wordpress/url": "^3.43.0",
+		"md5": "^2.3.0",
+		"typescript": "^5.2.2"
 	}
 }

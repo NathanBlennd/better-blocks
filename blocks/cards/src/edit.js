@@ -14,7 +14,8 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 import { InspectorControls, InnerBlocks, useBlockProps } from '@wordpress/block-editor';
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, TextControl  } from '@wordpress/components';
+
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -36,7 +37,7 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	const ALLOWED_BLOCKS = [ 'better-blocks/card' ];
 
-	const { size } = attributes;
+	const { size, type } = attributes;
 
 	return (
 		<>
@@ -52,7 +53,11 @@ export default function Edit( { attributes, setAttributes } ) {
 							{ label: '4', value: '4' },
 						] }
 						onChange={ ( newSize ) => { setAttributes( { size: newSize } ) } }
-						__nextHasNoMarginBottom
+					/>
+					<TextControl
+						label="Type"
+						value={ type }
+						onChange={ ( newType ) => { setAttributes( { type: newType } ) } }
 					/>
 				</PanelBody>
 			</InspectorControls>

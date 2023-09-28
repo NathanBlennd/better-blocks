@@ -1,14 +1,17 @@
 <?php
 /**
  * Plugin Name:       Better Blocks
+ * Plugin URI:        https://atmoz.org/better-blocks/
  * Description:       Registers custom blocks.
- * Requires at least: 5.8
- * Requires PHP:      7.0
  * Version:           0.1.0
- * Author:            Blennd Ninjas
- * License:           GPL-2.0-or-later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires at least: 6.3
+ * Requires PHP:      8.2
+ * Author:            Nathan Johnson
+ * Author URI:        https://atmoz.org/
+ * License:           GPL-3.0-or-later
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Text Domain:       better-blocks
+ * Domain Path:       /languages
  *
  * @package           better-blocks
  */
