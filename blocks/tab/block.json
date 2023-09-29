@@ -1,0 +1,26 @@
+{
+	"apiVersion": 2,
+	"name": "better-blocks/tab",
+	"version": "0.1.0",
+	"title": "Tab",
+	"category": "components",
+	"description": "",
+	"attributes": {
+		"label":{
+            "type": "string",
+			"default": ""
+        },
+		"index":{
+            "type": "number",
+			"default": ""
+        }
+	},
+	"parent": [ "better-blocks/tabs" ],
+	"supports": {
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

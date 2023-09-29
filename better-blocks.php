@@ -55,6 +55,8 @@ function better_blocks_init() {
 	register_block_type( BETTER_BLOCKS . '/blocks/before-after/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/tabs/' );
 	// register_block_type( BETTER_BLOCKS . 'blocks/hero/' );
 	// register_block_type( BETTER_BLOCKS . 'blocks/section/' );
 }
@@ -74,6 +76,15 @@ function better_blocks_enqueue_block_assets(){
 		wp_enqueue_script(
 			'better/before-after',
 			plugins_url( 'dist/before-after/ts/before-after.js', __FILE__ ),
+			[],
+			'0.1.0',
+			true
+		);
+    }
+	if ( has_block( 'better-blocks/tabs' ) ) {
+		wp_enqueue_script(
+			'better/tabs',
+			plugins_url( 'dist/tabs/ts/tabs.js', __FILE__ ),
 			[],
 			'0.1.0',
 			true

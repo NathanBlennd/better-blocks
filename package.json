@@ -21,7 +21,11 @@
 		"start:card": "wp-scripts start blocks/card/src/index.js --output-path=blocks/card/build/",
 		"build:card": "wp-scripts build blocks/card/src/index.js --output-path=blocks/card/build/",
 		"start:cards": "wp-scripts start blocks/cards/src/index.js --output-path=blocks/cards/build/",
-		"build:cards": "wp-scripts build blocks/cards/src/index.js --output-path=blocks/cards/build/"
+		"build:cards": "wp-scripts build blocks/cards/src/index.js --output-path=blocks/cards/build/",
+		"start:tab": "wp-scripts start blocks/tab/src/index.js --output-path=blocks/tab/build/",
+		"build:tab": "wp-scripts build blocks/tab/src/index.js --output-path=blocks/tab/build/",
+		"start:tabs": "wp-scripts start blocks/tabs/src/index.js --output-path=blocks/tabs/build/",
+		"build:tabs": "wp-scripts build blocks/tabs/src/index.js --output-path=blocks/tabs/build/"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "^26.13.0"
