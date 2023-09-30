@@ -11,7 +11,8 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { MediaPlaceholder, useBlockProps } from '@wordpress/block-editor';
+import { InspectorControls, MediaPlaceholder, useBlockProps } from '@wordpress/block-editor';
+import { PanelBody, TextControl } from '@wordpress/components';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -31,6 +32,9 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes, isSelected } ) {
 	const blockProps = useBlockProps();
+
+	const { height } = attributes;
+
 	const media1Preview = !! attributes.image1Url && (
 		<img src={ attributes.image1Url } />
 	);
@@ -39,43 +43,54 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	);
 
 	return (
-		<section { ...blockProps }>
-			<div class="image">
-				{ ( ! media1Preview || isSelected ) &&
-					<MediaPlaceholder
-						onSelect = {
-							( el ) => {
-								setAttributes( { image1Url: el.url } );
-							}
-						}
-						allowedTypes = { [ 'image' ] }
-						multiple = { false }
-						labels = { { title: 'The Image' } }
-						mediaPreview={ media1Preview }
+		<>
+			<InspectorControls key="setting">
+				<PanelBody title={ __( 'Settings' ) }>
+					<TextControl
+						label="Height"
+						value={ height }
+						onChange={ ( newHeight ) => { setAttributes( { height: newHeight } ) } }
 					/>
-				}
-				{ ( media1Preview && ! isSelected ) &&
-					<img className="image" src={ attributes.image1Url }/>
-				}
-			</div>
-			<div class="image">
-				{ ( ! media2Preview || isSelected ) &&
-					<MediaPlaceholder
-						onSelect = {
-							( el ) => {
-								setAttributes( { image2Url: el.url } );
+				</PanelBody>
+			</InspectorControls>
+			<section { ...blockProps }>
+				<div class="image">
+					{ ( ! media1Preview || isSelected ) &&
+						<MediaPlaceholder
+							onSelect = {
+								( el ) => {
+									setAttributes( { image1Url: el.url } );
+								}
 							}
-						}
-						allowedTypes = { [ 'image' ] }
-						multiple = { false }
-						labels = { { title: 'The Image' } }
-						mediaPreview={ media2Preview }
-					/>
-				}
-				{ ( media2Preview && ! isSelected ) &&
-					<img className="image" src={ attributes.image2Url }/>
-				}
-			</div>
-		</section>
+							allowedTypes = { [ 'image' ] }
+							multiple = { false }
+							labels = { { title: 'The Image' } }
+							mediaPreview={ media1Preview }
+						/>
+					}
+					{ ( media1Preview && ! isSelected ) &&
+						<img className="image" src={ attributes.image1Url }/>
+					}
+				</div>
+				<div class="image">
+					{ ( ! media2Preview || isSelected ) &&
+						<MediaPlaceholder
+							onSelect = {
+								( el ) => {
+									setAttributes( { image2Url: el.url } );
+								}
+							}
+							allowedTypes = { [ 'image' ] }
+							multiple = { false }
+							labels = { { title: 'The Image' } }
+							mediaPreview={ media2Preview }
+						/>
+					}
+					{ ( media2Preview && ! isSelected ) &&
+						<img className="image" src={ attributes.image2Url }/>
+					}
+				</div>
+			</section>
+		</>
 	);
 }

@@ -23,7 +23,12 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 export default function save( { attributes } ) {
-	const blockProps = useBlockProps.save();
+	
+	const { height } = attributes;
+
+	const blockProps = useBlockProps.save({
+		"style": "height:" + height
+	});
 
 	return (
 		<div { ...blockProps }>

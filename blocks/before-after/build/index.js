@@ -18,7 +18,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./editor.scss */ "./blocks/before-after/src/editor.scss");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
+/* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./blocks/before-after/src/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -33,6 +35,7 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
+
 
 
 /**
@@ -57,13 +60,28 @@ function Edit({
   isSelected
 }) {
   const blockProps = (0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)();
+  const {
+    height
+  } = attributes;
   const media1Preview = !!attributes.image1Url && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: attributes.image1Url
   });
   const media2Preview = !!attributes.image2Url && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     src: attributes.image2Url
   });
-  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
+  return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
+    key: "setting"
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings')
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+    label: "Height",
+    value: height,
+    onChange: newHeight => {
+      setAttributes({
+        height: newHeight
+      });
+    }
+  }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("section", {
     ...blockProps
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     class: "image"
@@ -99,7 +117,7 @@ function Edit({
   }), media2Preview && !isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
     className: "image",
     src: attributes.image2Url
-  })));
+  }))));
 }
 
 /***/ }),
@@ -200,7 +218,12 @@ __webpack_require__.r(__webpack_exports__);
 function save({
   attributes
 }) {
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
+  const {
+    height
+  } = attributes;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save({
+    "style": "height:" + height
+  });
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
@@ -267,6 +290,16 @@ module.exports = window["wp"]["blockEditor"];
 /***/ (function(module) {
 
 module.exports = window["wp"]["blocks"];
+
+/***/ }),
+
+/***/ "@wordpress/components":
+/*!************************************!*\
+  !*** external ["wp","components"] ***!
+  \************************************/
+/***/ (function(module) {
+
+module.exports = window["wp"]["components"];
 
 /***/ }),
 

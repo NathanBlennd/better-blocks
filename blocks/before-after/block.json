@@ -6,6 +6,10 @@
 	"category": "components",
 	"description": "before after",
 	"attributes": {
+		"height": {
+			"type": "string",
+			"default": "320px"
+		},
 		"image1Url": {
             "type": "string"
         },
@@ -14,6 +18,7 @@
         }
 	},
 	"supports": {
+		"align": ["wide","full"],
 		"html": false
 	},
 	"textdomain": "better-blocks",
