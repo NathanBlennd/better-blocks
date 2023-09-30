@@ -26,7 +26,7 @@ import { select } from '@wordpress/data';
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
-	const { networks } = attributes;
+	const { networks, share } = attributes;
 
 	const permalink = select( 'core/editor' ).getPermalink();
 
@@ -49,7 +49,7 @@ export default function save( { attributes } ) {
 
 	return (
 		<div { ...blockProps }>
-			<span className='share'>Share: </span>
+			<span className="share">{share}</span>
 				<ul className="list">
 					{networks.map((network) => {
 						let shareURL = getShareURL(network);

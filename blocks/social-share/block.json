@@ -6,9 +6,15 @@
 	"category": "components",
 	"description": "",
 	"attributes": {
+		"share": {
+			"type": "string",
+			"source": "html",
+			"default": "Share: ",
+			"selector": ".share"
+		},
 		"networks": {
 			"type": "array",
-			"default": "[]"
+			"default": []
 		}
 	},
 	"supports": {

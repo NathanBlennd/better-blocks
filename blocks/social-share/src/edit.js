@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
-import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
+import { InspectorControls, RichText, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { select } from '@wordpress/data';
 
@@ -33,7 +33,7 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } ) {
 
-	const { networks } = attributes;
+	const { networks, share } = attributes;
 
 	const permalink = select( 'core/editor' ).getPermalink();
 
@@ -73,14 +73,28 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<div { ...useBlockProps() }>
-				<span className="share">Share: </span>
-				<ul className="list">
-					{networks.map((network) => {
-						let shareURL = getShareURL(network);
-						let shareIcon = getShareIcon(network);
-						return ( <li className="network"><a target="_blank" rel="noopener" href={shareURL}>{shareIcon}</a></li>);	
-					})}
-				</ul>
+				{ ( ! Array.isArray(networks) || ! networks.length > 0 ) &&
+					<p>Select networks in side panel</p>
+				}
+				{ (Array.isArray(networks) && networks.length > 0 ) &&
+					<>
+						<RichText
+							tagName="span"
+							className="share"
+							value={ share }
+							allowedFormats={ [] }
+							onChange={ ( newShare ) => { setAttributes( { share: newShare } ) } }
+							placeholder={ __( 'Share: ' ) }
+						/>
+						<ul className="list">
+							{networks.map((network) => {
+								let shareURL = getShareURL(network);
+								let shareIcon = getShareIcon(network);
+								return ( <li className="network"><a target="_blank" rel="noopener" href={shareURL}>{shareIcon}</a></li>);	
+							})}
+						</ul>
+					</> 
+				}
 			</div>
 		</>
 	);

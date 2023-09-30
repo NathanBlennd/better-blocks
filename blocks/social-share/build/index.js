@@ -62,7 +62,8 @@ function Edit({
   setAttributes
 }) {
   const {
-    networks
+    networks,
+    share
   } = attributes;
   const permalink = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.select)('core/editor').getPermalink();
   const getShareURL = function (network) {
@@ -114,9 +115,18 @@ function Edit({
     }
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
-    className: "share"
-  }, "Share: "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+  }, (!Array.isArray(networks) || !networks.length > 0) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("p", null, "Select networks in side panel"), Array.isArray(networks) && networks.length > 0 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.RichText, {
+    tagName: "span",
+    className: "share",
+    value: share,
+    allowedFormats: [],
+    onChange: newShare => {
+      setAttributes({
+        share: newShare
+      });
+    },
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Share: ')
+  }), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     className: "list"
   }, networks.map(network => {
     let shareURL = getShareURL(network);
@@ -128,7 +138,7 @@ function Edit({
       rel: "noopener",
       href: shareURL
     }, shareIcon));
-  }))));
+  })))));
 }
 
 /***/ }),
@@ -234,7 +244,8 @@ function save({
 }) {
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   const {
-    networks
+    networks,
+    share
   } = attributes;
   const permalink = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)('core/editor').getPermalink();
   const getShareURL = function (network) {
@@ -262,7 +273,7 @@ function save({
     ...blockProps
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
     className: "share"
-  }, "Share: "), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
+  }, share), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("ul", {
     className: "list"
   }, networks.map(network => {
     let shareURL = getShareURL(network);

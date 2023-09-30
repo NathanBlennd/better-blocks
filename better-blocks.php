@@ -64,7 +64,7 @@ add_action( 'init', __NAMESPACE__ . '\better_blocks_init' );
 function better_blocks_enqueue_block_assets(){
     if ( has_block( 'better-blocks/accordion' ) ) {
 		wp_enqueue_script(
-			'better/accordion',
+			'better-blocks/accordion',
 			plugins_url( 'dist/accordion/ts/accordion.js', __FILE__ ),
 			[],
 			'0.1.0',
@@ -73,7 +73,7 @@ function better_blocks_enqueue_block_assets(){
     }
 	if ( has_block( 'better-blocks/before-after' ) ) {
 		wp_enqueue_script(
-			'better/before-after',
+			'better-blocks/before-after',
 			plugins_url( 'dist/before-after/ts/before-after.js', __FILE__ ),
 			[],
 			'0.1.0',
@@ -82,16 +82,16 @@ function better_blocks_enqueue_block_assets(){
     }
 	if ( has_block( 'better-blocks/tabs' ) ) {
 		wp_enqueue_script(
-			'better/tabs',
+			'better-blocks/tabs',
 			plugins_url( 'dist/tabs/ts/tabs.js', __FILE__ ),
 			[],
 			'0.1.0',
 			true
 		);
     }
-	if ( is_admin() && has_block( 'better-blocks/social-share' ) ) {
+	if ( is_admin() ) {
 		wp_enqueue_script(
-			'better/social-share',
+			'better-blocks/social-share',
 			plugins_url( 'dist/social-share/ts/social-share.js', __FILE__ ),
 			[],
 			'0.1.0',
@@ -99,7 +99,7 @@ function better_blocks_enqueue_block_assets(){
 		);
 		$url = plugins_url( 'assets', __FILE__ );
 		$script = 'better_blocks_assets = '. json_encode( $url ) . ';';
-		wp_add_inline_script ( 'better/social-share', $script, 'before' );
+		wp_add_inline_script ( 'better-blocks/social-share', $script, 'before' );
     }
 }
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\better_blocks_enqueue_block_assets' );
