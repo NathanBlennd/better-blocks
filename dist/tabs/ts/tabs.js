@@ -23,7 +23,12 @@
                     el.classList.remove(TAB_ACTIVE_CLASS);
                 });
                 var id = this.getAttribute('aria-controls');
-                parent.querySelector('#' + id).classList.add(TAB_ACTIVE_CLASS);
+                var tab = parent.querySelector('[data-tab="' + id + '"]');
+                if (tab != null) {
+                    tab.classList.add(TAB_ACTIVE_CLASS);
+                }
+                // console.log(tab.classList.length);
+                // parent.querySelector( '#' + id ).classList.add( TAB_ACTIVE_CLASS );
                 this.classList.add(TAB_ACTIVE_CLASS);
             });
         });

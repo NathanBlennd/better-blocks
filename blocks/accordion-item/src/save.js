@@ -29,17 +29,16 @@ export default function save( { attributes } ) {
 	const cleanHeading = cleanForSlug( attributes.heading ?? '' );
 	const cleanContent = cleanForSlug( attributes.content ?? '' );
 
+	blockProps.className += ' accordion-item';
 	return (
 		<div { ...blockProps }>
-			<div class="accordion-item">
-				<h2 class="accordion-header" id={ cleanHeading }>
-					<button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls={ cleanContent }>
-						<RichText.Content className="heading" tagName="h2" value={ attributes.heading } />
-					</button>
-				</h2>
-				<div id={ cleanContent} class="accordion-collapse collapse" aria-labelledby={ cleanHeading }>
-					<RichText.Content className="accordion-body" tagName="div" value={ attributes.content } />
-				</div>
+			<h2 class="accordion-header" id={ cleanHeading }>
+				<button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls={ cleanContent }>
+					<RichText.Content className="heading" tagName="h2" value={ attributes.heading } />
+				</button>
+			</h2>
+			<div id={ cleanContent} class="accordion-collapse collapse" aria-labelledby={ cleanHeading }>
+				<RichText.Content className="accordion-body" tagName="div" value={ attributes.content } />
 			</div>
 		</div>
 	);

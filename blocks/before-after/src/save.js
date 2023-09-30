@@ -26,15 +26,15 @@ export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
 	return (
-			<section { ...blockProps }>
-				<div className="card-image">
-					<img className="before" src={ attributes.image1Url }/>
-				</div>
-				<div className="card-image">
-					<img className="after" src={ attributes.image2Url }/>
-				</div>
-				<input type="range" class="slider" min="0" max="100" value="50" />
-				<div class="slider-button"></div>
-			</section>
+		<div { ...blockProps }>
+			<div className="image">
+				<img className="before" src={ attributes.image1Url }/>
+			</div>
+			<div className="image">
+				<img className="after" src={ attributes.image2Url }/>
+			</div>
+			<input type="range" class="slider" min="0" max="100" value="50" />
+			<div class="slider-button"></div>
+		</div>
 	);
 }

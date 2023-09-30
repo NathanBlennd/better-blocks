@@ -36,6 +36,7 @@ export default function save( { attributes } ) {
 	blockProps.role = 'tabpanel';
 	blockProps.tabindex = '0';
 	blockProps['data-index'] = index;
+	blockProps['data-tab'] =  cleanForSlug( label ?? '' );
 	blockProps.id = cleanForSlug( label ?? '' );
 
 	return (

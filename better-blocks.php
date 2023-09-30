@@ -57,8 +57,6 @@ function better_blocks_init() {
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tabs/' );
-	// register_block_type( BETTER_BLOCKS . 'blocks/hero/' );
-	// register_block_type( BETTER_BLOCKS . 'blocks/section/' );
 }
 add_action( 'init', __NAMESPACE__ . '\better_blocks_init' );
 

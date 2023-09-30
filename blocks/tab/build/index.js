@@ -202,6 +202,7 @@ function save({
   blockProps.role = 'tabpanel';
   blockProps.tabindex = '0';
   blockProps['data-index'] = index;
+  blockProps['data-tab'] = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)(label !== null && label !== void 0 ? label : '');
   blockProps.id = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)(label !== null && label !== void 0 ? label : '');
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps

@@ -40,7 +40,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 
 	return (
 		<section { ...blockProps }>
-			<div class="card-image">
+			<div class="image">
 				{ ( ! media1Preview || isSelected ) &&
 					<MediaPlaceholder
 						onSelect = {
@@ -55,10 +55,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					/>
 				}
 				{ ( media1Preview && ! isSelected ) &&
-					<img className="card-image" src={ attributes.image1Url }/>
+					<img className="image" src={ attributes.image1Url }/>
 				}
 			</div>
-			<div class="card-image">
+			<div class="image">
 				{ ( ! media2Preview || isSelected ) &&
 					<MediaPlaceholder
 						onSelect = {
@@ -73,7 +73,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 					/>
 				}
 				{ ( media2Preview && ! isSelected ) &&
-					<img className="card-image" src={ attributes.image2Url }/>
+					<img className="image" src={ attributes.image2Url }/>
 				}
 			</div>
 		</section>

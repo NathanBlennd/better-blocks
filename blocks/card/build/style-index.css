@@ -8,8 +8,15 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-better-blocks-card {
-  border: 1px solid #eee;
+  --card-border-color: var(--wp--preset--color--secondary);
+  --card-border-radius: 0.25rem;
+  --card-border-width: 1px;
+}
+.wp-block-better-blocks-card.card {
+  border: var(--card-border-width) solid var(--card-border-color);
+  border-radius: var(--card-border-radius);
   box-sizing: border-box;
+  overflow: hidden;
 }
 .wp-block-better-blocks-card .card-body {
   padding: 1rem;

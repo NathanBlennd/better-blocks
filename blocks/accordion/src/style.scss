@@ -9,7 +9,7 @@
 	--accordion-bg: #ffffff;
 	--accordion-body-padding-x: 1rem;
 	--accordion-body-padding-y: 1rem;
-	--accordion-border-color: #000000;
+	--accordion-border-color: var(--wp--preset--color--secondary);
 	--accordion-border-radius: 0.25rem;
 	--accordion-border-width: 1px;
 	--accordion-btn-bg: #ffffff;
@@ -82,11 +82,13 @@
 
 	.accordion-header {
 		margin-bottom: 0;
+		margin-top: 0;
 	}
 
 	.accordion-item {
 		color: var(--accordion-color);
 		background-color: var(--accordion-bg);
+		border: var(--accordion-border-width) solid var(--accordion-border-color);
 
 		&:first-of-type {
 			border-top-left-radius: var(--accordion-border-radius);

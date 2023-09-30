@@ -60,13 +60,12 @@ function Edit({
   context
 }) {
   var _attributes$heading, _attributes$content;
-  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps;
   const cleanHeading = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$heading = attributes.heading) !== null && _attributes$heading !== void 0 ? _attributes$heading : '');
   const cleanContent = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$content = attributes.content) !== null && _attributes$content !== void 0 ? _attributes$content : '');
+  blockProps.className += ' accordion-item';
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "accordion-item"
+    ...blockProps
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     class: "accordion-header",
     id: cleanHeading
@@ -97,7 +96,7 @@ function Edit({
       content
     }),
     placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Content...')
-  })))));
+  }))));
 }
 
 /***/ }),
@@ -205,10 +204,9 @@ function save({
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   const cleanHeading = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$heading = attributes.heading) !== null && _attributes$heading !== void 0 ? _attributes$heading : '');
   const cleanContent = (0,_wordpress_url__WEBPACK_IMPORTED_MODULE_3__.cleanForSlug)((_attributes$content = attributes.content) !== null && _attributes$content !== void 0 ? _attributes$content : '');
+  blockProps.className += ' accordion-item';
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    class: "accordion-item"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("h2", {
     class: "accordion-header",
     id: cleanHeading
@@ -229,7 +227,7 @@ function save({
     className: "accordion-body",
     tagName: "div",
     value: attributes.content
-  }))));
+  })));
 }
 
 /***/ }),

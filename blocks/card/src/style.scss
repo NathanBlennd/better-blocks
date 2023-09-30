@@ -6,8 +6,16 @@
  */
 
  .wp-block-better-blocks-card {
-	border: 1px solid #eee;
-	box-sizing: border-box;
+	--card-border-color: var(--wp--preset--color--secondary);
+	--card-border-radius: 0.25rem;
+	--card-border-width: 1px;
+
+	&.card {
+		border: var(--card-border-width) solid var(--card-border-color);
+		border-radius: var(--card-border-radius);
+		box-sizing: border-box;
+		overflow: hidden;
+	}
 
 	.card-body {
 		padding: 1rem;

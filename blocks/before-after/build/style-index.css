@@ -9,18 +9,17 @@
  */
 .wp-block-better-blocks-before-after {
   height: 320px;
-  margin: 20px;
   position: relative;
   width: 100%;
 }
-.wp-block-better-blocks-before-after .card-image {
+.wp-block-better-blocks-before-after .image {
   height: 100%;
   left: 0px;
   position: absolute;
   top: 0px;
   width: 100%;
 }
-.wp-block-better-blocks-before-after .card-image img {
+.wp-block-better-blocks-before-after .image img {
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -29,7 +28,7 @@
   position: relative;
   width: 100%;
 }
-.wp-block-better-blocks-before-after .card-image img.before {
+.wp-block-better-blocks-before-after .image img.before {
   width: 50%;
   z-index: 1;
 }

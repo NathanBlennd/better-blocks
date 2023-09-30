@@ -24,6 +24,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
  */
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
+	blockProps.className += ' card';
 	return (
 		<div { ...blockProps }>
 			<img className="card-image" src={ attributes.imageUrl }/>

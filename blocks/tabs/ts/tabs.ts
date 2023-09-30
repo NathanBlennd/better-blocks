@@ -30,7 +30,10 @@
 					el.classList.remove( TAB_ACTIVE_CLASS );
 				});
 				let id = this.getAttribute('aria-controls');
-				parent.querySelector( '#' + id ).classList.add( TAB_ACTIVE_CLASS );
+				let tab = parent.querySelector( '[data-tab="'+id+'"]');
+				if ( tab != null ){
+					tab.classList.add( TAB_ACTIVE_CLASS );
+				}
 				this.classList.add( TAB_ACTIVE_CLASS );
 			});
 		});

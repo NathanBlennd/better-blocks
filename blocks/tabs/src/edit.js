@@ -17,6 +17,7 @@ import { InnerBlocks, useBlockProps } from '@wordpress/block-editor';
 
 import { useSelect } from '@wordpress/data';
 import { RawHTML } from '@wordpress/element';
+import { cleanForSlug } from '@wordpress/url';
 
 
 /**
@@ -70,7 +71,8 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 		<div { ...useBlockProps() } >
 			<ul className="tab-labels" role="tablist" aria-label="tabbed content">
 				{labels.map((label, i) => {
-					return ( <li className={i == 0 ? "tab-label active" : "tab-label"} role="tab" aria-selected={i == 0 ? "true" : "false"} aria-controls={label} tabindex="0"><RawHTML>{label}</RawHTML></li>);	
+					const cleanLabel = cleanForSlug( label ?? '' );
+					return ( <li className={i == 0 ? "tab-label active" : "tab-label"} role="tab" aria-selected={i == 0 ? "true" : "false"} aria-controls={cleanLabel} tabindex="0"><RawHTML>{label}</RawHTML></li>);	
 				})}
 			</ul>
 			<InnerBlocks allowedBlocks={ ALLOWED_BLOCKS } />

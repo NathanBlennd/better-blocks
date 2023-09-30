@@ -33,34 +33,33 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes, context } ) {
 
-	const blockProps = useBlockProps.save();
+	const blockProps = useBlockProps;
 	const cleanHeading = cleanForSlug( attributes.heading ?? '' );
 	const cleanContent = cleanForSlug( attributes.content ?? '' );
 
+	blockProps.className += ' accordion-item';
 	return (
-		<div { ...useBlockProps() }>
-			<div class="accordion-item">
-				<h2 class="accordion-header" id={ cleanHeading }>
-					<button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls={ cleanContent }>
+		<div { ...blockProps }>
+			<h2 class="accordion-header" id={ cleanHeading }>
+				<button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls={ cleanContent }>
+				<RichText
+					tagName="h2"
+					value={ attributes.heading }
+					allowedFormats={ [] }
+					onChange={ ( heading ) => setAttributes( { heading } ) }
+					placeholder={ __( 'Heading...' ) }
+				/>
+				</button>
+			</h2>
+			<div id={ cleanContent } class="accordion-collapse collapse" aria-labelledby={ cleanHeading }>
+				<div class="accordion-body">
 					<RichText
-						tagName="h2"
-						value={ attributes.heading }
+						tagName="p"
+						value={ attributes.content }
 						allowedFormats={ [] }
-						onChange={ ( heading ) => setAttributes( { heading } ) }
-						placeholder={ __( 'Heading...' ) }
+						onChange={ ( content ) => setAttributes( { content } ) }
+						placeholder={ __( 'Content...' ) }
 					/>
-					</button>
-				</h2>
-				<div id={ cleanContent } class="accordion-collapse collapse" aria-labelledby={ cleanHeading }>
-					<div class="accordion-body">
-						<RichText
-							tagName="p"
-							value={ attributes.content }
-							allowedFormats={ [] }
-							onChange={ ( content ) => setAttributes( { content } ) }
-							placeholder={ __( 'Content...' ) }
-						/>
-					</div>
 				</div>
 			</div>
 		</div>
