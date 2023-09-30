@@ -27,8 +27,6 @@
                 if (tab != null) {
                     tab.classList.add(TAB_ACTIVE_CLASS);
                 }
-                // console.log(tab.classList.length);
-                // parent.querySelector( '#' + id ).classList.add( TAB_ACTIVE_CLASS );
                 this.classList.add(TAB_ACTIVE_CLASS);
             });
         });

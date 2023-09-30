@@ -1,0 +1,21 @@
+{
+	"apiVersion": 3,
+	"name": "better-blocks/social-share",
+	"version": "0.1.0",
+	"title": "Social Share",
+	"category": "components",
+	"description": "",
+	"attributes": {
+		"networks": {
+			"type": "array",
+			"default": "[]"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

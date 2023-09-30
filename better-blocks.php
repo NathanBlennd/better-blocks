@@ -55,6 +55,7 @@ function better_blocks_init() {
 	register_block_type( BETTER_BLOCKS . '/blocks/before-after/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/social-share/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tabs/' );
 }
@@ -87,6 +88,18 @@ function better_blocks_enqueue_block_assets(){
 			'0.1.0',
 			true
 		);
+    }
+	if ( is_admin() && has_block( 'better-blocks/social-share' ) ) {
+		wp_enqueue_script(
+			'better/social-share',
+			plugins_url( 'dist/social-share/ts/social-share.js', __FILE__ ),
+			[],
+			'0.1.0',
+			true
+		);
+		$url = plugins_url( 'assets', __FILE__ );
+		$script = 'better_blocks_assets = '. json_encode( $url ) . ';';
+		wp_add_inline_script ( 'better/social-share', $script, 'before' );
     }
 }
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\better_blocks_enqueue_block_assets' );

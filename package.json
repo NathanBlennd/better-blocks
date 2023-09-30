@@ -22,6 +22,8 @@
 		"build:card": "wp-scripts build blocks/card/src/index.js --output-path=blocks/card/build/",
 		"start:cards": "wp-scripts start blocks/cards/src/index.js --output-path=blocks/cards/build/",
 		"build:cards": "wp-scripts build blocks/cards/src/index.js --output-path=blocks/cards/build/",
+		"start:social-share": "wp-scripts start blocks/social-share/src/index.js --output-path=blocks/social-share/build/",
+		"build:social-share": "wp-scripts build blocks/social-share/src/index.js --output-path=blocks/social-share/build/",
 		"start:tab": "wp-scripts start blocks/tab/src/index.js --output-path=blocks/tab/build/",
 		"build:tab": "wp-scripts build blocks/tab/src/index.js --output-path=blocks/tab/build/",
 		"start:tabs": "wp-scripts start blocks/tabs/src/index.js --output-path=blocks/tabs/build/",
