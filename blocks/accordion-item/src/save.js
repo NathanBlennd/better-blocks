@@ -32,11 +32,11 @@ export default function save( { attributes } ) {
 	blockProps.className += ' accordion-item';
 	return (
 		<div { ...blockProps }>
-			<h2 class="accordion-header" id={ cleanHeading }>
+			<div class="accordion-header" id={ cleanHeading }>
 				<button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls={ cleanContent }>
-					<RichText.Content className="heading" tagName="h2" value={ attributes.heading } />
+					<RichText.Content className="heading" tagName="span" value={ attributes.heading } />
 				</button>
-			</h2>
+			</div>
 			<div id={ cleanContent} class="accordion-collapse collapse" aria-labelledby={ cleanHeading }>
 				<RichText.Content className="accordion-body" tagName="div" value={ attributes.content } />
 			</div>

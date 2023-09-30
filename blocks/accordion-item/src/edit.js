@@ -40,17 +40,17 @@ export default function Edit( { attributes, setAttributes, context } ) {
 	blockProps.className += ' accordion-item';
 	return (
 		<div { ...blockProps }>
-			<h2 class="accordion-header" id={ cleanHeading }>
+			<div class="accordion-header" id={ cleanHeading }>
 				<button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls={ cleanContent }>
 				<RichText
-					tagName="h2"
+					tagName="span"
 					value={ attributes.heading }
 					allowedFormats={ [] }
 					onChange={ ( heading ) => setAttributes( { heading } ) }
 					placeholder={ __( 'Heading...' ) }
 				/>
 				</button>
-			</h2>
+			</div>
 			<div id={ cleanContent } class="accordion-collapse collapse" aria-labelledby={ cleanHeading }>
 				<div class="accordion-body">
 					<RichText

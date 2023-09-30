@@ -8,7 +8,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-better-blocks-accordion-item .heading {
-  margin: 0;
+  font-weight: bold;
 }
 
 /*# sourceMappingURL=style-index.css.map*/
