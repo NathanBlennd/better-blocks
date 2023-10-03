@@ -8,6 +8,7 @@
  * Replace them with your own styles or remove the file completely.
  */
 .wp-block-better-blocks-accordion-item .heading {
+  font-size: var(--wp--preset--font-size--large);
   font-weight: bold;
 }
 
