@@ -1,0 +1,35 @@
+{
+	"apiVersion": 3,
+	"name": "better-blocks/counter",
+	"version": "0.1.0",
+	"title": "Counter",
+	"category": "components",
+	"description": "",
+	"attributes": {
+		"initial": {
+			"type": "string",
+			"default": "0"
+		},
+		"final": {
+			"type": "string"
+		},
+		"prefix": {
+			"type": "string"
+		},
+		"suffix": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string",
+			"source": "html",
+			"selector": ".counter-title"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
