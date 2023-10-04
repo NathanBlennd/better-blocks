@@ -1,0 +1,36 @@
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-better-blocks-call-to-action {
+
+	.components-placeholder__preview img {
+		max-width: 100%;
+	}
+
+	input[type=radio] {
+		appearance: none;
+		margin: 0;
+		padding: 0;
+		position: absolute;
+	}
+
+	input[type=radio] + label {
+		cursor: pointer;
+		background-size: contain;
+		background-repeat: no-repeat;
+		display: inline-block;
+		width: 100px;
+		height: 70px;
+	}
+
+	input[value="1"] + label {
+		background-image:url(/assets/layout-1.svg);
+	}
+
+	input[value="2"] + label {
+		background-image:url(/assets/layout-2.svg);
+	}
+}

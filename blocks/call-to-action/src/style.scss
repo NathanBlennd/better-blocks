@@ -1,0 +1,59 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+ .wp-block-better-blocks-call-to-action {
+
+	display: flex;
+	flex-direction: column;
+
+	@media (min-width: 968px) {
+		flex-direction: row;
+	}
+
+	img,
+	&__image {
+		max-width:100%;
+	}
+
+	.wp-block-heading {
+		margin-top: 0;
+	}
+
+	&__body {
+		padding: 2rem;
+	}
+
+	.wp-block-better-blocks-call-to-action__image,
+	.wp-block-better-blocks-call-to-action__body {
+		@media (min-width: 968px) {
+			flex-basis: 50%;
+			max-width: 50%;
+		}
+	}
+
+	&[data-layout="1"] {
+		.wp-block-better-blocks-call-to-action__image {
+			order: 0;
+		}
+		.wp-block-better-blocks-call-to-action__body {
+			order: 1;
+		}
+	}
+
+	&[data-layout="2"] {
+		.wp-block-better-blocks-call-to-action__image {
+			@media (min-width: 968px) {
+				order: 1;
+			}
+		}
+		.wp-block-better-blocks-call-to-action__body {
+			order: 0;
+		}
+
+	}
+
+}

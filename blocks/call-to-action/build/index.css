@@ -1,0 +1,35 @@
+/*!**************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/call-to-action/src/editor.scss ***!
+  \**************************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied inside the editor only.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-better-blocks-call-to-action .components-placeholder__preview img {
+  max-width: 100%;
+}
+.wp-block-better-blocks-call-to-action input[type=radio] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+.wp-block-better-blocks-call-to-action input[type=radio] + label {
+  cursor: pointer;
+  background-size: contain;
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 100px;
+  height: 70px;
+}
+.wp-block-better-blocks-call-to-action input[value="1"] + label {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCjxwYXRoIGQ9Ik0yMCA5LjMzMzMzVjZDMjAgNC44OTU0MyAxOS4xMDQ2IDQgMTggNEgxNC42NjY3TTIwIDkuMzMzMzNWMTQuNjY2N00yMCA5LjMzMzMzSDE0LjY2NjdNMjAgMTQuNjY2N1YxOEMyMCAxOS4xMDQ2IDE5LjEwNDYgMjAgMTggMjBIMTQuNjY2N00yMCAxNC42NjY3SDE0LjY2NjdNMTQuNjY2NyA0VjkuMzMzMzNNMTQuNjY2NyA0SDZDNC44OTU0MyA0IDQgNC44OTU0MyA0IDZWMThDNCAxOS4xMDQ2IDQuODk1NDMgMjAgNiAyMEgxNC42NjY3TTE0LjY2NjcgMjBWMTQuNjY2N00xNC42NjY3IDkuMzMzMzNWMTQuNjY2NyIgc3Ryb2tlPSIjMDAwMDAwIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPg0KPC9zdmc+);
+}
+.wp-block-better-blocks-call-to-action input[value="2"] + label {
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz48IS0tIFVwbG9hZGVkIHRvOiBTVkcgUmVwbywgd3d3LnN2Z3JlcG8uY29tLCBHZW5lcmF0b3I6IFNWRyBSZXBvIE1peGVyIFRvb2xzIC0tPg0KPHN2ZyB3aWR0aD0iODAwcHgiIGhlaWdodD0iODAwcHgiIHZpZXdCb3g9IjAgMCAxNiAxNiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMS41NDcgMC4zMDkgQyAxLjI1OCAwLjM4NCwxLjAxNiAwLjUyOSwwLjc3MyAwLjc3MyBDIDAuNTI0IDEuMDIyLDAuNDE2IDEuMTk4LDAuMzE2IDEuNTIwIEwgMC4yNTMgMS43MjAgMC4yNTMgOC4wMDAgTCAwLjI1MyAxNC4yODAgMC4zMTYgMTQuNDgwIEMgMC40MTYgMTQuODAyLDAuNTI0IDE0Ljk3OCwwLjc3MyAxNS4yMjcgQyAxLjAyMiAxNS40NzYsMS4xOTggMTUuNTg0LDEuNTIwIDE1LjY4NCBMIDEuNzIwIDE1Ljc0NyA4LjAwMCAxNS43NDcgTCAxNC4yODAgMTUuNzQ3IDE0LjQ4MCAxNS42ODQgQyAxNC44MDIgMTUuNTg0LDE0Ljk3OCAxNS40NzYsMTUuMjI3IDE1LjIyNyBDIDE1LjQ3NiAxNC45NzgsMTUuNTg0IDE0LjgwMiwxNS42ODQgMTQuNDgwIEwgMTUuNzQ3IDE0LjI4MCAxNS43NDcgOC4wMDAgTCAxNS43NDcgMS43MjAgMTUuNjg0IDEuNTIwIEMgMTUuNTg0IDEuMTk4LDE1LjQ3NiAxLjAyMiwxNS4yMjcgMC43NzMgQyAxNC45ODAgMC41MjUsMTQuNzM5IDAuMzgyLDE0LjQ0MSAwLjMwNyBDIDE0LjIwNyAwLjI0OCwxLjc3NCAwLjI0OSwxLjU0NyAwLjMwOSBNMTQuMTcwIDEuODMwIEwgMTQuMjQwIDEuOTAxIDE0LjI0MCAzLjMyNCBMIDE0LjI0MCA0Ljc0NyA4LjAwMCA0Ljc0NyBMIDEuNzYwIDQuNzQ3IDEuNzYwIDMuMzI0IEwgMS43NjAgMS45MDEgMS44MzAgMS44MzAgTCAxLjkwMSAxLjc2MCA4LjAwMCAxLjc2MCBMIDE0LjA5OSAxLjc2MCAxNC4xNzAgMS44MzAgTTQuNzQ3IDEwLjI2NyBMIDQuNzQ3IDE0LjI2NyAzLjQwMyAxNC4yNjcgQyAyLjY2NSAxNC4yNjcsMi4wMjMgMTQuMjU5LDEuOTc3IDE0LjI1MCBDIDEuOTMxIDE0LjI0MSwxLjg2NCAxNC4yMDMsMS44MjcgMTQuMTY2IEwgMS43NjAgMTQuMDk5IDEuNzYwIDEwLjE4MyBMIDEuNzYwIDYuMjY3IDMuMjUzIDYuMjY3IEwgNC43NDcgNi4yNjcgNC43NDcgMTAuMjY3IE0xNC4yNDAgMTAuMTgzIEwgMTQuMjQwIDE0LjA5OSAxNC4xNzMgMTQuMTY2IEMgMTQuMTM2IDE0LjIwMywxNC4wNjkgMTQuMjQxLDE0LjAyMyAxNC4yNTAgQyAxMy45NzcgMTQuMjU5LDEyLjIxNCAxNC4yNjcsMTAuMTAzIDE0LjI2NyBMIDYuMjY3IDE0LjI2NyA2LjI2NyAxMC4yNjcgTCA2LjI2NyA2LjI2NyAxMC4yNTMgNi4yNjcgTCAxNC4yNDAgNi4yNjcgMTQuMjQwIDEwLjE4MyAiIHN0cm9rZT0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIiBmaWxsPSIjMDAwMDAwIj48L3BhdGg+PC9zdmc+);
+}
+
+/*# sourceMappingURL=index.css.map*/

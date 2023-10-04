@@ -1,0 +1,25 @@
+{
+	"apiVersion": 3,
+	"name": "better-blocks/call-to-action",
+	"version": "0.1.0",
+	"title": "Call to Action",
+	"category": "components",
+	"description": "",
+	"attributes": {
+		"layout": {
+			"enum": [ "1", "2" ]
+		},
+		"imageUrl": {
+            "type": "string"
+        }
+	},
+	"supports": {
+		"align": [ "wide", "full" ],
+		"color": true,
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

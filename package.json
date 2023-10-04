@@ -18,6 +18,8 @@
 		"build:accordion-item": "wp-scripts build blocks/accordion-item/src/index.js --output-path=blocks/accordion-item/build/",
 		"start:before-after": "wp-scripts start blocks/before-after/src/index.js --output-path=blocks/before-after/build/",
 		"build:before-after": "wp-scripts build blocks/before-after/src/index.js --output-path=blocks/before-after/build/",
+		"start:call-to-action": "wp-scripts start blocks/call-to-action/src/index.js --output-path=blocks/call-to-action/build/",
+		"build:call-to-action": "wp-scripts build blocks/call-to-action/src/index.js --output-path=blocks/call-to-action/build/",
 		"start:card": "wp-scripts start blocks/card/src/index.js --output-path=blocks/card/build/",
 		"build:card": "wp-scripts build blocks/card/src/index.js --output-path=blocks/card/build/",
 		"start:cards": "wp-scripts start blocks/cards/src/index.js --output-path=blocks/cards/build/",

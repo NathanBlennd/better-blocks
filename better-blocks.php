@@ -53,6 +53,7 @@ function better_blocks_init() {
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion-item/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/before-after/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/call-to-action/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/counter/' );
