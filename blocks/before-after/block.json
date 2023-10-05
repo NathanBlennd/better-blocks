@@ -3,8 +3,8 @@
 	"name": "better-blocks/before-after",
 	"version": "0.1.0",
 	"title": "Before/After",
-	"category": "components",
-	"description": "before after",
+	"category": "interactive",
+	"description": "A set of two images with a slider to show both images overlayed.",
 	"attributes": {
 		"height": {
 			"type": "string",
@@ -18,7 +18,7 @@
         }
 	},
 	"supports": {
-		"align": ["wide","full"],
+		"align": [ "wide","full" ],
 		"html": false
 	},
 	"textdomain": "better-blocks",

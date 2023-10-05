@@ -3,10 +3,12 @@
 	"name": "better-blocks/call-to-action",
 	"version": "0.1.0",
 	"title": "Call to Action",
-	"category": "components",
-	"description": "",
+	"description": "An image and content with a horizontally layout in several designs",
+	"category": "content",
+	"keywords": [ "cta" ],
 	"attributes": {
 		"layout": {
+			"default": "1",
 			"enum": [ "1", "2" ]
 		},
 		"imageUrl": {

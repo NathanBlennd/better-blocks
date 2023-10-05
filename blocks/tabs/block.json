@@ -3,8 +3,8 @@
 	"name": "better-blocks/tabs",
 	"version": "0.1.0",
 	"title": "Tabs",
-	"category": "components",
-	"description": "Tabs component",
+	"category": "interactive",
+	"description": "Toggleable content on several panes to save screen space",
 	"attributes": {
 		"labels":{
 			"type": "array",

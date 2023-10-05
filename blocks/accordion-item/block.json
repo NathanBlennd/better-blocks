@@ -3,7 +3,7 @@
 	"name": "better-blocks/accordion-item",
 	"version": "0.1.0",
 	"title": "Accordion Item",
-	"category": "components",
+	"category": "",
 	"description": "An accordion item contains a header and content.",
 	"attributes": {
 		"heading": {

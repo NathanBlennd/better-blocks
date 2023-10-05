@@ -3,8 +3,8 @@
 	"name": "better-blocks/cards",
 	"version": "0.1.0",
 	"title": "Cards",
-	"category": "components",
-	"description": "Cards component",
+	"category": "content",
+	"description": "A collection of cards in a card deck",
 	"attributes": {
 		"size": {
 			"enum": [ "1", "2", "3", "4" ]

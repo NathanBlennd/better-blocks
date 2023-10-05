@@ -3,8 +3,8 @@
 	"name": "better-blocks/accordion",
 	"version": "0.1.0",
 	"title": "Accordion",
-	"category": "components",
-	"description": "accordion",
+	"category": "interactive",
+	"description": "An Accordion is a collection of collapable content",
 	"attributes": {
 	},
 	"supports": {

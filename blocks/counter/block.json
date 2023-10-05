@@ -3,8 +3,8 @@
 	"name": "better-blocks/counter",
 	"version": "0.1.0",
 	"title": "Counter",
-	"category": "components",
-	"description": "",
+	"category": "content",
+	"description": "Count up or down from an initial to a final value",
 	"attributes": {
 		"initial": {
 			"type": "string",

@@ -17,7 +17,7 @@
  */
 
 declare( strict_types = 1 );
-namespace blenndiris\better_blocks;
+namespace better_blocks\better_blocks;
 
 defined( 'ABSPATH' ) || die;
 
@@ -28,20 +28,26 @@ define( 'BETTER_BLOCKS', __DIR__ );
  * Blocks are grouped into categories to help users browse and discover them.
  * The categories provided by core are `text`, `media`, `design`, `widgets`, and `embed`.
  */
-function better_blocks_block_categories_all( $block_categories, $editor_context ) {
+function add_block_categories( $block_categories, $editor_context ) {
 	if ( ! empty( $editor_context->post ) ) {
+
 		array_unshift(
 			$block_categories,
 			[
-				'slug'  => 'components',
-				'title' => 'Components',
-				'icon'  => 'block-default',
+				'slug' => 'interactive',
+				'title' => 'Interactive',
+				'icon' => '',
+			],
+			[
+				'slug' => 'content',
+				'title' => 'Content',
+				'icon' => 'dashicons-editor-ul',
 			]
 		);
 	}
 	return $block_categories;
 }
-add_filter( 'block_categories_all', __NAMESPACE__ . '\better_blocks_block_categories_all', 10, 2 );
+add_filter( 'block_categories_all', __NAMESPACE__ . '\add_block_categories', 10, 2 );
 
 
 /**
@@ -49,7 +55,7 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\better_blocks_block_catego
  * Behind the scenes, it registers also all assets so they can be enqueued
  * through the block editor in the corresponding context.
  */
-function better_blocks_init() {
+function register_block_types() {
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion-item/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/before-after/' );
@@ -61,10 +67,63 @@ function better_blocks_init() {
 	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tabs/' );
 }
-add_action( 'init', __NAMESPACE__ . '\better_blocks_init' );
+add_action( 'init', __NAMESPACE__ . '\register_block_types' );
 
-function better_blocks_enqueue_block_assets(){
-    if ( has_block( 'better-blocks/accordion' ) ) {
+
+function register_block_patterns() {
+	register_block_pattern(
+		'better-blocks/accordion-image-left',
+		[
+			'title'      => __( 'Accordion with Image Left', 'better-blocks' ),
+			'blockTypes' => [ 'core/image', 'better-blocks/accordion', 'better-blocks/accordion-item' ],
+			'content'    => '<!-- wp:columns -->
+			<div class="wp-block-columns"><!-- wp:column -->
+			<div class="wp-block-column"><!-- wp:image -->
+			<figure class="wp-block-image"><img alt=""/></figure>
+			<!-- /wp:image --></div>
+			<!-- /wp:column -->
+			
+			<!-- wp:column -->
+			<div class="wp-block-column"><!-- wp:better-blocks/accordion -->
+			<div class="wp-block-better-blocks-accordion"><!-- wp:better-blocks/accordion-item -->
+			<div class="wp-block-better-blocks-accordion-item accordion-item"><div class="accordion-header" id=""><button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls=""><span class="heading"></span></button></div><div id="" class="accordion-collapse collapse" aria-labelledby=""><div class="accordion-body"></div></div></div>
+			<!-- /wp:better-blocks/accordion-item -->
+			
+			<!-- wp:better-blocks/accordion-item -->
+			<div class="wp-block-better-blocks-accordion-item accordion-item"><div class="accordion-header" id=""><button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls=""><span class="heading"></span></button></div><div id="" class="accordion-collapse collapse" aria-labelledby=""><div class="accordion-body"></div></div></div>
+			<!-- /wp:better-blocks/accordion-item --></div>
+			<!-- /wp:better-blocks/accordion --></div>
+			<!-- /wp:column --></div>
+			<!-- /wp:columns -->',
+		]
+	);
+	register_block_pattern(
+		'better-blocks/accordion-image-right',
+		[
+			'title'      => __( 'Accordion with Image Right', 'better-blocks' ),
+			'blockTypes' => [ 'core/image', 'better-blocks/accordion', 'better-blocks/accordion-item' ],
+			'content'    => '<!-- wp:columns -->
+			<div class="wp-block-columns"><!-- wp:column {"width":"50%"} -->
+			<div class="wp-block-column" style="flex-basis:50%"><!-- wp:better-blocks/accordion -->
+			<div class="wp-block-better-blocks-accordion"><!-- wp:better-blocks/accordion-item -->
+			<div class="wp-block-better-blocks-accordion-item accordion-item"><div class="accordion-header" id=""><button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls=""><span class="heading"></span></button></div><div id="" class="accordion-collapse collapse" aria-labelledby=""><div class="accordion-body"></div></div></div>
+			<!-- /wp:better-blocks/accordion-item --></div>
+			<!-- /wp:better-blocks/accordion --></div>
+			<!-- /wp:column -->
+			
+			<!-- wp:column {"width":"50%"} -->
+			<div class="wp-block-column" style="flex-basis:50%"><!-- wp:image -->
+			<figure class="wp-block-image"><img alt=""/></figure>
+			<!-- /wp:image --></div>
+			<!-- /wp:column --></div>
+			<!-- /wp:columns -->',
+		]
+	);
+}
+add_action( 'init', __NAMESPACE__ . '\register_block_patterns' );
+
+function enqueue_block_assets(){
+    if ( is_admin() || has_block( 'better-blocks/accordion' ) ) {
 		wp_enqueue_script(
 			'better-blocks/accordion',
 			plugins_url( 'dist/accordion/ts/accordion.js', __FILE__ ),
@@ -113,4 +172,4 @@ function better_blocks_enqueue_block_assets(){
 		wp_add_inline_script ( 'better-blocks/social-share', $script, 'before' );
     }
 }
-add_action( 'enqueue_block_assets', __NAMESPACE__ . '\better_blocks_enqueue_block_assets' );
+add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_block_assets' );

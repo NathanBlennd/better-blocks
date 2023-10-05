@@ -3,8 +3,8 @@
 	"name": "better-blocks/social-share",
 	"version": "0.1.0",
 	"title": "Social Share",
-	"category": "components",
-	"description": "",
+	"category": "content",
+	"description": "Add links to share the current page on several social platforms",
 	"attributes": {
 		"share": {
 			"type": "string",

@@ -3,8 +3,8 @@
 	"name": "better-blocks/tab",
 	"version": "0.1.0",
 	"title": "Tab",
-	"category": "components",
-	"description": "",
+	"category": "",
+	"description": "Used exclusively as part of a tabs group",
 	"attributes": {
 		"label":{
             "type": "string",

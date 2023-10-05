@@ -2,7 +2,7 @@
 	"name": "better-blocks",
 	"version": "0.1.0",
 	"description": "Registers custom blocks.",
-	"author": "Blennd Ninjas",
+	"author": "Nathan Johnson",
 	"license": "GPL-3.0-or-later",
 	"main": "build/index.js",
 	"scripts": {
