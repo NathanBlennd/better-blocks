@@ -1,0 +1,22 @@
+{
+	"apiVersion": 3,
+	"name": "better-blocks/pricing-table",
+	"version": "0.1.0",
+	"title": "Pricing Table",
+	"category": "content",
+	"description": "",
+	"attributes": {
+		"columns": {
+			"type": "string",
+			"default": "3"
+		}
+	},
+	"supports": {
+		"align": [ "wide","full" ],
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

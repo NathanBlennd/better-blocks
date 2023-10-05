@@ -63,6 +63,8 @@ function register_block_types() {
 	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/counter/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/pricing/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/pricing-table/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/social-share/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tabs/' );
@@ -117,6 +119,98 @@ function register_block_patterns() {
 			<!-- /wp:image --></div>
 			<!-- /wp:column --></div>
 			<!-- /wp:columns -->',
+		]
+	);
+	register_block_pattern(
+		'better-blocks/three-level-pricing',
+		[
+			'title' => __( 'Three level pricing', 'better-blocks' ),
+			'blockTypes' => [ 'core/spacer', 'core/columns', 'core/column', 'better-blocks/pricing', 'core/header', 'core/paragraph', 'core/list', 'core/list-item' ],
+			'content' => '<!-- wp:spacer {"height":"6rem"} -->
+			<div style="height:6rem" aria-hidden="true" class="wp-block-spacer"></div>
+			<!-- /wp:spacer -->
+			
+			<!-- wp:columns {"align":"wide"} -->
+			<div class="wp-block-columns alignwide"><!-- wp:column -->
+			<div class="wp-block-column">
+			<!-- wp:better-blocks/pricing -->
+			<div class="wp-block-better-blocks-pricing">
+			<!-- wp:heading {"textAlign":"center","level":3,"placeholder":"Header"} -->
+			<h3 class="wp-block-heading has-text-align-center">Developer</h3>
+			<!-- /wp:heading -->
+			
+			<!-- wp:paragraph {"align":"center","placeholder":"Price"} -->
+			<p class="has-text-align-center">$0</p>
+			<!-- /wp:paragraph -->
+			
+			<!-- wp:paragraph {"align":"center","placeholder":"Summary"} -->
+			<p class="has-text-align-center">totally free, start now</p>
+			<!-- /wp:paragraph -->
+			
+			<!-- wp:list -->
+			<ul><!-- wp:list-item -->
+			<li>Search</li>
+			<!-- /wp:list-item -->
+			
+			<!-- wp:list-item -->
+			<li>Stuff</li>
+			<!-- /wp:list-item -->
+			
+			<!-- wp:list-item -->
+			<li>Now</li>
+			<!-- /wp:list-item --></ul>
+			<!-- /wp:list --></div>
+			<!-- /wp:better-blocks/pricing --></div>
+			<!-- /wp:column -->
+			
+			<!-- wp:column -->
+			<div class="wp-block-column">
+			<!-- wp:better-blocks/pricing {"backgroundColor":"secondary","textColor":"base","className":"featured"} -->
+			<div class="wp-block-better-blocks-pricing featured has-base-color has-secondary-background-color has-text-color has-background">
+			<!-- wp:heading {"textAlign":"center","level":3,"placeholder":"Header"} -->
+			<h3 class="wp-block-heading has-text-align-center">Starter</h3>
+			<!-- /wp:heading -->
+			
+			<!-- wp:paragraph {"align":"center","placeholder":"Price"} -->
+			<p class="has-text-align-center">$199</p>
+			<!-- /wp:paragraph -->
+			
+			<!-- wp:paragraph {"align":"center","placeholder":"Summary"} -->
+			<p class="has-text-align-center">best way to start as a business</p>
+			<!-- /wp:paragraph -->
+			
+			<!-- wp:list -->
+			<ul><!-- wp:list-item -->
+			<li>Something</li>
+			<!-- /wp:list-item --></ul>
+			<!-- /wp:list --></div>
+			<!-- /wp:better-blocks/pricing --></div>
+			<!-- /wp:column -->
+			
+			<!-- wp:column -->
+			<div class="wp-block-column">
+			<!-- wp:better-blocks/pricing -->
+			<div class="wp-block-better-blocks-pricing">
+			<!-- wp:heading {"textAlign":"center","level":3,"placeholder":"Header"} -->
+			<h3 class="wp-block-heading has-text-align-center">Enterprise</h3>
+			<!-- /wp:heading -->
+			
+			<!-- wp:paragraph {"align":"center","placeholder":"Price"} -->
+			<p class="has-text-align-center">$1999</p>
+			<!-- /wp:paragraph -->
+			
+			<!-- wp:paragraph {"align":"center","placeholder":"Summary"} -->
+			<p class="has-text-align-center">enterprise-level support</p>
+			<!-- /wp:paragraph -->
+			
+			<!-- wp:list -->
+			<ul><!-- wp:list-item -->
+			<li>Shamrock</li>
+			<!-- /wp:list-item --></ul>
+			<!-- /wp:list --></div>
+			<!-- /wp:better-blocks/pricing --></div>
+			<!-- /wp:column --></div>
+			<!-- /wp:columns -->'
 		]
 	);
 }
