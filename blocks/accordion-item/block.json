@@ -1,9 +1,10 @@
 {
+	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "better-blocks/accordion-item",
 	"version": "0.1.0",
 	"title": "Accordion Item",
-	"category": "",
+	"category": "content",
 	"description": "An accordion item contains a header and content.",
 	"attributes": {
 		"heading": {

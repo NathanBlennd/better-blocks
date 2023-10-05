@@ -1,4 +1,5 @@
 {
+	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
 	"name": "better-blocks/call-to-action",
 	"version": "0.1.0",
@@ -17,7 +18,11 @@
 	},
 	"supports": {
 		"align": [ "wide", "full" ],
-		"color": true,
+		"color": {
+			"background": true,
+			"gradients": false,
+			"text": true
+		},
 		"html": false
 	},
 	"textdomain": "better-blocks",

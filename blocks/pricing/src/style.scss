@@ -8,11 +8,19 @@
  .wp-block-better-blocks-pricing {
 	border: 1px solid var(--wp--preset--color--secondary);
 	padding: 1rem;
+	transition: all 0.3s ease-in-out;
 
 	&[data-featured="true"] {
 		background: var(--wp--preset--color--secondary);
 		color: var(--wp--preset--color--white);
-		margin-block-start: -2rem !important;
+
+		@media (min-width: 968px) {
+			margin-block-start: -2rem !important;
+		}
+	}
+
+	&:hover {
+		transform: scale3d(1.025,1.025,1.025);
 	}
 
 	.wp-block-heading {

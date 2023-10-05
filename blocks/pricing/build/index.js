@@ -63,13 +63,15 @@ function Edit({
   } = attributes;
   const PRICING_TEMPLATE = [['core/heading', {
     placeholder: 'Header',
-    align: 'center',
-    className: 'my-css-name'
+    textAlign: 'center',
+    level: '3'
   }], ['core/paragraph', {
     placeholder: 'Price',
     align: 'center'
   }], ['core/paragraph', {
     placeholder: 'Summary',
+    align: 'center'
+  }], ['core/separator', {
     align: 'center'
   }], ['core/list', {}]];
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
@@ -79,11 +81,7 @@ function Edit({
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
     label: "Featured",
     help: isFeatured ? 'This is a featured pricing' : 'This is a normal pricing',
-    checked: isFeatured
-    // onChange={ () => {
-    // 	setHasFixedBackground( ( state ) => ! state );
-    // } }
-    ,
+    checked: isFeatured,
     onChange: newIsFeatured => {
       setAttributes({
         isFeatured: newIsFeatured

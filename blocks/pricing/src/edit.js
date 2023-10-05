@@ -35,9 +35,10 @@ export default function Edit( { attributes, setAttributes } ) {
 	const { isFeatured } = attributes;
 
 	const PRICING_TEMPLATE = [
-		[ 'core/heading', { placeholder: 'Header', align: 'center', className: 'my-css-name' } ],
+		[ 'core/heading', { placeholder: 'Header', textAlign: 'center', level: '3' } ],
 		[ 'core/paragraph', { placeholder: 'Price', align: 'center' } ],
 		[ 'core/paragraph', { placeholder: 'Summary', align: 'center' } ],
+		[ 'core/separator', { align: 'center' } ],
 		[ 'core/list', {} ],
 	];
 
@@ -53,9 +54,6 @@ export default function Edit( { attributes, setAttributes } ) {
 								: 'This is a normal pricing'
 						}
 						checked={ isFeatured }
-						// onChange={ () => {
-						// 	setHasFixedBackground( ( state ) => ! state );
-						// } }
 						onChange = { ( newIsFeatured ) => { setAttributes( { isFeatured: newIsFeatured } ) } }
 					/>
 				</PanelBody>

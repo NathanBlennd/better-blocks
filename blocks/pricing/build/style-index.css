@@ -10,11 +10,19 @@
 .wp-block-better-blocks-pricing {
   border: 1px solid var(--wp--preset--color--secondary);
   padding: 1rem;
+  transition: all 0.3s ease-in-out;
 }
 .wp-block-better-blocks-pricing[data-featured=true] {
   background: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--white);
-  margin-block-start: -2rem !important;
+}
+@media (min-width: 968px) {
+  .wp-block-better-blocks-pricing[data-featured=true] {
+    margin-block-start: -2rem !important;
+  }
+}
+.wp-block-better-blocks-pricing:hover {
+  transform: scale3d(1.025, 1.025, 1.025);
 }
 .wp-block-better-blocks-pricing .wp-block-heading {
   margin-block-start: 0;
