@@ -40,6 +40,7 @@ export default function Edit( { attributes, setAttributes } ) {
 		[ 'core/paragraph', { placeholder: 'Summary', align: 'center' } ],
 		[ 'core/separator', { align: 'center' } ],
 		[ 'core/list', {} ],
+		[ 'core/buttons', {} ],
 	];
 
 	return (

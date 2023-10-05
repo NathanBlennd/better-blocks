@@ -217,7 +217,7 @@ function register_block_patterns() {
 add_action( 'init', __NAMESPACE__ . '\register_block_patterns' );
 
 function enqueue_block_assets(){
-    if ( is_admin() || has_block( 'better-blocks/accordion' ) ) {
+	if ( is_admin() || has_block( 'better-blocks/accordion' ) ) {
 		wp_enqueue_script(
 			'better-blocks/accordion',
 			plugins_url( 'dist/accordion/ts/accordion.js', __FILE__ ),
@@ -225,7 +225,7 @@ function enqueue_block_assets(){
 			'0.1.0',
 			true
 		);
-    }
+	}
 	if ( has_block( 'better-blocks/before-after' ) ) {
 		wp_enqueue_script(
 			'better-blocks/before-after',
@@ -234,7 +234,7 @@ function enqueue_block_assets(){
 			'0.1.0',
 			true
 		);
-    }
+	}
 	if ( has_block( 'better-blocks/counter' ) ) {
 		wp_enqueue_script(
 			'better-blocks/counter',
@@ -243,7 +243,7 @@ function enqueue_block_assets(){
 			'0.1.0',
 			true
 		);
-    }
+	}
 	if ( has_block( 'better-blocks/tabs' ) ) {
 		wp_enqueue_script(
 			'better-blocks/tabs',
@@ -252,7 +252,7 @@ function enqueue_block_assets(){
 			'0.1.0',
 			true
 		);
-    }
+	}
 	if ( is_admin() ) {
 		wp_enqueue_script(
 			'better-blocks/social-share',
@@ -264,6 +264,6 @@ function enqueue_block_assets(){
 		$url = plugins_url( 'assets', __FILE__ );
 		$script = 'better_blocks_assets = '. json_encode( $url ) . ';';
 		wp_add_inline_script ( 'better-blocks/social-share', $script, 'before' );
-    }
+	}
 }
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_block_assets' );

@@ -7,5 +7,10 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
+@media (min-width: 968px) {
+  .wp-block-better-blocks-pricing-table {
+    margin-top: 6rem;
+  }
+}
 
 /*# sourceMappingURL=style-index.css.map*/

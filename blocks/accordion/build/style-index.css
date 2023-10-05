@@ -6,26 +6,26 @@
  * and in the editor.
  */
 .wp-block-better-blocks-accordion {
-  --accordion-active-bg: #ffffff;
-  --accordion-active-color: #000000;
-  --accordion-bg: #ffffff;
+  --accordion-active-bg: #fff;
+  --accordion-active-color: #000;
+  --accordion-bg: #fff;
   --accordion-body-padding-x: 1rem;
   --accordion-body-padding-y: 1rem;
   --accordion-border-color: var(--wp--preset--color--secondary);
   --accordion-border-radius: 0.25rem;
   --accordion-border-width: 1px;
-  --accordion-btn-bg: #ffffff;
+  --accordion-btn-bg: #fff;
   --accordion-btn-focus-box-shadow: 0 0 0 0.2rem rgb(4 123 255 / 25%);
-  --accordion-btn-focus-border-color: #0000FF;
-  --accordion-btn-icon: url("data:image/svg+xml,<svg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27#000000%27%3E%3Cpath%20fill-rule=%27evenodd%27%20d=%27M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708z%27/%3E%3C/svg%3E");
+  --accordion-btn-focus-border-color: #00f;
+  --accordion-btn-icon: url("data:image/svg+xml,<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 16 16\" fill=\"#000000%22%3E%3Cpath%20fill-rule=%22evenodd%22%20d=%22M1.646%204.646a.5.5%200%200%201%20.708%200L8%2010.293l5.646-5.647a.5.5%200%200%201%20.708.708l-6%206a.5.5%200%200%201-.708%200l-6-6a.5.5%200%200%201%200-.708z%22/%3E%3C/svg%3E");
   --accordion-btn-active-icon: var(--accordion-btn-icon);
   --accordion-btn-border-width: 1px;
-  --accordion-btn-color: #000000;
+  --accordion-btn-color: #000;
   --accordion-btn-icon-transform: scaleY(-1);
   --accordion-btn-icon-width: 1rem;
   --accordion-btn-padding-x: 1rem;
   --accordion-btn-padding-y: 1rem;
-  --accordion-color: #000000;
+  --accordion-color: #000;
   --accordion-font-size: 1rem;
   --accordion-transition: all 0.3s ease-in-out;
 }
@@ -45,14 +45,6 @@
   transition: var(--accordion-transition);
   cursor: pointer;
 }
-.wp-block-better-blocks-accordion .accordion-button:not(.collapsed) {
-  color: var(--accordion-active-color);
-  background-color: var(--accordion-active-bg);
-}
-.wp-block-better-blocks-accordion .accordion-button:not(.collapsed)::after {
-  background-image: var(--accordion-btn-active-icon);
-  transform: var(--accordion-btn-icon-transform);
-}
 .wp-block-better-blocks-accordion .accordion-button::after {
   flex-shrink: 0;
   width: var(--accordion-btn-icon-width);
@@ -63,6 +55,14 @@
   background-repeat: no-repeat;
   background-size: var(--accordion-btn-icon-width);
   transition: var(--accordion-transition);
+}
+.wp-block-better-blocks-accordion .accordion-button:not(.collapsed) {
+  color: var(--accordion-active-color);
+  background-color: var(--accordion-active-bg);
+}
+.wp-block-better-blocks-accordion .accordion-button:not(.collapsed)::after {
+  background-image: var(--accordion-btn-active-icon);
+  transform: var(--accordion-btn-icon-transform);
 }
 .wp-block-better-blocks-accordion .accordion-button:hover {
   z-index: 2;

@@ -12,6 +12,10 @@
 			"default": "3"
 		}
 	},
+	"styles": [
+        { "name": "light", "label": "Light", "isDefault": true },
+        { "name": "dark", "label": "Dark" }
+    ],
 	"supports": {
 		"align": [ "wide","full" ],
 		"html": false

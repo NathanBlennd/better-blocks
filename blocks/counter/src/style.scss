@@ -5,18 +5,18 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- .wp-block-better-blocks-counter {
-	
-    .counter {
-        border: 1px solid var(--wp--preset--color--primary);
-        border-radius: 0.25rem;
-        padding: 1rem;
-        text-align: center;
-    }
+.wp-block-better-blocks-counter {
 
-    .counter-number {
-        display: flex;
-        justify-content: center;
-        gap: 8px;
-    }
+	.counter {
+		border: 1px solid var(--wp--preset--color--primary);
+		border-radius: 0.25rem;
+		padding: 1rem;
+		text-align: center;
+	}
+
+	.counter-number {
+		display: flex;
+		justify-content: center;
+		gap: 8px;
+	}
 }

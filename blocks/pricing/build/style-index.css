@@ -12,6 +12,15 @@
   padding: 1rem;
   transition: all 0.3s ease-in-out;
 }
+@media (min-width: 968px) {
+  .wp-block-better-blocks-pricing {
+    padding: 2rem;
+  }
+}
+.is-style-dark .wp-block-better-blocks-pricing {
+  background-color: var(--wp--preset--color--contrast);
+  color: var(--wp--preset--color--base);
+}
 .wp-block-better-blocks-pricing[data-featured=true] {
   background: var(--wp--preset--color--secondary);
   color: var(--wp--preset--color--white);

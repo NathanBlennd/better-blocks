@@ -7,21 +7,21 @@
 
 .wp-block-better-blocks-tabs {
 
-    .tab-labels {
-        padding-left: 0;
-    }
+	.tab-labels {
+		padding-left: 0;
+	}
 
-    .tab-label {
-        border-bottom: 1px solid transparent;
-        cursor: pointer;
-        display: inline-block;
-        list-style: none;
-        padding: var( --wp--preset--spacing--30 );
-        transition: border-bottom-color 0.3s ease-in-out;
+	.tab-label {
+		border-bottom: 1px solid transparent;
+		cursor: pointer;
+		display: inline-block;
+		list-style: none;
+		padding: var(--wp--preset--spacing--30);
+		transition: border-bottom-color 0.3s ease-in-out;
 
-        &.active {
-            border-bottom-color:var( --wp--preset--color--primary );
-            cursor: auto;
-        }
-    }
+		&.active {
+			border-bottom-color: var(--wp--preset--color--primary);
+			cursor: auto;
+		}
+	}
 }

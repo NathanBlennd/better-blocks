@@ -5,15 +5,16 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- .wp-block-better-blocks-social-share {
-    .list {
-        display: inline;
-        list-style-type: none;
-        padding-left: 0;
-    }
+.wp-block-better-blocks-social-share {
 
-    .network {
-        display: inline;
-        margin-right: 0.5rem;
-    }
+	.list {
+		display: inline;
+		list-style-type: none;
+		padding-left: 0;
+	}
+
+	.network {
+		display: inline;
+		margin-right: 0.5rem;
+	}
 }

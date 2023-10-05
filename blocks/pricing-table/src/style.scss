@@ -5,6 +5,9 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- .wp-block-better-blocks-pricing-table {
+.wp-block-better-blocks-pricing-table {
 
+	@media (min-width: 968px) {
+		margin-top: 6rem;
+	}
 }

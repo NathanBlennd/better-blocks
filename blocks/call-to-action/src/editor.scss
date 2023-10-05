@@ -10,14 +10,14 @@
 		max-width: 100%;
 	}
 
-	input[type=radio] {
+	input[type="radio"] {
 		appearance: none;
 		margin: 0;
 		padding: 0;
 		position: absolute;
 	}
 
-	input[type=radio] + label {
+	input[type="radio"] + label {
 		cursor: pointer;
 		background-size: contain;
 		background-repeat: no-repeat;
@@ -27,10 +27,10 @@
 	}
 
 	input[value="1"] + label {
-		background-image:url(/assets/layout-1.svg);
+		background-image: url(/assets/layout-1.svg);
 	}
 
 	input[value="2"] + label {
-		background-image:url(/assets/layout-2.svg);
+		background-image: url(/assets/layout-2.svg);
 	}
 }

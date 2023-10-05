@@ -13,9 +13,9 @@
 }
 .wp-block-better-blocks-before-after .image {
   height: 100%;
-  left: 0px;
+  left: 0;
   position: absolute;
-  top: 0px;
+  top: 0;
   width: 100%;
 }
 .wp-block-better-blocks-before-after .image img {
@@ -46,31 +46,31 @@
 }
 .wp-block-better-blocks-before-after input[type=range]::-webkit-slider-thumb {
   -webkit-appearance: none;
-  border: 1px solid #000000;
+  border: 1px solid #000;
   height: 36px;
   width: 36px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #fff;
   cursor: pointer;
-  margin-top: -14px; /* You need to specify a margin in Chrome, but in Firefox and IE it is automatic */
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d; /* Add cool effects to your sliders! */
+  margin-top: -14px;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
 }
 .wp-block-better-blocks-before-after input[type=range]::-moz-range-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+  border: 1px solid #000;
   height: 36px;
   width: 36px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #fff;
   cursor: pointer;
 }
 .wp-block-better-blocks-before-after input[type=range]::-ms-thumb {
-  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
-  border: 1px solid #000000;
+  box-shadow: 1px 1px 1px #000, 0 0 1px #0d0d0d;
+  border: 1px solid #000;
   height: 36px;
   width: 36px;
   border-radius: 50%;
-  background: #ffffff;
+  background: #fff;
   cursor: pointer;
 }
 
