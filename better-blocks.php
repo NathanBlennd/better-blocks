@@ -84,13 +84,13 @@ function register_block_patterns() {
 			<figure class="wp-block-image"><img alt=""/></figure>
 			<!-- /wp:image --></div>
 			<!-- /wp:column -->
-			
+
 			<!-- wp:column -->
 			<div class="wp-block-column"><!-- wp:better-blocks/accordion -->
 			<div class="wp-block-better-blocks-accordion"><!-- wp:better-blocks/accordion-item -->
 			<div class="wp-block-better-blocks-accordion-item accordion-item"><div class="accordion-header" id=""><button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls=""><span class="heading"></span></button></div><div id="" class="accordion-collapse collapse" aria-labelledby=""><div class="accordion-body"></div></div></div>
 			<!-- /wp:better-blocks/accordion-item -->
-			
+
 			<!-- wp:better-blocks/accordion-item -->
 			<div class="wp-block-better-blocks-accordion-item accordion-item"><div class="accordion-header" id=""><button class="components-button accordion-button collapsed" type="button" aria-expanded="false" aria-controls=""><span class="heading"></span></button></div><div id="" class="accordion-collapse collapse" aria-labelledby=""><div class="accordion-body"></div></div></div>
 			<!-- /wp:better-blocks/accordion-item --></div>
@@ -112,7 +112,7 @@ function register_block_patterns() {
 			<!-- /wp:better-blocks/accordion-item --></div>
 			<!-- /wp:better-blocks/accordion --></div>
 			<!-- /wp:column -->
-			
+
 			<!-- wp:column {"width":"50%"} -->
 			<div class="wp-block-column" style="flex-basis:50%"><!-- wp:image -->
 			<figure class="wp-block-image"><img alt=""/></figure>
@@ -129,7 +129,7 @@ function register_block_patterns() {
 			'content' => '<!-- wp:spacer {"height":"6rem"} -->
 			<div style="height:6rem" aria-hidden="true" class="wp-block-spacer"></div>
 			<!-- /wp:spacer -->
-			
+
 			<!-- wp:columns {"align":"wide"} -->
 			<div class="wp-block-columns alignwide"><!-- wp:column -->
 			<div class="wp-block-column">
@@ -138,31 +138,31 @@ function register_block_patterns() {
 			<!-- wp:heading {"textAlign":"center","level":3,"placeholder":"Header"} -->
 			<h3 class="wp-block-heading has-text-align-center">Developer</h3>
 			<!-- /wp:heading -->
-			
+
 			<!-- wp:paragraph {"align":"center","placeholder":"Price"} -->
 			<p class="has-text-align-center">$0</p>
 			<!-- /wp:paragraph -->
-			
+
 			<!-- wp:paragraph {"align":"center","placeholder":"Summary"} -->
 			<p class="has-text-align-center">totally free, start now</p>
 			<!-- /wp:paragraph -->
-			
+
 			<!-- wp:list -->
 			<ul><!-- wp:list-item -->
 			<li>Search</li>
 			<!-- /wp:list-item -->
-			
+
 			<!-- wp:list-item -->
 			<li>Stuff</li>
 			<!-- /wp:list-item -->
-			
+
 			<!-- wp:list-item -->
 			<li>Now</li>
 			<!-- /wp:list-item --></ul>
 			<!-- /wp:list --></div>
 			<!-- /wp:better-blocks/pricing --></div>
 			<!-- /wp:column -->
-			
+
 			<!-- wp:column -->
 			<div class="wp-block-column">
 			<!-- wp:better-blocks/pricing {"backgroundColor":"secondary","textColor":"base","className":"featured"} -->
@@ -170,15 +170,15 @@ function register_block_patterns() {
 			<!-- wp:heading {"textAlign":"center","level":3,"placeholder":"Header"} -->
 			<h3 class="wp-block-heading has-text-align-center">Starter</h3>
 			<!-- /wp:heading -->
-			
+
 			<!-- wp:paragraph {"align":"center","placeholder":"Price"} -->
 			<p class="has-text-align-center">$199</p>
 			<!-- /wp:paragraph -->
-			
+
 			<!-- wp:paragraph {"align":"center","placeholder":"Summary"} -->
 			<p class="has-text-align-center">best way to start as a business</p>
 			<!-- /wp:paragraph -->
-			
+
 			<!-- wp:list -->
 			<ul><!-- wp:list-item -->
 			<li>Something</li>
@@ -186,7 +186,7 @@ function register_block_patterns() {
 			<!-- /wp:list --></div>
 			<!-- /wp:better-blocks/pricing --></div>
 			<!-- /wp:column -->
-			
+
 			<!-- wp:column -->
 			<div class="wp-block-column">
 			<!-- wp:better-blocks/pricing -->
@@ -194,15 +194,15 @@ function register_block_patterns() {
 			<!-- wp:heading {"textAlign":"center","level":3,"placeholder":"Header"} -->
 			<h3 class="wp-block-heading has-text-align-center">Enterprise</h3>
 			<!-- /wp:heading -->
-			
+
 			<!-- wp:paragraph {"align":"center","placeholder":"Price"} -->
 			<p class="has-text-align-center">$1999</p>
 			<!-- /wp:paragraph -->
-			
+
 			<!-- wp:paragraph {"align":"center","placeholder":"Summary"} -->
 			<p class="has-text-align-center">enterprise-level support</p>
 			<!-- /wp:paragraph -->
-			
+
 			<!-- wp:list -->
 			<ul><!-- wp:list-item -->
 			<li>Shamrock</li>
@@ -213,8 +213,39 @@ function register_block_patterns() {
 			<!-- /wp:columns -->'
 		]
 	);
+
+	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+		register_block_pattern(
+			'better-blocks/woocommerce-products-cover',
+			[
+				'title'       => __( 'WooCommerce Products Cover', 'better-blocks' ),
+				'categories'  => [ 'shop' ],
+				'keywords'    => [ __( 'Shop', 'better-blocks' ) ],
+				'description' => __( 'A handpicked products section with a full background image.', 'better-blocks' ),
+				'content'     => '
+				<!-- wp:cover {"hasParallax":true,"dimRatio":50,"overlayColor":"contrast","contentPosition":"center center","align":"full","className":"is-light is-position-center-center"} -->
+				<div class="wp-block-cover alignfull has-parallax is-light is-position-center-center"><span aria-hidden="true" class="wp-block-cover__background has-contrast-background-color has-background-dim"></span><div class="wp-block-cover__inner-container"><!-- wp:columns {"align":"wide"} -->
+				<div class="wp-block-columns alignwide"><!-- wp:column {"width":"33.33%"} -->
+				<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:heading {"textColor":"base"} -->
+				<h2 class="wp-block-heading has-base-color has-text-color"></h2>
+				<!-- /wp:heading --></div>
+				<!-- /wp:column -->
+
+				<!-- wp:column {"width":"66.66%"} -->
+				<div class="wp-block-column" style="flex-basis:66.66%"><!-- wp:woocommerce/handpicked-products {"contentVisibility":{"title":true,"price":false,"rating":false,"button":true},"products":[],"alignButtons":true} /--></div>
+				<!-- /wp:column --></div>
+				<!-- /wp:columns --></div></div>
+				<!-- /wp:cover -->',
+			]
+		);
+	}
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_patterns' );
+
+function register_block_pattern_categories() {
+	register_block_pattern_category( 'shop', [ 'label' => __( 'Shop', 'better-blocks' ) ] );
+}
+add_action( 'init', __NAMESPACE__ . '\register_block_pattern_categories' );
 
 function enqueue_block_assets(){
 	if ( is_admin() || has_block( 'better-blocks/accordion' ) ) {
