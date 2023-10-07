@@ -214,7 +214,7 @@ function register_block_patterns() {
 		]
 	);
 
-	if( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+	if( class_exists( 'WooCommerce') ) {
 		register_block_pattern(
 			'better-blocks/woocommerce-products-cover',
 			[
