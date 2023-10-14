@@ -33,9 +33,10 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } ) {
 
-	const { networks, share } = attributes;
+	const { networks, permalink, share } = attributes;
 
-	const permalink = select( 'core/editor' ).getPermalink();
+	let newPermalink = select( 'core/editor' ).getPermalink();
+	setAttributes( { permalink: newPermalink } );
 
 	const getShareURL = function( network ) {
 		let url = encodeURI(permalink);
@@ -90,10 +91,10 @@ export default function Edit( { attributes, setAttributes } ) {
 							{networks.map((network) => {
 								let shareURL = getShareURL(network);
 								let shareIcon = getShareIcon(network);
-								return ( <li className="network"><a target="_blank" rel="noopener" href={shareURL}>{shareIcon}</a></li>);	
+								return ( <li className="network"><a target="_blank" rel="noopener" href={shareURL}>{shareIcon}</a></li>);
 							})}
 						</ul>
-					</> 
+					</>
 				}
 			</div>
 		</>

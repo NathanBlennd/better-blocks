@@ -26,9 +26,7 @@ import { select } from '@wordpress/data';
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
 
-	const { networks, share } = attributes;
-
-	const permalink = select( 'core/editor' ).getPermalink();
+	const { networks, permalink, share } = attributes;
 
 	const getShareURL = function( network ) {
 		let url = encodeURI(permalink);
@@ -54,7 +52,7 @@ export default function save( { attributes } ) {
 					{networks.map((network) => {
 						let shareURL = getShareURL(network);
 						let shareIcon = getShareIcon(network);
-						return ( <li className="network"><a target="_blank" rel="noopener" href={shareURL}>{shareIcon}</a></li>);	
+						return ( <li className="network"><a target="_blank" rel="noopener" href={shareURL}>{shareIcon}</a></li>);
 					})}
 				</ul>
 		</div>

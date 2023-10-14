@@ -63,9 +63,13 @@ function Edit({
 }) {
   const {
     networks,
+    permalink,
     share
   } = attributes;
-  const permalink = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.select)('core/editor').getPermalink();
+  let newPermalink = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_4__.select)('core/editor').getPermalink();
+  setAttributes({
+    permalink: newPermalink
+  });
   const getShareURL = function (network) {
     var _lookup$network;
     let url = encodeURI(permalink);
@@ -245,9 +249,9 @@ function save({
   const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps.save();
   const {
     networks,
+    permalink,
     share
   } = attributes;
-  const permalink = (0,_wordpress_data__WEBPACK_IMPORTED_MODULE_3__.select)('core/editor').getPermalink();
   const getShareURL = function (network) {
     var _lookup$network;
     let url = encodeURI(permalink);
