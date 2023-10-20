@@ -2,6 +2,69 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./blocks/bracket/src/BracketGame.js":
+/*!*******************************************!*\
+  !*** ./blocks/bracket/src/BracketGame.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _BracketTeam_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./BracketTeam.js */ "./blocks/bracket/src/BracketTeam.js");
+
+
+
+class BracketGame extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component) {
+  render() {
+    const {
+      game,
+      teams,
+      round
+    } = this.props;
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("game", {
+      "data-game": game,
+      "data-round": round
+    }, teams.length === 2 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, teams.map(team => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BracketTeam_js__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      display: team.display,
+      name: team.name,
+      rank: team.rank
+    }))));
+  }
+}
+/* harmony default export */ __webpack_exports__["default"] = (BracketGame);
+
+/***/ }),
+
+/***/ "./blocks/bracket/src/BracketTeam.js":
+/*!*******************************************!*\
+  !*** ./blocks/bracket/src/BracketTeam.js ***!
+  \*******************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/element */ "@wordpress/element");
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+
+
+class BracketTeam extends (react__WEBPACK_IMPORTED_MODULE_1___default().Component) {
+  render() {
+    const {
+      display,
+      name,
+      rank
+    } = this.props;
+    return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("team", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamName", null, display && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamRank", null, rank), name)));
+  }
+}
+/* harmony default export */ __webpack_exports__["default"] = (BracketTeam);
+
+/***/ }),
+
 /***/ "./blocks/bracket/src/edit.js":
 /*!************************************!*\
   !*** ./blocks/bracket/src/edit.js ***!
@@ -20,7 +83,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./blocks/bracket/src/editor.scss");
+/* harmony import */ var _BracketGame_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./BracketGame.js */ "./blocks/bracket/src/BracketGame.js");
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./functions.js */ "./blocks/bracket/src/functions.js");
+/* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./editor.scss */ "./blocks/bracket/src/editor.scss");
 
 /**
  * Retrieves the translation of text.
@@ -35,6 +100,8 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
+
+
 
 
 
@@ -63,51 +130,6 @@ function Edit({
     teams,
     teamNames
   } = attributes;
-  function getBaseLog(x, y) {
-    return Math.log(y) / Math.log(x);
-  }
-  let base = 2;
-  const logval = getBaseLog(base, teams);
-  let numberRounds = Math.ceil(logval);
-  let firstRoundGames = 2 ** numberRounds / 2;
-  let rounds;
-  if (teams > 0) {
-    rounds = [...Array(numberRounds).keys()];
-  }
-  let teamsArray = [...Array(teams).keys()];
-  let currentGame = 0;
-  let currentTeam = 1;
-  const numberOfGamesPerRound = function (round) {
-    let numberGames = firstRoundGames;
-    while (round > 0) {
-      numberGames = numberGames / 2;
-      round--;
-    }
-    return [...Array(Math.floor(numberGames)).keys()];
-  };
-  let shouldPrintTeamName = function (round, currentTeam) {
-    return round === 0 && currentTeam <= teams;
-  };
-
-  // https://stackoverflow.com/a/11631472/6077935
-  const seeding = function (numPlayers) {
-    var rounds = Math.log(numPlayers) / Math.log(2) - 1;
-    var pls = [1, 2];
-    for (var i = 0; i < rounds; i++) {
-      pls = nextLayer(pls);
-    }
-    return pls;
-    function nextLayer(pls) {
-      var out = [];
-      var length = pls.length * 2 + 1;
-      pls.forEach(function (d) {
-        out.push(d);
-        out.push(length - d);
-      });
-      return out;
-    }
-  };
-  const seeds = seeding(teams);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     key: "setting"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
@@ -128,7 +150,7 @@ function Edit({
   })), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
     title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Teams'),
     initialOpen: false
-  }, teamsArray.map(teamNumber => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
+  }, [...Array(teams).keys()].map(teamNumber => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
     label: "Team Ranked " + (teamNumber + 1),
     onChange: newTeam => {
       let newTeamNames = [...teamNames];
@@ -140,12 +162,99 @@ function Edit({
     value: teamNames[teamNumber]
   })))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, teams > 1 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("bracket", null, rounds.map(round => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("round", {
+  }, teams > 1 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("bracket", null, (0,_functions_js__WEBPACK_IMPORTED_MODULE_5__.numberOfRounds)(teams).map(round => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("round", {
     "data-round": round
-  }, numberOfGamesPerRound(round).map(game => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("game", {
-    "data-game": currentGame++
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("team", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamName", null, currentTeam++ && shouldPrintTeamName(round, seeds[currentTeam - 2]) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamRank", null, seeds[currentTeam - 2]), teamNames[seeds[currentTeam - 2] - 1]))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("team", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamName", null, currentTeam++ && shouldPrintTeamName(round, seeds[currentTeam - 2]) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamRank", null, seeds[currentTeam - 2]), teamNames[seeds[currentTeam - 2] - 1]))))))))));
+  }, (0,_functions_js__WEBPACK_IMPORTED_MODULE_5__.numberOfGamesPerRound)(teams, round).map(game => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BracketGame_js__WEBPACK_IMPORTED_MODULE_4__["default"], {
+    game: game,
+    round: round,
+    teams: (0,_functions_js__WEBPACK_IMPORTED_MODULE_5__.getTeams)(teams, teamNames, round, game)
+  })))))));
 }
+
+/***/ }),
+
+/***/ "./blocks/bracket/src/functions.js":
+/*!*****************************************!*\
+  !*** ./blocks/bracket/src/functions.js ***!
+  \*****************************************/
+/***/ (function(__unused_webpack_module, __webpack_exports__, __webpack_require__) {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   getTeams: function() { return /* binding */ getTeams; },
+/* harmony export */   numberOfGamesPerRound: function() { return /* binding */ numberOfGamesPerRound; },
+/* harmony export */   numberOfRounds: function() { return /* binding */ numberOfRounds; }
+/* harmony export */ });
+// https://stackoverflow.com/a/11631472/6077935
+const seeding = function (numPlayers) {
+  var rounds = Math.log(numPlayers) / Math.log(2) - 1;
+  var pls = [1, 2];
+  for (var i = 0; i < rounds; i++) {
+    pls = nextLayer(pls);
+  }
+  return pls;
+  function nextLayer(pls) {
+    var out = [];
+    var length = pls.length * 2 + 1;
+    pls.forEach(function (d) {
+      out.push(d);
+      out.push(length - d);
+    });
+    return out;
+  }
+};
+const getBaseLog = function (x, y) {
+  return Math.log(y) / Math.log(x);
+};
+const getTeams = function (teams, teamNames, round, game) {
+  const seeds = seeding(teams);
+  if (0 !== round) {
+    return [{
+      'display': false,
+      'id': '',
+      'name': '',
+      'rank': ''
+    }, {
+      'display': false,
+      'id': '',
+      'name': '',
+      'rank': ''
+    }];
+  }
+  const id1 = 2 * game;
+  const id2 = id1 + 1;
+  return [{
+    'display': seeds[id1] < teams + 1,
+    'id': id1,
+    'name': teamNames[seeds[id1] - 1],
+    'rank': seeds[id1]
+  }, {
+    'display': seeds[id2] < teams + 1,
+    'id': 2 * game + 1,
+    'name': teamNames[seeds[id2] - 1],
+    'rank': seeds[id2]
+  }];
+};
+const numberOfGamesPerRound = function (teams, round) {
+  const logval = getBaseLog(2, teams);
+  let numberRounds = Math.ceil(logval);
+  let numberGames = 2 ** numberRounds / 2;
+  while (round > 0) {
+    numberGames = numberGames / 2;
+    round--;
+  }
+  return [...Array(Math.floor(numberGames)).keys()];
+};
+const numberOfRounds = function (teams) {
+  let rounds = [];
+  const logval = getBaseLog(2, teams);
+  let numberRounds = Math.ceil(logval);
+  if (teams > 0) {
+    rounds = [...Array(numberRounds).keys()];
+  }
+  return rounds;
+};
+
 
 /***/ }),
 
@@ -217,6 +326,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_i18n__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _BracketGame_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./BracketGame.js */ "./blocks/bracket/src/BracketGame.js");
+/* harmony import */ var _functions_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./functions.js */ "./blocks/bracket/src/functions.js");
 
 /**
  * Retrieves the translation of text.
@@ -231,6 +342,8 @@ __webpack_require__.r(__webpack_exports__);
  *
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
+
+
 
 
 /**
@@ -250,57 +363,15 @@ function save({
     teams,
     teamNames
   } = attributes;
-  function getBaseLog(x, y) {
-    return Math.log(y) / Math.log(x);
-  }
-  let base = 2;
-  const logval = getBaseLog(base, teams);
-  let numberRounds = Math.ceil(logval);
-  let firstRoundGames = 2 ** numberRounds / 2;
-  let rounds;
-  if (teams > 0) {
-    rounds = [...Array(numberRounds).keys()];
-  }
-  let currentGame = 0;
-  let currentTeam = 1;
-  const numberOfGamesPerRound = function (round) {
-    let numberGames = firstRoundGames;
-    while (round > 0) {
-      numberGames = numberGames / 2;
-      round--;
-    }
-    return [...Array(Math.floor(numberGames)).keys()];
-  };
-  let shouldPrintTeamName = function (round, currentTeam) {
-    return round === 0 && currentTeam <= teams;
-  };
-
-  // https://stackoverflow.com/a/11631472/6077935
-  const seeding = function (numPlayers) {
-    var rounds = Math.log(numPlayers) / Math.log(2) - 1;
-    var pls = [1, 2];
-    for (var i = 0; i < rounds; i++) {
-      pls = nextLayer(pls);
-    }
-    return pls;
-    function nextLayer(pls) {
-      var out = [];
-      var length = pls.length * 2 + 1;
-      pls.forEach(function (d) {
-        out.push(d);
-        out.push(length - d);
-      });
-      return out;
-    }
-  };
-  const seeds = seeding(teams);
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, teams > 1 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("bracket", null, rounds.map(round => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("round", {
+  }, teams > 1 && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("bracket", null, (0,_functions_js__WEBPACK_IMPORTED_MODULE_4__.numberOfRounds)(teams).map(round => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("round", {
     "data-round": round
-  }, numberOfGamesPerRound(round).map(game => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("game", {
-    "data-game": currentGame++
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("team", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamName", null, currentTeam++ && shouldPrintTeamName(round, seeds[currentTeam - 2]) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamRank", null, seeds[currentTeam - 2]), teamNames[seeds[currentTeam - 2] - 1]))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("team", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamName", null, currentTeam++ && shouldPrintTeamName(round, seeds[currentTeam - 2]) && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("teamRank", null, seeds[currentTeam - 2]), teamNames[seeds[currentTeam - 2] - 1])))))))));
+  }, (0,_functions_js__WEBPACK_IMPORTED_MODULE_4__.numberOfGamesPerRound)(teams, round).map(game => (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_BracketGame_js__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    game: game,
+    round: round,
+    teams: (0,_functions_js__WEBPACK_IMPORTED_MODULE_4__.getTeams)(teams, teamNames, round, game)
+  }))))));
 }
 
 /***/ }),
@@ -326,6 +397,16 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
+
+/***/ }),
+
+/***/ "react":
+/*!************************!*\
+  !*** external "React" ***!
+  \************************/
+/***/ (function(module) {
+
+module.exports = window["React"];
 
 /***/ }),
 

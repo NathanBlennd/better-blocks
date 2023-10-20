@@ -15,6 +15,8 @@ import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, TextControl } from '@wordpress/components';
 import { __experimentalNumberControl as NumberControl } from '@wordpress/components';
 
+import BracketGame from './BracketGame.js';
+import { getTeams, numberOfGamesPerRound, numberOfRounds } from './functions.js';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -36,56 +38,6 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	const { teams, teamNames } = attributes;
 
-	function getBaseLog(x, y) {
-		return Math.log(y) / Math.log(x);
-	}
-	let base = 2;
-
-	const logval = getBaseLog( base, teams );
-
-	let numberRounds = Math.ceil( logval );
-	let firstRoundGames = 2 ** numberRounds / 2;
-	let rounds;
-	if( teams > 0 ) {
-		rounds = [...Array(numberRounds).keys()];
-	}
-	let teamsArray =[...Array(teams).keys()];
-	let currentGame = 0;
-	let currentTeam = 1;
-
-	const numberOfGamesPerRound = function( round ) {
-		let numberGames = firstRoundGames;
-		while( round > 0 ) {
-			numberGames = numberGames / 2;
-			round--;
-		}
-		return [...Array(Math.floor(numberGames)).keys()];
-	}
-
-	let shouldPrintTeamName = function(round,currentTeam) {
-		return round === 0 && currentTeam <= teams;
-	}
-
-	// https://stackoverflow.com/a/11631472/6077935
-	const seeding = function(numPlayers){
-		var rounds = Math.log(numPlayers)/Math.log(2)-1;
-		var pls = [1,2];
-		for(var i=0;i<rounds;i++){
-			pls = nextLayer(pls);
-		}
-		return pls;
-		function nextLayer(pls){
-			var out=[];
-			var length = pls.length*2+1;
-			pls.forEach(function(d){
-				out.push(d);
-				out.push(length-d);
-			});
-			return out;
-		}
-	}
-	const seeds = seeding(teams);
-
 	return (
 		<>
 			<InspectorControls key="setting">
@@ -102,7 +54,7 @@ export default function Edit( { attributes, setAttributes } ) {
 					/>
 				</PanelBody>
 				<PanelBody title={ __( 'Teams' ) } initialOpen={ false } >
-					{teamsArray.map( teamNumber => (
+					{ [...Array(teams).keys()].map( teamNumber => (
 						<TextControl
 							label = { "Team Ranked " + ( teamNumber + 1 ) }
 							onChange = { ( newTeam ) => {
@@ -117,37 +69,17 @@ export default function Edit( { attributes, setAttributes } ) {
 			</InspectorControls>
 			<div { ...useBlockProps() }>
 
-				{(teams > 1) &&
+				{ (teams > 1 ) &&
 					<bracket>
-						{rounds.map(round => (
-							<round data-round={round}>
-								{ numberOfGamesPerRound(round).map( game => (
-									<game data-game={currentGame++}>
-										<team>
-											<teamName>
-												{ currentTeam++ && shouldPrintTeamName(round,seeds[ currentTeam - 2  ]) &&
-													<>
-														<teamRank>
-															{ seeds[ currentTeam - 2  ] }
-														</teamRank>
-														{ teamNames[ seeds[ currentTeam - 2 ] - 1 ] }
-													</>
-												}
-											</teamName>
-										</team>
-										<team>
-											<teamName>
-												{ currentTeam++ && shouldPrintTeamName(round,seeds[ currentTeam - 2  ]) &&
-													<>
-														<teamRank>
-															{ seeds[ currentTeam - 2 ] }
-														</teamRank>
-														{ teamNames[ seeds[ currentTeam - 2 ] - 1 ] }
-													</>
-												}
-											</teamName>
-										</team>
-									</game>
+						{ numberOfRounds( teams ).map( round => (
+							<round data-round = { round } >
+								{ numberOfGamesPerRound( teams, round ).map( game => (
+									<BracketGame
+										game = { game }
+										round = { round }
+										teams = { getTeams( teams, teamNames, round, game ) }
+									>
+									</BracketGame>
 								))}
 							</round>
 						))}
