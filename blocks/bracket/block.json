@@ -1,0 +1,26 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "better-blocks/bracket",
+	"version": "0.1.0",
+	"title": "Bracket",
+	"category": "interactive",
+	"description": "",
+	"attributes": {
+		"teams": {
+			"type": "number",
+			"default": "8"
+		},
+		"teamNames": {
+			"type": "array",
+			"default": []
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

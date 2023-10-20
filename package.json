@@ -16,6 +16,8 @@
 		"build:accordion": "wp-scripts build blocks/accordion/src/index.js --output-path=blocks/accordion/build/",
 		"start:accordion-item": "wp-scripts start blocks/accordion-item/src/index.js --output-path=blocks/accordion-item/build/",
 		"build:accordion-item": "wp-scripts build blocks/accordion-item/src/index.js --output-path=blocks/accordion-item/build/",
+		"start:bracket": "wp-scripts start blocks/bracket/src/index.js --output-path=blocks/bracket/build/",
+		"build:bracket": "wp-scripts build blocks/bracket/src/index.js --output-path=blocks/bracket/build/",
 		"start:before-after": "wp-scripts start blocks/before-after/src/index.js --output-path=blocks/before-after/build/",
 		"build:before-after": "wp-scripts build blocks/before-after/src/index.js --output-path=blocks/before-after/build/",
 		"start:call-to-action": "wp-scripts start blocks/call-to-action/src/index.js --output-path=blocks/call-to-action/build/",

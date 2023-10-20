@@ -58,6 +58,7 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\add_block_categories', 10,
 function register_block_types() {
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion-item/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/accordion/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/bracket/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/before-after/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/call-to-action/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/card/' );

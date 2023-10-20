@@ -1,0 +1,74 @@
+/*!******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/bracket/src/style.scss ***!
+  \******************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+.wp-block-better-blocks-bracket bracket {
+  display: flex;
+}
+.wp-block-better-blocks-bracket game {
+  display: flex;
+  flex-direction: column;
+  height: 100px;
+  justify-content: space-between;
+  margin: 32px 0;
+  position: relative;
+}
+.wp-block-better-blocks-bracket game:after {
+  content: "";
+  width: 1px;
+  position: absolute;
+  height: calc(100% - 28px);
+  background: black;
+  right: 0;
+  bottom: 0;
+}
+.wp-block-better-blocks-bracket round {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  position: relative;
+  width: 200px;
+}
+.wp-block-better-blocks-bracket round:not([data-round="0"]) teamName {
+  display: none;
+}
+.wp-block-better-blocks-bracket round[data-round="1"] game {
+  height: 190px;
+}
+.wp-block-better-blocks-bracket round[data-round="2"] game {
+  height: 360px;
+}
+.wp-block-better-blocks-bracket round[data-round="3"] game {
+  height: 670px;
+}
+.wp-block-better-blocks-bracket round[data-round="4"] game {
+  height: 1320px;
+}
+.wp-block-better-blocks-bracket round[data-round="5"] game {
+  height: 2650px;
+}
+.wp-block-better-blocks-bracket round:last-of-type {
+  margin-right: 200px;
+}
+.wp-block-better-blocks-bracket round:last-of-type:after {
+  background: black;
+  content: "";
+  height: 1px;
+  margin-top: 32px;
+  position: absolute;
+  right: -200px;
+  width: 200px;
+}
+.wp-block-better-blocks-bracket team {
+  border-bottom: 1px solid black;
+  display: block;
+  height: 28px;
+}
+.wp-block-better-blocks-bracket teamRank:after {
+  content: ": ";
+}
+
+/*# sourceMappingURL=style-index.css.map*/

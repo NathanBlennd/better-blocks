@@ -1,0 +1,98 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ */
+
+.wp-block-better-blocks-bracket {
+	bracket {
+		display: flex;
+	}
+
+	game {
+		display: flex;
+		flex-direction: column;
+		height: 100px;
+		justify-content: space-between;
+		margin: 32px 0;
+		position: relative;
+
+		&:after {
+			content: '';
+			width: 1px;
+			position: absolute;
+			height: calc( 100% - 28px );
+			background: black;
+			right: 0;
+			bottom: 0;
+		}
+	}
+
+	round {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-around;
+		position: relative;
+		width: 200px;
+
+		&:not([data-round="0"]) {
+			teamName {
+				display: none;
+			}
+		}
+
+		&[data-round="1"] {
+			game {
+				height: 190px;
+			}
+		}
+
+		&[data-round="2"] {
+			game {
+				height: 360px;
+			}
+		}
+
+		&[data-round="3"] {
+			game {
+				height: 670px;
+			}
+		}
+
+		&[data-round="4"] {
+			game {
+				height: 1320px;
+			}
+		}
+
+		&[data-round="5"] {
+			game {
+				height: 2650px;
+			}
+		}
+
+		&:last-of-type {
+			margin-right: 200px;
+			&:after {
+				background: black;
+				content: '';
+				height: 1px;
+				margin-top: 32px;
+				position: absolute;
+				right: -200px;
+				width: 200px;
+			}
+		}
+	}
+
+	team {
+		border-bottom: 1px solid black;
+		display: block;
+		height: 28px;
+	}
+
+	teamRank {
+		&:after {
+			content: ': ';
+		}
+	}
+}
