@@ -2,20 +2,15 @@
 
 Registers custom blocks.
 
-## Accordion
+## Blocks
 
-## Before / After
-
-## Bracket
-
-## Call to Action
-
-## Cards
-
-## Counter
-
-## Pricing Table
-
-## Social Share
-
-## Tabs
+* Accordion
+* Before / After
+* Bracket
+* Call to Action
+* Cards
+* Countdown
+* Counter
+* Pricing Table
+* Social Share
+* Tabs
