@@ -1,0 +1,39 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-better-blocks-countdown {
+
+	.countdown {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-evenly;
+	}
+
+	.card {
+		background-color: var(--wp--preset--color--contrast);
+		border-radius: 5px;
+		color: var(--wp--preset--color--base);
+		display: flex;
+		flex-direction: column;
+		height: 75px;
+		justify-content: center;
+		padding: 1rem;
+		text-align: center;
+		width: 75px
+	}
+
+	.label {
+		font-size: var(--wp--preset--font-size--medium);
+	}
+
+	.days,
+	.hours,
+	.minutes,
+	.seconds {
+		height: 28px;
+	}
+}

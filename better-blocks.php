@@ -63,6 +63,7 @@ function register_block_types() {
 	register_block_type( BETTER_BLOCKS . '/blocks/call-to-action/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/countdown/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/counter/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing-table/' );
@@ -262,6 +263,15 @@ function enqueue_block_assets(){
 		wp_enqueue_script(
 			'better-blocks/before-after',
 			plugins_url( 'dist/before-after/ts/before-after.js', __FILE__ ),
+			[],
+			'0.1.0',
+			true
+		);
+	}
+	if ( has_block( 'better-blocks/countdown' ) ) {
+		wp_enqueue_script(
+			'better-blocks/countdown',
+			plugins_url( 'dist/countdown/ts/countdown.js', __FILE__ ),
 			[],
 			'0.1.0',
 			true
