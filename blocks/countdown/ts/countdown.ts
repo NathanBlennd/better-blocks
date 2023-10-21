@@ -15,17 +15,28 @@ window.onload = function () {
 		let minutes : HTMLElement = countdown.querySelector(COUNTDOWN_MINUTES_SELECTOR);
 		let seconds : HTMLElement = countdown.querySelector(COUNTDOWN_SECONDS_SELECTOR);
 
-		setInterval(function(){
+		let interval = setInterval(function(){
 			let diff = date-Date.now();
-			if( diff < 0 ) {
-				diff = 0;
-			}
 			let diff_as_date = new Date(diff);
 
-			days.textContent = diff_as_date.getDate().toString();
-			hours.textContent = diff_as_date.getHours().toString();
-			minutes.textContent = diff_as_date.getMinutes().toString();
-			seconds.textContent = diff_as_date.getSeconds().toString();
+			let daysString = diff_as_date.getDate().toString();
+			let hoursString = diff_as_date.getHours().toString();
+			let minutesString = diff_as_date.getMinutes().toString();
+			let secondsString = diff_as_date.getSeconds().toString();
+
+			if( diff < 0 ) {
+				daysString = '0';
+				hoursString = '0';
+				minutesString = '0';
+				secondsString = '0';
+
+				clearInterval(interval);
+			}
+
+			days.textContent = daysString;
+			hours.textContent = hoursString;
+			minutes.textContent = minutesString;
+			seconds.textContent = secondsString;
 
 		}, 1000);
 	});

@@ -19,21 +19,18 @@
 		color: var(--wp--preset--color--base);
 		display: flex;
 		flex-direction: column;
-		height: 75px;
+		height: 120px;
 		justify-content: center;
 		padding: 1rem;
 		text-align: center;
-		width: 75px
-	}
-
-	.label {
-		font-size: var(--wp--preset--font-size--medium);
+		width: 120px
 	}
 
 	.days,
 	.hours,
 	.minutes,
 	.seconds {
+		font-size: var(--wp--preset--font-size--medium);
 		height: 28px;
 	}
 }

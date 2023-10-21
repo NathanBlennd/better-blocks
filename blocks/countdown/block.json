@@ -11,7 +11,18 @@
 			"type": "string"		}
 	},
 	"supports": {
-		"html": false
+		"align": [ "full", "wide" ],
+		"color": {
+			"background": true,
+			"gradients": false
+    	},
+		"html": false,
+		"spacing": {
+			"margin": true
+		},
+		"typography": {
+			"fontSize": true
+		}
 	},
 	"textdomain": "better-blocks",
 	"editorScript": "file:./build/index.js",
