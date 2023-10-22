@@ -16,6 +16,7 @@ import { PanelBody, SelectControl } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
 import { rawHandler } from '@wordpress/blocks';
 import { useEntityRecords } from '@wordpress/core-data';
+import { RawHTML } from '@wordpress/element';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -56,10 +57,12 @@ export default function Edit( { attributes, setAttributes } ) {
 
 	if( hasResolved === true ) {
 		let newPosts = records?.map(function(x){
+			const imageObj = wp.data.select('core').getMedia(x.featured_media);
 			return {
 				"id": x.id,
 				"title": x.title,
-				"content": x.content.raw
+				"content": x.content.raw,
+				"featured_media": imageObj
 			};
 		})
 		if( JSON.stringify( ( posts ) ) !== JSON.stringify( newPosts ) ) {
@@ -83,13 +86,26 @@ export default function Edit( { attributes, setAttributes } ) {
 				</PanelBody>
 			</InspectorControls>
 			<div { ...useBlockProps() }>
-				<div>Custom Post Type</div>
+				{ ! customPostType && (
+					<div>Select Custom Post Type</div>
+				)}
+				{ records?.length < 1 && customPostType && (
+					<div>No `{customPostType }` post types</div>
+				)}
 				{ records?.map( ( post ) => {
+					let featured_media = '';
+					const imageObj = wp.data.select('core').getMedia(post.featured_media);
+					if( typeof imageObj != "undefined" ) {
+						featured_media = imageObj.description.rendered;
+					}
 					let content = rawHandler( { HTML: post.content.raw } ).map( ( x ) => x.attributes.content );
 					return (
-						<div className="custom-post-type">
-							<div className="title">{post.title.rendered}</div>
-							<div className="content">{content}</div>
+						<div className="wp-block-better-blocks-custom-post-type__item">
+							<RawHTML>
+								{ featured_media }
+							</RawHTML>
+							<div className="wp-block-better-blocks-custom-post-type__title">{post.title.rendered}</div>
+							<div className="wp-block-better-blocks-custom-post-type__content">{content}</div>
 						</div>
 					);
 				})}

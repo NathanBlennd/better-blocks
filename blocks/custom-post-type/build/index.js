@@ -47,6 +47,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
  * Those files can contain any CSS code that gets applied to the editor.
@@ -99,10 +100,12 @@ function Edit({
   } = (0,_wordpress_core_data__WEBPACK_IMPORTED_MODULE_6__.useEntityRecords)('postType', customPostType);
   if (hasResolved === true) {
     let newPosts = records?.map(function (x) {
+      const imageObj = wp.data.select('core').getMedia(x.featured_media);
       return {
         "id": x.id,
         "title": x.title,
-        "content": x.content.raw
+        "content": x.content.raw,
+        "featured_media": imageObj
       };
     });
     if (JSON.stringify(posts) !== JSON.stringify(newPosts)) {
@@ -133,16 +136,21 @@ function Edit({
     }
   }))), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.useBlockProps)()
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Custom Post Type"), records?.map(post => {
+  }, !customPostType && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "Select Custom Post Type"), records?.length < 1 && customPostType && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", null, "No `", customPostType, "` post types"), records?.map(post => {
+    let featured_media = '';
+    const imageObj = wp.data.select('core').getMedia(post.featured_media);
+    if (typeof imageObj != "undefined") {
+      featured_media = imageObj.description.rendered;
+    }
     let content = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_5__.rawHandler)({
       HTML: post.content.raw
     }).map(x => x.attributes.content);
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "custom-post-type"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "title"
+      className: "wp-block-better-blocks-custom-post-type__item"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.RawHTML, null, featured_media), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "wp-block-better-blocks-custom-post-type__title"
     }, post.title.rendered), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "content"
+      className: "wp-block-better-blocks-custom-post-type__content"
     }, content));
   })));
 }
@@ -236,6 +244,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+
 /**
  * The save function defines the way in which the different attributes should
  * be combined into the final markup, which is then serialized by the block
@@ -255,15 +264,19 @@ function save({
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
   }, posts?.map(post => {
+    let featured_media = '';
+    if (typeof post.featured_media != "undefined") {
+      featured_media = post.featured_media.description.rendered;
+    }
     let content = (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_3__.rawHandler)({
       HTML: post.content
     }).map(x => x.attributes.content);
     return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "custom-post-type"
-    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "title"
+      className: "wp-block-better-blocks-custom-post-type__item"
+    }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.RawHTML, null, featured_media), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
+      className: "wp-block-better-blocks-custom-post-type__title"
     }, post.title.rendered), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-      className: "content"
+      className: "wp-block-better-blocks-custom-post-type__content"
     }, content));
   }));
 }

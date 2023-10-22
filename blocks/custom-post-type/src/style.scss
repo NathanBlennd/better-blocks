@@ -6,4 +6,26 @@
  */
 
 .wp-block-better-blocks-custom-post-type {
+	box-sizing: border-box;
+
+	&__item {
+		border: 1px solid var(--wp--preset--color--primary);
+		margin-bottom: var(--wp--style--block-gap);
+		padding: var(--wp--preset--spacing--30);
+
+		.is-style-grid & {
+			flex-basis: calc( 50% - 2 * var(--wp--style--block-gap) );
+			max-width: calc( 50% - 2 * var(--wp--style--block-gap) );
+		}
+	}
+
+	&__title {
+		font-size: var(--wp--preset--font-size--large);
+	}
+
+	&.is-style-grid {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--wp--style--block-gap);
+	}
 }

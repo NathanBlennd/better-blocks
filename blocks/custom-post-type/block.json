@@ -16,6 +16,10 @@
 			"default": []
 		}
 	},
+	"styles": [
+        { "name": "list", "label": "List", "isDefault": true },
+        { "name": "grid", "label": "Grid" }
+    ],
 	"supports": {
 		"html": false
 	},

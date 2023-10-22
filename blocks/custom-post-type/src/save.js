@@ -13,6 +13,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps } from '@wordpress/block-editor';
 import { rawHandler } from '@wordpress/blocks';
+import { RawHTML } from '@wordpress/element';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -31,11 +32,18 @@ export default function save( { attributes } ) {
 	return (
 		<div { ...blockProps }>
 			{ posts?.map( ( post ) => {
+				let featured_media = '';
+				if( typeof( post.featured_media ) != "undefined" ) {
+					featured_media = post.featured_media.description.rendered;
+				}
 				let content = rawHandler( { HTML: post.content } ).map( ( x ) => x.attributes.content );
 				return (
-					<div className="custom-post-type">
-						<div className="title">{post.title.rendered}</div>
-						<div className="content">{content}</div>
+					<div className="wp-block-better-blocks-custom-post-type__item">
+						<RawHTML>
+							{ featured_media }
+						</RawHTML>
+						<div className="wp-block-better-blocks-custom-post-type__title">{post.title.rendered}</div>
+						<div className="wp-block-better-blocks-custom-post-type__content">{content}</div>
 					</div>
 				);
 			})}
