@@ -23,6 +23,7 @@ defined( 'ABSPATH' ) || die;
 
 define( 'BETTER_BLOCKS', __DIR__ );
 
+require __DIR__ . '/functions.php';
 
 /**
  * Blocks are grouped into categories to help users browse and discover them.
@@ -309,3 +310,23 @@ function enqueue_block_assets(){
 	}
 }
 add_action( 'enqueue_block_assets', __NAMESPACE__ . '\enqueue_block_assets' );
+
+function wpdocs_add_dashboard_widgets() {
+	wp_add_dashboard_widget( 'dashboard_widget', 'Better Blocks', __NAMESPACE__ . '\dashboard_widget_function' );
+}
+add_action( 'wp_dashboard_setup', __NAMESPACE__ . '\wpdocs_add_dashboard_widgets' );
+
+function dashboard_widget_function( $post, $callback_args ) {
+	$better_blocks = find_better_blocks();
+	ksort( $better_blocks );
+	esc_html_e( 'The following blocks are currently used on this site:', 'better-blocks' );
+	echo '<ul>';
+	foreach( $better_blocks as $key => $block ) {
+		$key = str_replace( 'better-blocks/', '', $key );
+		$pages = count( $block[ 'pages' ] );
+		$t = _n( 'time', 'times', $block[ 'count' ], 'better-blocks' );
+		$p = _n( 'page', 'pages', $pages, 'better-blocks' );
+		echo "<li>$key: used {$block[ 'count' ]} $t on $pages $p</li>";
+	}
+	echo '</ul>';
+}
