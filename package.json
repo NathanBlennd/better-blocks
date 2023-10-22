@@ -30,6 +30,8 @@
 		"build:countdown": "wp-scripts build blocks/countdown/src/index.js --output-path=blocks/countdown/build/",
 		"start:counter": "wp-scripts start blocks/counter/src/index.js --output-path=blocks/counter/build/",
 		"build:counter": "wp-scripts build blocks/counter/src/index.js --output-path=blocks/counter/build/",
+		"start:custom-post-type": "wp-scripts start blocks/custom-post-type/src/index.js --output-path=blocks/custom-post-type/build/",
+		"build:custom-post-type": "wp-scripts build blocks/custom-post-type/src/index.js --output-path=blocks/custom-post-type/build/",
 		"start:pricing": "wp-scripts start blocks/pricing/src/index.js --output-path=blocks/pricing/build/",
 		"build:pricing": "wp-scripts build blocks/pricing/src/index.js --output-path=blocks/pricing/build/",
 		"start:pricing-table": "wp-scripts start blocks/pricing-table/src/index.js --output-path=blocks/pricing-table/build/",

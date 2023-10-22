@@ -66,6 +66,7 @@ function register_block_types() {
 	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/countdown/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/counter/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/custom-post-type/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing-table/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/social-share/' );
