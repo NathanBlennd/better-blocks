@@ -13,8 +13,9 @@ import { __ } from '@wordpress/i18n';
  */
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
-import { select } from '@wordpress/data';
+import { useSelect } from '@wordpress/data';
 import { rawHandler } from '@wordpress/blocks';
+import { useEntityRecords } from '@wordpress/core-data';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -34,21 +35,37 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } ) {
 
-	const { customPostType } = attributes;
+	const { customPostType, posts } = attributes;
 
-	const { getPostTypes, getEntityRecords } = select( 'core' );
-	const excludedPostTypes = [ 'attachment', 'post', 'page' ];
-	const filteredPostTypes = getPostTypes( { per_page: -1 } )?.filter(
-		( { viewable, slug } ) =>
-			viewable && ! excludedPostTypes.includes( slug )
-	).map(function({slug,name}){
-		return {
-			'value' : slug,
-			'label' : name
-		};
-	});
+	const filteredPostTypes = useSelect( ( select ) => {
+		const { getPostTypes } = select( 'core' );
+		const excludedPostTypes = [ 'attachment', 'post', 'page' ];
+		const filteredPostTypes = getPostTypes( { per_page: -1 } )?.filter(
+			( { viewable, slug } ) => viewable && ! excludedPostTypes.includes( slug )
+		);
+		const result = ( filteredPostTypes || [] ).map(function({slug,name}){
+			return {
+				'value' : slug ?? '',
+				'label' : name ?? ''
+			};
+		});
+		return result;
+	}, [] );
 
-	let posts = getEntityRecords( 'postType', customPostType );
+	const { hasResolved, records } = useEntityRecords( 'postType', customPostType );
+
+	if( hasResolved === true ) {
+		let newPosts = records?.map(function(x){
+			return {
+				"id": x.id,
+				"title": x.title,
+				"content": x.content.raw
+			};
+		})
+		if( JSON.stringify( ( posts ) ) !== JSON.stringify( newPosts ) ) {
+			setAttributes( { posts: newPosts } )
+		}
+	}
 
 	return (
 		<>
@@ -58,13 +75,16 @@ export default function Edit( { attributes, setAttributes } ) {
 						label="Custom Post Type"
 						value={ customPostType }
 						options={ [ { value: '', label: 'Select Custom Post Type', disabled: true } ].concat( filteredPostTypes ) }
-						onChange={ ( newCustomPostType ) => { setAttributes( { customPostType: newCustomPostType } ) } }
+						onChange={ ( newCustomPostType ) => {
+							setAttributes( { customPostType: newCustomPostType } )
+							setAttributes( { posts: [] } )
+						} }
 					/>
 				</PanelBody>
 			</InspectorControls>
 			<div { ...useBlockProps() }>
 				<div>Custom Post Type</div>
-				{ posts?.map( ( post ) => {
+				{ records?.map( ( post ) => {
 					let content = rawHandler( { HTML: post.content.raw } ).map( ( x ) => x.attributes.content );
 					return (
 						<div className="custom-post-type">

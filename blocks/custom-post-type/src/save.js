@@ -12,7 +12,6 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 import { useBlockProps } from '@wordpress/block-editor';
-import { select } from '@wordpress/data';
 import { rawHandler } from '@wordpress/blocks';
 
 /**
@@ -26,16 +25,13 @@ import { rawHandler } from '@wordpress/blocks';
  */
 export default function save( { attributes } ) {
 	const blockProps = useBlockProps.save();
-	const { getEntityRecords } = select( 'core' );
 
-	const { customPostType } = attributes;
-
-	let posts = getEntityRecords( 'postType', customPostType );
+	const { posts } = attributes;
 
 	return (
 		<div { ...blockProps }>
 			{ posts?.map( ( post ) => {
-				let content = rawHandler( { HTML: post.content.raw } ).map( ( x ) => x.attributes.content );
+				let content = rawHandler( { HTML: post.content } ).map( ( x ) => x.attributes.content );
 				return (
 					<div className="custom-post-type">
 						<div className="title">{post.title.rendered}</div>

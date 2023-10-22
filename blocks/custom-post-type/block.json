@@ -10,6 +10,10 @@
 		"customPostType": {
 			"type": "string",
 			"default": ""
+		},
+		"posts": {
+			"type": "array",
+			"default": []
 		}
 	},
 	"supports": {
