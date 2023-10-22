@@ -51,3 +51,12 @@ function find_better_blocks() {
 	}
 	return $global_blocks;
 }
+
+function register_block_pattern( string $pattern_name, array $pattern_properties ) {
+	$name = str_replace( 'better-blocks/', '', $pattern_name );
+	$file = BETTER_BLOCKS . "/patterns/$name.html";
+	if( empty( $pattern_properties[ 'content' ] ) && file_exists( $file ) ) {
+		$pattern_properties[ 'content' ] = file_get_contents( $file );
+	}
+	\register_block_pattern( $pattern_name, $pattern_properties );
+}
