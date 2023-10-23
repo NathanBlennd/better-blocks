@@ -12,6 +12,7 @@ Registers custom blocks.
 * Countdown
 * Counter
 * Custom Post Type
+* Custom Post Type Archive
 * Pricing Table
 * Social Share
 * Tabs
