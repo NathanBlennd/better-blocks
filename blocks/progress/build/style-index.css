@@ -1,0 +1,41 @@
+/*!*******************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/progress/src/style.scss ***!
+  \*******************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-better-blocks-progress {
+  display: flex;
+  align-items: center;
+}
+.wp-block-better-blocks-progress label {
+  flex-basis: 100px;
+}
+.wp-block-better-blocks-progress progress {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border-radius: 7px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.2);
+  display: block;
+  flex-basis: calc(100% - 100px);
+  height: 1rem;
+  margin-left: 1rem;
+  width: calc(100% - 100px);
+}
+.wp-block-better-blocks-progress progress::-moz-progress-bar {
+  background-color: var(--wp--preset--color--base);
+}
+.wp-block-better-blocks-progress progress::-webkit-progress-bar {
+  background-color: var(--wp--preset--color--base);
+}
+.wp-block-better-blocks-progress progress::-webkit-progress-value {
+  background-color: var(--wp--preset--color--primary);
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

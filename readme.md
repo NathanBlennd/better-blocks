@@ -14,6 +14,7 @@ Registers custom blocks.
 * Custom Post Type
 * Custom Post Type Archive
 * Pricing Table
+* Progress
 * Read Time
 * Social Share
 * Tabs

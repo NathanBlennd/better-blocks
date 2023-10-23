@@ -1,0 +1,24 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "better-blocks/progress",
+	"version": "0.1.0",
+	"title": "Progress",
+	"category": "content",
+	"description": "Show progress toward a goal",
+	"attributes": {
+		"final": {
+			"type": "string"
+		},
+		"title": {
+			"type": "string"
+		}
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}

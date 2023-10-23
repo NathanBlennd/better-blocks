@@ -70,6 +70,7 @@ function register_block_types() {
 	register_block_type( BETTER_BLOCKS . '/blocks/custom-post-type-archive/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing-table/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/progress/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/read-time/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/social-share/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
@@ -294,6 +295,15 @@ function enqueue_block_assets(){
 		wp_enqueue_script(
 			'better-blocks/custom-post-type-archive',
 			plugins_url( 'dist/custom-post-type-archive/ts/custom-post-type-archive.js', __FILE__ ),
+			[],
+			'0.1.0',
+			true
+		);
+	}
+	if ( has_block( 'better-blocks/progress' ) ) {
+		wp_enqueue_script(
+			'better-blocks/progress',
+			plugins_url( 'dist/progress/ts/progress.js', __FILE__ ),
 			[],
 			'0.1.0',
 			true
