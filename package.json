@@ -36,6 +36,8 @@
 		"build:pricing": "wp-scripts build blocks/pricing/src/index.js --output-path=blocks/pricing/build/",
 		"start:pricing-table": "wp-scripts start blocks/pricing-table/src/index.js --output-path=blocks/pricing-table/build/",
 		"build:pricing-table": "wp-scripts build blocks/pricing-table/src/index.js --output-path=blocks/pricing-table/build/",
+		"start:read-time": "wp-scripts start blocks/read-time/src/index.js --output-path=blocks/read-time/build/",
+		"build:read-time": "wp-scripts build blocks/read-time/src/index.js --output-path=blocks/read-time/build/",
 		"start:social-share": "wp-scripts start blocks/social-share/src/index.js --output-path=blocks/social-share/build/",
 		"build:social-share": "wp-scripts build blocks/social-share/src/index.js --output-path=blocks/social-share/build/",
 		"start:tab": "wp-scripts start blocks/tab/src/index.js --output-path=blocks/tab/build/",

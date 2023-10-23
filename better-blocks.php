@@ -70,6 +70,7 @@ function register_block_types() {
 	register_block_type( BETTER_BLOCKS . '/blocks/custom-post-type-archive/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/pricing-table/' );
+	register_block_type( BETTER_BLOCKS . '/blocks/read-time/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/social-share/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
 	register_block_type( BETTER_BLOCKS . '/blocks/tabs/' );
