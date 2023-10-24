@@ -194,13 +194,17 @@ function save({
   } = attributes;
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     ...blockProps
-  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("wrapper", null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("label", {
     for: title
-  }, title, ":"), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("progress", {
+  }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wp-block-better-blocks-progress__title"
+  }, title), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("span", {
+    className: "wp-block-better-blocks-progress__value"
+  }, final, "%")), (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("progress", {
     id: title,
     max: "100",
     value: final
-  }, final, "%"));
+  }, final, "%")));
 }
 
 /***/ }),

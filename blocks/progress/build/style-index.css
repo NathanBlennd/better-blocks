@@ -7,12 +7,19 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-better-blocks-progress {
-  display: flex;
+.wp-block-better-blocks-progress wrapper {
   align-items: center;
+  display: flex;
+  width: 100%;
 }
 .wp-block-better-blocks-progress label {
   flex-basis: 100px;
+}
+.wp-block-better-blocks-progress label .wp-block-better-blocks-progress__title:after {
+  content: ":";
+}
+.wp-block-better-blocks-progress label .wp-block-better-blocks-progress__value {
+  display: none;
 }
 .wp-block-better-blocks-progress progress {
   -webkit-appearance: none;
@@ -36,6 +43,369 @@
   background-color: var(--wp--preset--color--primary);
   -webkit-transition: width 1s;
   transition: width 1s;
+}
+.wp-block-better-blocks-progress.is-style-circle {
+  --background: white;
+  --color: greenyellow;
+  --size: 100px;
+  --thickness: 10px;
+  --track-color: white;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.wp-block-better-blocks-progress.is-style-circle wrapper {
+  position: relative;
+  width: var(--size);
+}
+.wp-block-better-blocks-progress.is-style-circle label {
+  left: 50%;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 9;
+}
+.wp-block-better-blocks-progress.is-style-circle label .wp-block-better-blocks-progress__title:after {
+  content: "";
+}
+.wp-block-better-blocks-progress.is-style-circle label .wp-block-better-blocks-progress__value {
+  display: block;
+}
+.wp-block-better-blocks-progress.is-style-circle progress {
+  align-items: center;
+  border-radius: 50%;
+  box-shadow: none;
+  display: flex;
+  flex-basis: var(--size, 100px);
+  height: var(--size, 100px);
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+  margin-left: 0;
+  width: var(--size, 100px);
+}
+.wp-block-better-blocks-progress.is-style-circle progress::-webkit-progress-value {
+  background: transparent;
+}
+.wp-block-better-blocks-progress.is-style-circle progress::-moz-progress-bar {
+  background: transparent;
+}
+.wp-block-better-blocks-progress.is-style-circle progress:before {
+  align-items: center;
+  background-color: var(--background);
+  border-radius: 50%;
+  color: black;
+  content: "";
+  display: flex;
+  height: calc(var(--size, 100px) - var(--thickness, 10px) * 2);
+  justify-content: center;
+  margin: auto;
+  position: absolute;
+  width: calc(var(--size, 100px) - var(--thickness, 10px) * 2);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="0"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 0%, var(--track-color) 0% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="1"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 1%, var(--track-color) 1% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="2"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 2%, var(--track-color) 2% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="3"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 3%, var(--track-color) 3% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="4"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 4%, var(--track-color) 4% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="5"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 5%, var(--track-color) 5% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="6"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 6%, var(--track-color) 6% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="7"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 7%, var(--track-color) 7% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="8"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 8%, var(--track-color) 8% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="9"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 9%, var(--track-color) 9% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="10"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 10%, var(--track-color) 10% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="11"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 11%, var(--track-color) 11% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="12"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 12%, var(--track-color) 12% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="13"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 13%, var(--track-color) 13% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="14"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 14%, var(--track-color) 14% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="15"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 15%, var(--track-color) 15% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="16"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 16%, var(--track-color) 16% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="17"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 17%, var(--track-color) 17% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="18"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 18%, var(--track-color) 18% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="19"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 19%, var(--track-color) 19% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="20"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 20%, var(--track-color) 20% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="21"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 21%, var(--track-color) 21% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="22"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 22%, var(--track-color) 22% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="23"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 23%, var(--track-color) 23% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="24"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 24%, var(--track-color) 24% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="25"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 25%, var(--track-color) 25% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="26"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 26%, var(--track-color) 26% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="27"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 27%, var(--track-color) 27% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="28"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 28%, var(--track-color) 28% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="29"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 29%, var(--track-color) 29% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="30"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 30%, var(--track-color) 30% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="31"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 31%, var(--track-color) 31% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="32"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 32%, var(--track-color) 32% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="33"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 33%, var(--track-color) 33% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="34"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 34%, var(--track-color) 34% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="35"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 35%, var(--track-color) 35% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="36"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 36%, var(--track-color) 36% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="37"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 37%, var(--track-color) 37% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="38"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 38%, var(--track-color) 38% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="39"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 39%, var(--track-color) 39% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="40"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 40%, var(--track-color) 40% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="41"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 41%, var(--track-color) 41% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="42"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 42%, var(--track-color) 42% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="43"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 43%, var(--track-color) 43% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="44"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 44%, var(--track-color) 44% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="45"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 45%, var(--track-color) 45% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="46"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 46%, var(--track-color) 46% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="47"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 47%, var(--track-color) 47% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="48"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 48%, var(--track-color) 48% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="49"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 49%, var(--track-color) 49% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="50"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 50%, var(--track-color) 50% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="51"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 51%, var(--track-color) 51% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="52"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 52%, var(--track-color) 52% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="53"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 53%, var(--track-color) 53% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="54"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 54%, var(--track-color) 54% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="55"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 55%, var(--track-color) 55% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="56"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 56%, var(--track-color) 56% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="57"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 57%, var(--track-color) 57% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="58"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 58%, var(--track-color) 58% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="59"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 59%, var(--track-color) 59% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="60"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 60%, var(--track-color) 60% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="61"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 61%, var(--track-color) 61% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="62"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 62%, var(--track-color) 62% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="63"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 63%, var(--track-color) 63% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="64"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 64%, var(--track-color) 64% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="65"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 65%, var(--track-color) 65% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="66"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 66%, var(--track-color) 66% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="67"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 67%, var(--track-color) 67% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="68"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 68%, var(--track-color) 68% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="69"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 69%, var(--track-color) 69% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="70"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 70%, var(--track-color) 70% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="71"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 71%, var(--track-color) 71% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="72"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 72%, var(--track-color) 72% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="73"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 73%, var(--track-color) 73% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="74"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 74%, var(--track-color) 74% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="75"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 75%, var(--track-color) 75% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="76"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 76%, var(--track-color) 76% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="77"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 77%, var(--track-color) 77% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="78"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 78%, var(--track-color) 78% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="79"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 79%, var(--track-color) 79% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="80"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 80%, var(--track-color) 80% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="81"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 81%, var(--track-color) 81% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="82"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 82%, var(--track-color) 82% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="83"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 83%, var(--track-color) 83% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="84"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 84%, var(--track-color) 84% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="85"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 85%, var(--track-color) 85% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="86"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 86%, var(--track-color) 86% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="87"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 87%, var(--track-color) 87% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="88"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 88%, var(--track-color) 88% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="89"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 89%, var(--track-color) 89% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="90"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 90%, var(--track-color) 90% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="91"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 91%, var(--track-color) 91% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="92"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 92%, var(--track-color) 92% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="93"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 93%, var(--track-color) 93% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="94"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 94%, var(--track-color) 94% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="95"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 95%, var(--track-color) 95% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="96"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 96%, var(--track-color) 96% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="97"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 97%, var(--track-color) 97% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="98"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 98%, var(--track-color) 98% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="99"]::-webkit-progress-bar {
+  background: conic-gradient(var(--wp--preset--color--primary) 0% 99%, var(--track-color) 99% 100%);
+}
+.wp-block-better-blocks-progress.is-style-circle progress[value="100"]::-webkit-progress-bar {
+  background: var(--wp--preset--color--primary);
 }
 
 /*# sourceMappingURL=style-index.css.map*/

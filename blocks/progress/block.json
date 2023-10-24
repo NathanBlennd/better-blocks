@@ -14,6 +14,10 @@
 			"type": "string"
 		}
 	},
+	"styles": [
+        { "name": "linear", "label": "Linear", "isDefault": true },
+        { "name": "circle", "label": "Circle" }
+    ],
 	"supports": {
 		"html": false
 	},

@@ -29,8 +29,13 @@ export default function save( { attributes } ) {
 
 	return (
 		<div { ...blockProps }>
-			<label for={ title }>{ title }:</label>
-			<progress id={ title } max="100" value={ final }>{ final }%</progress>
+			<wrapper>
+				<label for={ title }>
+					<span className="wp-block-better-blocks-progress__title">{ title }</span>
+					<span className="wp-block-better-blocks-progress__value">{ final }%</span>
+				</label>
+				<progress id={ title } max="100" value={ final }>{ final }%</progress>
+			</wrapper>
 		</div>
 	);
 }
