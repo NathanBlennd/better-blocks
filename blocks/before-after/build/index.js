@@ -72,9 +72,9 @@ function Edit({
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     key: "setting"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'better-blocks')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.TextControl, {
-    label: "Height",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Height', 'better-blocks'),
     value: height,
     onChange: newHeight => {
       setAttributes({
@@ -94,7 +94,7 @@ function Edit({
     allowedTypes: ['image'],
     multiple: false,
     labels: {
-      title: 'The Image'
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The Image', 'better-blocks')
     },
     mediaPreview: media1Preview
   }), media1Preview && !isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {
@@ -111,7 +111,7 @@ function Edit({
     allowedTypes: ['image'],
     multiple: false,
     labels: {
-      title: 'The Image'
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The Image', 'better-blocks')
     },
     mediaPreview: media2Preview
   }), media2Preview && !isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {

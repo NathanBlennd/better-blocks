@@ -29,7 +29,7 @@ export default function save( { attributes } ) {
 
 	return (
 		<div { ...blockProps }>
-			<p>Estimated Reading Time: { readTime } minutes</p>
+			<p>{ __( 'Estimated Reading Time:', 'better-blocks' ) } { readTime } { __( 'minutes', 'better-blocks' ) }</p>
 		</div>
 	);
 }

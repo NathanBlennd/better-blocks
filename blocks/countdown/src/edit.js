@@ -37,7 +37,7 @@ export default function Edit( { attributes, setAttributes }) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<DateTimePicker
 						currentDate={ date }
 						onChange = { ( newDate ) => { setAttributes( { date: newDate } ) } }

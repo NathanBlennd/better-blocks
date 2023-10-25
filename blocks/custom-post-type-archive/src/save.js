@@ -12,8 +12,6 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/packages/packages-block-editor/#useBlockProps
  */
 import { useBlockProps } from '@wordpress/block-editor';
-import { rawHandler } from '@wordpress/blocks';
-import { RawHTML } from '@wordpress/element';
 
 /**
  * The save function defines the way in which the different attributes should

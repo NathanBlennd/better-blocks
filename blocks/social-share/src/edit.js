@@ -58,16 +58,16 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<SelectControl
 						multiple
-						label="Networks"
+						label={ __( 'Networks', 'better-blocks' ) }
 						value={ networks }
 						options={ [
-							{ label: 'Facebook', value: 'facebook' },
-							{ label: 'Linkedin', value: 'linkedin' },
-							{ label: 'Twitter', value: 'twitter' },
-							{ label: 'Pinterest', value: 'pinterest' },
+							{ label: __( 'Facebook', 'better-blocks' ), value: 'facebook' },
+							{ label: __( 'Linkedin', 'better-blocks' ), value: 'linkedin' },
+							{ label: __( 'Twitter', 'better-blocks' ), value: 'twitter' },
+							{ label: __( 'Pinterest', 'better-blocks' ), value: 'pinterest' },
 						] }
 						onChange={ ( newNetworks ) => { setAttributes( { networks: newNetworks } ) } }
 					/>

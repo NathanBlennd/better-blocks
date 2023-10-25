@@ -29,7 +29,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, setAttributes } ) {
+export default function Edit() {
 
 	const ALLOWED_BLOCKS = [ 'better-blocks/accordion-item' ];
 

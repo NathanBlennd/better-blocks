@@ -48,9 +48,9 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title = { __( 'Settings' ) }>
+				<PanelBody title = { __( 'Settings', 'better-blocks' ) }>
 					<NumberControl
-						label = { __( 'Number of Pricing Levels' ) }
+						label = { __( 'Number of Pricing Levels', 'better-blocks' ) }
 						isShiftStepEnabled = { true }
 						onChange = { ( newColumns ) => { setAttributes( { columns: newColumns } ) } }
 						shiftStep = { 1 }

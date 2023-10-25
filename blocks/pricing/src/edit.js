@@ -35,9 +35,9 @@ export default function Edit( { attributes, setAttributes } ) {
 	const { isFeatured } = attributes;
 
 	const PRICING_TEMPLATE = [
-		[ 'core/heading', { placeholder: 'Header', textAlign: 'center', level: '3' } ],
-		[ 'core/paragraph', { placeholder: 'Price', align: 'center' } ],
-		[ 'core/paragraph', { placeholder: 'Summary', align: 'center' } ],
+		[ 'core/heading', { placeholder: __( 'Header', 'better-blocks' ), textAlign: 'center', level: '3' } ],
+		[ 'core/paragraph', { placeholder: __( 'Price', 'better-blocks' ), align: 'center' } ],
+		[ 'core/paragraph', { placeholder: __( 'Summary', 'better-blocks' ), align: 'center' } ],
 		[ 'core/separator', { align: 'center' } ],
 		[ 'core/list', {} ],
 		[ 'core/buttons', {} ],
@@ -46,13 +46,13 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title = { __( 'Settings' ) }>
+				<PanelBody title = { __( 'Settings', 'better-blocks' ) }>
 					<ToggleControl
-						label="Featured"
+						label={ __( 'Featured', 'better-blocks' ) }
 						help={
 							isFeatured
-								? 'This is a featured pricing'
-								: 'This is a normal pricing'
+								? __( 'This is a featured pricing', 'better-blocks' )
+								: __( 'This is a normal pricing', 'better-blocks' )
 						}
 						checked={ isFeatured }
 						onChange = { ( newIsFeatured ) => { setAttributes( { isFeatured: newIsFeatured } ) } }

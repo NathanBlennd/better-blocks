@@ -73,11 +73,11 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<SelectControl
-						label="Custom Post Type"
+						label={ __('Custom Post Type', 'better-blocks' ) }
 						value={ customPostType }
-						options={ [ { value: '', label: 'Select Custom Post Type', disabled: true } ].concat( filteredPostTypes ) }
+						options={ [ { value: '', label: __( 'Select Custom Post Type', 'better-blocks' ), disabled: true } ].concat( filteredPostTypes ) }
 						onChange={ ( newCustomPostType ) => {
 							setAttributes( { customPostType: newCustomPostType } )
 							setAttributes( { posts: [] } )

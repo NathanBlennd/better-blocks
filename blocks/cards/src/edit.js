@@ -42,9 +42,9 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<SelectControl
-						label="Size"
+						label={ __( 'Size', 'better-blocks' ) }
 						value={ size }
 						options={ [
 							{ label: '1', value: '1' },
@@ -55,7 +55,7 @@ export default function Edit( { attributes, setAttributes } ) {
 						onChange={ ( newSize ) => { setAttributes( { size: newSize } ) } }
 					/>
 					<TextControl
-						label="Type"
+						label={ __( 'Type', 'better-blocks' ) }
 						value={ type }
 						onChange={ ( newType ) => { setAttributes( { type: newType } ) } }
 					/>

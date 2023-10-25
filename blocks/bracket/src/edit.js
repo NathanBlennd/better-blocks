@@ -41,10 +41,10 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<NumberControl
 						isShiftStepEnabled = { true }
-						label = "Number of Teams"
+						label = { __( 'Number of Teams', 'better-blocks' ) }
 						max = { 64 }
 						min = { 2 }
 						onChange = { ( newTeams ) => { setAttributes( { teams: newTeams } ) } }
@@ -56,7 +56,7 @@ export default function Edit( { attributes, setAttributes } ) {
 				<PanelBody title={ __( 'Teams' ) } initialOpen={ false } >
 					{ [...Array(teams).keys()].map( teamNumber => (
 						<TextControl
-							label = { "Team Ranked " + ( teamNumber + 1 ) }
+							label = { __( 'Team Ranked ', 'better-blocks' ) + ( teamNumber + 1 ) }
 							onChange = { ( newTeam ) => {
 								let newTeamNames = [...teamNames];
 								newTeamNames[teamNumber] = newTeam;

@@ -42,11 +42,11 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						tagName="div"
 						value={ title }
 						onChange={ ( title ) => setAttributes( { title } ) }
-						placeholder={ __( 'Title' ) }
+						placeholder={ __( 'Title', 'better-blocks' ) }
 					/>
 					<NumberControl
 						isShiftStepEnabled={ true }
-						label={ __( 'Value' ) }
+						label={ __( 'Value', 'better-blocks' ) }
 						onChange={ ( final ) => setAttributes( { final } ) }
 						shiftStep={ 10 }
 						value={ final }

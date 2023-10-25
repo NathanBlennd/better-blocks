@@ -46,10 +46,10 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<div className="wp-block-better-blocks-call-to-action">
 						<RadioControl
-							label="Layout"
+							label= { __( 'Layout', 'better-blocks' ) }
 							selected={ layout }
 							options={ [
 								{ label: '1', value: '1' },
@@ -61,7 +61,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 				</PanelBody>
 			</InspectorControls>
 			<div { ...blockProps }>
-				
+
 					{ ( ! mediaPreview || isSelected ) &&
 						<div class="wp-block-better-blocks-call-to-action__image">
 							<MediaPlaceholder
@@ -72,7 +72,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 								}
 								allowedTypes = { [ 'image' ] }
 								multiple = { false }
-								labels = { { title: 'The Image' } }
+								labels = { { title: __( 'The Image', 'better-blocks' ) } }
 								mediaPreview={ mediaPreview }
 							/>
 						</div>

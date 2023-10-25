@@ -72,11 +72,11 @@ function Edit({
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     key: "setting"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'better-blocks')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
     className: "wp-block-better-blocks-call-to-action"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.RadioControl, {
-    label: "Layout",
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Layout', 'better-blocks'),
     selected: layout,
     options: [{
       label: '1',
@@ -103,7 +103,7 @@ function Edit({
     allowedTypes: ['image'],
     multiple: false,
     labels: {
-      title: 'The Image'
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The Image', 'better-blocks')
     },
     mediaPreview: mediaPreview
   })), mediaPreview && !isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {

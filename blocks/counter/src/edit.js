@@ -32,14 +32,14 @@ import './editor.scss';
  */
 export default function Edit( { attributes, setAttributes } ) {
 
-	const { height, final, initial, prefix, suffix, title } = attributes;
+	const { final, initial, prefix, suffix, title } = attributes;
 
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<TextControl
-						label="Initial Value"
+						label={ __( 'Initial Value', 'better-blocks' ) }
 						value={ initial }
 						onChange={ ( initial ) => setAttributes( { initial } ) }
 					/>

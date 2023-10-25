@@ -49,9 +49,9 @@ export default function Edit( { attributes, setAttributes, clientId } ) {
 	return (
 		<>
 			<InspectorControls>
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<TextControl
-						label="Label"
+						label={ __( 'Label', 'better-blocks' ) }
 						value={ label }
 						onChange={onChangeTabLabel}
 					/>

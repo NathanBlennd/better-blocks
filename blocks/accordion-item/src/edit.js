@@ -31,7 +31,7 @@ import './editor.scss';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit( { attributes, setAttributes, context } ) {
+export default function Edit( { attributes, setAttributes } ) {
 
 	const blockProps = useBlockProps;
 	const cleanHeading = cleanForSlug( attributes.heading ?? '' );
@@ -47,7 +47,7 @@ export default function Edit( { attributes, setAttributes, context } ) {
 					value={ attributes.heading }
 					allowedFormats={ [] }
 					onChange={ ( heading ) => setAttributes( { heading } ) }
-					placeholder={ __( 'Heading...' ) }
+					placeholder={ __( 'Heading...', 'better-blocks' ) }
 				/>
 				</button>
 			</div>
@@ -58,7 +58,7 @@ export default function Edit( { attributes, setAttributes, context } ) {
 						value={ attributes.content }
 						allowedFormats={ [] }
 						onChange={ ( content ) => setAttributes( { content } ) }
-						placeholder={ __( 'Content...' ) }
+						placeholder={ __( 'Content...', 'better-blocks' ) }
 					/>
 				</div>
 			</div>

@@ -73,7 +73,7 @@ function Edit({
     allowedTypes: ['image'],
     multiple: false,
     labels: {
-      title: 'The Image'
+      title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('The Image', 'better-blocks')
     },
     mediaPreview: mediaPreview
   }), mediaPreview && !isSelected && (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)("img", {

@@ -14,9 +14,6 @@ import { __ } from '@wordpress/i18n';
 import { InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import { PanelBody, SelectControl } from '@wordpress/components';
 import { useSelect } from '@wordpress/data';
-import { rawHandler } from '@wordpress/blocks';
-import { useEntityRecords } from '@wordpress/core-data';
-import { RawHTML } from '@wordpress/element';
 
 /**
  * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
@@ -56,11 +53,11 @@ export default function Edit( { attributes, setAttributes } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<SelectControl
-						label="Custom Post Type"
+						label={ __( 'Custom Post Type', 'better-blocks' ) }
 						value={ customPostType }
-						options={ [ { value: '', label: 'Select Custom Post Type', disabled: true } ].concat( filteredPostTypes ) }
+						options={ [ { value: '', label: __( 'Select Custom Post Type', 'better-blocks' ), disabled: true } ].concat( filteredPostTypes ) }
 						onChange={ ( newCustomPostType ) => { setAttributes( { customPostType: newCustomPostType } ) } }
 					/>
 				</PanelBody>

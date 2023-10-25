@@ -48,7 +48,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 						}
 						allowedTypes = { [ 'image' ] }
 						multiple = { false }
-						labels = { { title: 'The Image' } }
+						labels = { { title: __( 'The Image', 'better-blocks' ) } }
 						mediaPreview={ mediaPreview }
 					/>
 				}

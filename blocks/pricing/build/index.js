@@ -62,14 +62,14 @@ function Edit({
     isFeatured
   } = attributes;
   const PRICING_TEMPLATE = [['core/heading', {
-    placeholder: 'Header',
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Header', 'better-blocks'),
     textAlign: 'center',
     level: '3'
   }], ['core/paragraph', {
-    placeholder: 'Price',
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Price', 'better-blocks'),
     align: 'center'
   }], ['core/paragraph', {
-    placeholder: 'Summary',
+    placeholder: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Summary', 'better-blocks'),
     align: 'center'
   }], ['core/separator', {
     align: 'center'
@@ -77,10 +77,10 @@ function Edit({
   return (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_2__.InspectorControls, {
     key: "setting"
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.PanelBody, {
-    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings')
+    title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Settings', 'better-blocks')
   }, (0,_wordpress_element__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__.ToggleControl, {
-    label: "Featured",
-    help: isFeatured ? 'This is a featured pricing' : 'This is a normal pricing',
+    label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('Featured', 'better-blocks'),
+    help: isFeatured ? (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('This is a featured pricing', 'better-blocks') : (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_1__.__)('This is a normal pricing', 'better-blocks'),
     checked: isFeatured,
     onChange: newIsFeatured => {
       setAttributes({

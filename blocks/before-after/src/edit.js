@@ -45,9 +45,9 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 	return (
 		<>
 			<InspectorControls key="setting">
-				<PanelBody title={ __( 'Settings' ) }>
+				<PanelBody title={ __( 'Settings', 'better-blocks' ) }>
 					<TextControl
-						label="Height"
+						label= { __( 'Height', 'better-blocks' ) }
 						value={ height }
 						onChange={ ( newHeight ) => { setAttributes( { height: newHeight } ) } }
 					/>
@@ -64,7 +64,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							allowedTypes = { [ 'image' ] }
 							multiple = { false }
-							labels = { { title: 'The Image' } }
+							labels = { { title: __( 'The Image', 'better-blocks' ) } }
 							mediaPreview={ media1Preview }
 						/>
 					}
@@ -82,7 +82,7 @@ export default function Edit( { attributes, setAttributes, isSelected } ) {
 							}
 							allowedTypes = { [ 'image' ] }
 							multiple = { false }
-							labels = { { title: 'The Image' } }
+							labels = { { title: __( 'The Image', 'better-blocks' ) } }
 							mediaPreview={ media2Preview }
 						/>
 					}
