@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function() {
 
 	const COUNTDOWN_SELECTOR = '.countdown';
 	const COUNTDOWN_DAYS_SELECTOR = '.days';
@@ -41,4 +41,4 @@ window.onload = function () {
 		}, 1000);
 	});
 
-};
+});

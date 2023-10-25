@@ -1,4 +1,4 @@
-window.onload = function () {
+document.addEventListener("DOMContentLoaded", function () {
     var COUNTDOWN_SELECTOR = '.countdown';
     var COUNTDOWN_DAYS_SELECTOR = '.days';
     var COUNTDOWN_HOURS_SELECTOR = '.hours';
@@ -31,5 +31,5 @@ window.onload = function () {
             seconds.textContent = secondsString;
         }, 1000);
     });
-};
+});
 //# sourceMappingURL=countdown.js.map
