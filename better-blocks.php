@@ -57,24 +57,10 @@ add_filter( 'block_categories_all', __NAMESPACE__ . '\add_block_categories', 10,
  * through the block editor in the corresponding context.
  */
 function register_block_types() {
-	register_block_type( BETTER_BLOCKS . '/blocks/accordion-item/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/accordion/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/bracket/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/before-after/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/call-to-action/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/card/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/cards/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/countdown/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/counter/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/custom-post-type/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/custom-post-type-archive/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/pricing/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/pricing-table/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/progress/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/read-time/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/social-share/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/tab/' );
-	register_block_type( BETTER_BLOCKS . '/blocks/tabs/' );
+	$blocks = array_filter( glob( BETTER_BLOCKS . '/blocks/*'), 'is_dir' );
+	foreach( $blocks as $block ) {
+		register_block_type( $block );
+	}
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_types' );
 
