@@ -1,0 +1,62 @@
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+
+.wp-block-better-blocks-portfolio {
+
+	box-sizing: border-box;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	.attachment {
+		margin: 0;
+		height: 100px;
+		width: 100%;
+		display: block;
+		position: relative;
+	}
+
+	&__wrapper {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&__item {
+		flex-basis: 25%;
+		height: 100px;
+		max-width: 25%;
+		overflow: hidden;
+		position: relative;
+	}
+
+	&__image {
+		display: block;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+			position: absolute;
+			width: 100%;
+		}
+	}
+
+	&__skills {
+		list-style-type: none;
+	}
+
+	&__skills-item {
+		display: inline-block;
+	}
+
+	&__skills-item-button {
+    	background: transparent;
+		border: none;
+		cursor: pointer;
+	}
+
+}

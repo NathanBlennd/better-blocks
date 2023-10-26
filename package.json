@@ -38,6 +38,8 @@
 		"build:pricing": "wp-scripts build blocks/pricing/src/index.js --output-path=blocks/pricing/build/",
 		"start:pricing-table": "wp-scripts start blocks/pricing-table/src/index.js --output-path=blocks/pricing-table/build/",
 		"build:pricing-table": "wp-scripts build blocks/pricing-table/src/index.js --output-path=blocks/pricing-table/build/",
+		"start:portfolio": "wp-scripts start blocks/portfolio/src/index.js --output-path=blocks/portfolio/build/",
+		"build:portfolio": "wp-scripts build blocks/portfolio/src/index.js --output-path=blocks/portfolio/build/",
 		"start:progress": "wp-scripts start blocks/progress/src/index.js --output-path=blocks/progress/build/",
 		"build:progress": "wp-scripts build blocks/progress/src/index.js --output-path=blocks/progress/build/",
 		"start:read-time": "wp-scripts start blocks/read-time/src/index.js --output-path=blocks/read-time/build/",

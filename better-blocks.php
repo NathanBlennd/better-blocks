@@ -107,6 +107,80 @@ function register_block_pattern_categories() {
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_pattern_categories' );
 
+function register_post_types() {
+	$labels = array(
+		'name'                  => _x( 'Projects', 'Post type general name', 'better-blocks' ),
+		'singular_name'         => _x( 'Project', 'Post type singular name', 'better-blocks' ),
+		'menu_name'             => _x( 'Projects', 'Admin Menu text', 'better-blocks' ),
+		'name_admin_bar'        => _x( 'Project', 'Add New on Toolbar', 'better-blocks' ),
+		'add_new'               => __( 'Add New', 'better-blocks' ),
+		'add_new_item'          => __( 'Add New Project', 'better-blocks' ),
+		'new_item'              => __( 'New Project', 'better-blocks' ),
+		'edit_item'             => __( 'Edit Project', 'better-blocks' ),
+		'view_item'             => __( 'View Project', 'better-blocks' ),
+		'all_items'             => __( 'All Projects', 'better-blocks' ),
+		'search_items'          => __( 'Search Projects', 'better-blocks' ),
+		'parent_item_colon'     => __( 'Parent Projects:', 'better-blocks' ),
+		'not_found'             => __( 'No projects found.', 'better-blocks' ),
+		'not_found_in_trash'    => __( 'No projects found in Trash.', 'better-blocks' ),
+		'featured_image'        => _x( 'Project Cover Image', 'Overrides the “Featured Image” phrase for this post type. Added in 4.3', 'better-blocks' ),
+		'set_featured_image'    => _x( 'Set cover image', 'Overrides the “Set featured image” phrase for this post type. Added in 4.3', 'better-blocks' ),
+		'remove_featured_image' => _x( 'Remove cover image', 'Overrides the “Remove featured image” phrase for this post type. Added in 4.3', 'better-blocks' ),
+		'use_featured_image'    => _x( 'Use as cover image', 'Overrides the “Use as featured image” phrase for this post type. Added in 4.3', 'better-blocks' ),
+		'archives'              => _x( 'Project archives', 'The post type archive label used in nav menus. Default “Post Archives”. Added in 4.4', 'better-blocks' ),
+		'insert_into_item'      => _x( 'Insert into project', 'Overrides the “Insert into post”/”Insert into page” phrase (used when inserting media into a post). Added in 4.4', 'better-blocks' ),
+		'uploaded_to_this_item' => _x( 'Uploaded to this project', 'Overrides the “Uploaded to this post”/”Uploaded to this page” phrase (used when viewing media attached to a post). Added in 4.4', 'better-blocks' ),
+		'filter_items_list'     => _x( 'Filter projects list', 'Screen reader text for the filter links heading on the post type listing screen. Default “Filter posts list”/”Filter pages list”. Added in 4.4', 'better-blocks' ),
+		'items_list_navigation' => _x( 'Projects list navigation', 'Screen reader text for the pagination heading on the post type listing screen. Default “Posts list navigation”/”Pages list navigation”. Added in 4.4', 'better-blocks' ),
+		'items_list'            => _x( 'Projects list', 'Screen reader text for the items list heading on the post type listing screen. Default “Posts list”/”Pages list”. Added in 4.4', 'better-blocks' ),
+	);
+
+	$args = array(
+		'labels'             => $labels,
+		'public'             => true,
+		'publicly_queryable' => true,
+		'show_ui'            => true,
+		'show_in_rest'       => true,
+		'show_in_menu'       => true,
+		'query_var'          => true,
+		'rewrite'            => array( 'slug' => 'project' ),
+		'capability_type'    => 'post',
+		'has_archive'        => true,
+		'hierarchical'       => false,
+		'menu_position'      => null,
+		'supports'           => array( 'title', 'editor', 'author', 'thumbnail', 'excerpt', 'comments' ),
+	);
+
+	register_post_type( 'project', $args );
+
+	$labels = array(
+		'name'              => _x( 'Skills', 'taxonomy general name', 'better-blocks' ),
+		'singular_name'     => _x( 'Skill', 'taxonomy singular name', 'better-blocks' ),
+		'search_items'      => __( 'Search Skills', 'better-blocks' ),
+		'all_items'         => __( 'All Skills', 'better-blocks' ),
+		'parent_item'       => __( 'Parent Skill', 'better-blocks' ),
+		'parent_item_colon' => __( 'Parent Skill:', 'better-blocks' ),
+		'edit_item'         => __( 'Edit Skill', 'better-blocks' ),
+		'update_item'       => __( 'Update Skill', 'better-blocks' ),
+		'add_new_item'      => __( 'Add New Skill', 'better-blocks' ),
+		'new_item_name'     => __( 'New Skill Name', 'better-blocks' ),
+		'menu_name'         => __( 'Skills', 'better-blocks' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'show_in_rest'      => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'skill' ),
+	);
+
+	register_taxonomy( 'skill', [ 'project' ], $args );
+}
+add_action( 'init', __NAMESPACE__ . '\register_post_types' );
+
 function enqueue_block_assets(){
 	if ( is_admin() || has_block( 'better-blocks/accordion' ) ) {
 		wp_enqueue_script(
@@ -148,6 +222,15 @@ function enqueue_block_assets(){
 		wp_enqueue_script(
 			'better-blocks/custom-post-type-archive',
 			plugins_url( 'dist/custom-post-type-archive/ts/custom-post-type-archive.js', __FILE__ ),
+			[],
+			'0.1.0',
+			true
+		);
+	}
+	if ( has_block( 'better-blocks/portfolio' ) ) {
+		wp_enqueue_script(
+			'better-blocks/portfolio',
+			plugins_url( 'dist/portfolio/ts/portfolio.js', __FILE__ ),
 			[],
 			'0.1.0',
 			true
@@ -205,3 +288,15 @@ function dashboard_widget_function( $post, $callback_args ) {
 	}
 	echo '</ul>';
 }
+
+function create_api_posts_meta_field() {
+	register_rest_field( 'project', 'cover_image', array(
+		'get_callback'    => function( $object ) {
+			return (object) [
+				'rendered' => get_the_post_thumbnail( $object->ID ?? null ),
+			];
+		},
+	 )
+ );
+}
+add_action( 'rest_api_init', __NAMESPACE__ . '\create_api_posts_meta_field' );

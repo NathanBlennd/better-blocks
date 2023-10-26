@@ -13,6 +13,7 @@ Registers custom blocks.
 * Counter
 * Custom Post Type
 * Custom Post Type Archive
+* Portfolio
 * Pricing Table
 * Progress
 * Read Time

@@ -1,0 +1,56 @@
+/*!********************************************************************************************************************************************************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./blocks/portfolio/src/style.scss ***!
+  \********************************************************************************************************************************************************************************************************************************************************/
+/**
+ * The following styles get applied both on the front of your site
+ * and in the editor.
+ *
+ * Replace them with your own styles or remove the file completely.
+ */
+.wp-block-better-blocks-portfolio {
+  box-sizing: border-box;
+}
+.wp-block-better-blocks-portfolio * {
+  box-sizing: border-box;
+}
+.wp-block-better-blocks-portfolio .attachment {
+  margin: 0;
+  height: 100px;
+  width: 100%;
+  display: block;
+  position: relative;
+}
+.wp-block-better-blocks-portfolio__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wp-block-better-blocks-portfolio__item {
+  flex-basis: 25%;
+  height: 100px;
+  max-width: 25%;
+  overflow: hidden;
+  position: relative;
+}
+.wp-block-better-blocks-portfolio__image {
+  display: block;
+}
+.wp-block-better-blocks-portfolio__image img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  position: absolute;
+  width: 100%;
+}
+.wp-block-better-blocks-portfolio__skills {
+  list-style-type: none;
+}
+.wp-block-better-blocks-portfolio__skills-item {
+  display: inline-block;
+}
+.wp-block-better-blocks-portfolio__skills-item-button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=style-index.css.map*/

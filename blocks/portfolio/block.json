@@ -1,0 +1,18 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 3,
+	"name": "better-blocks/portfolio",
+	"version": "0.1.0",
+	"title": "Portfolio",
+	"category": "content",
+	"description": "",
+	"attributes": {
+	},
+	"supports": {
+		"html": false
+	},
+	"textdomain": "better-blocks",
+	"editorScript": "file:./build/index.js",
+	"editorStyle": "file:./build/index.css",
+	"style": "file:./build/style-index.css"
+}
