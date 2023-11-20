@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 			let diff = date-Date.now();
 			let diff_as_date = new Date(diff);
 
-			let daysString = diff_as_date.getDate().toString();
+			let daysString = Math.floor( diff / (1000 * 60 * 60 * 24) ).toString();
 			let hoursString = diff_as_date.getHours().toString();
 			let minutesString = diff_as_date.getMinutes().toString();
 			let secondsString = diff_as_date.getSeconds().toString();

@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
         var interval = setInterval(function () {
             var diff = date - Date.now();
             var diff_as_date = new Date(diff);
-            var daysString = diff_as_date.getDate().toString();
+            var daysString = Math.floor(diff / (1000 * 60 * 60 * 24)).toString();
             var hoursString = diff_as_date.getHours().toString();
             var minutesString = diff_as_date.getMinutes().toString();
             var secondsString = diff_as_date.getSeconds().toString();
