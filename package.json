@@ -52,7 +52,7 @@
 		"build:tabs": "wp-scripts build blocks/tabs/src/index.js --output-path=blocks/tabs/build/"
 	},
 	"devDependencies": {
-		"@wordpress/scripts": "^26.13.0"
+		"@wordpress/scripts": "^26.19.0"
 	},
 	"dependencies": {
 		"@wordpress/block-editor": "^12.10.0",
